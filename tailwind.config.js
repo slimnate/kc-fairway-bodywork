@@ -10,6 +10,6 @@ export default {
 			}
 		}
 	},
-	safelist: ['badge-success', 'badge-warning'],
+	safelist: ['badge-success', 'badge-warning', 'md:grid-cols-4', 'md:grid-cols-5'],
 	plugins: [daisyui]
 };

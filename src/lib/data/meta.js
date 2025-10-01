@@ -27,7 +27,7 @@
 /** @type {MetaData} */
 const metadata = {
 	// Contact information
-	name: 'Sincerely Self Care',
+	name: 'Sincerely, Selfcare',
 	tagline: '<tagline>',
 	description: 'Sincerely Self Care is a mobile massage serice based in the Kansas City area.',
 	address: null,
@@ -51,7 +51,7 @@ const metadata = {
 	cp_url: 'https://spotlitestudios.com/',
 
 	// Page metadata
-	title: 'Sincerely Self Care – Mobile Massage',
+	title: 'Sincerely, Selfcare – Mobile Massage',
 
 	// SEO Keywords
 	keywords: [

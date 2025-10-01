@@ -1,251 +1,254 @@
 <script>
-	import TeamMembers from '$lib/components/TeamMembers.svelte';
-	import TitleHero from '$lib/components/TitleHero.svelte';
-	import { aboutData } from '$lib/data/about.js';
-	import { services } from '$lib/data/services.js';
-	import { developmentPricing, hostingPricing } from '$lib/data/pricing.js';
-	import PricingCard from '$lib/components/PricingCard.svelte';
-	import { isTouchDevice } from '$lib/stores/device';
+	import {
+		offerings,
+		modalities,
+		serviceAreas,
+		mobileSetupSteps,
+		clientPrepTips
+	} from '$lib/data/services.js';
+
+	/**
+	 * @param {number|string} price
+	 * @returns {string}
+	 */
+	const formatPrice = (price) => {
+		if (typeof price !== 'number') return String(price);
+		return `$${Number.isInteger(price) ? price : price.toFixed(2)}`;
+	};
 </script>
 
-<section class="bg-blur px-4 py-12 pt-24">
+<section class="bg-base-200 px-4 py-12 pt-24">
 	<h1
-		class="text-primary text-shadow-base-200 mb-6 text-center text-4xl font-bold text-balance uppercase text-shadow-lg"
+		class="text-primary text-shadow-primary-content mb-6 text-center text-4xl font-bold text-balance uppercase text-shadow-lg md:text-5xl"
 	>
-		Solutions That Spotlight Your Success
+		Massage Therapy Services
 	</h1>
-	<p class="mx-auto mb-12 max-w-2xl text-center text-lg">
-		At Spotlite Studios, we don't just build websites—we engineer digital growth. Our service
-		offerings are designed to help small businesses increase visibility, drive meaningful traffic,
-		and convert visitors into loyal customers. Whether you're starting fresh or need a site
-		overhaul, our clean and conversion-focused designs are built for results.
+	<p class="mx-auto mb-12 max-w-3xl text-center text-lg md:text-xl">
+		Personalized therapeutic massage designed to relieve pain, improve mobility, and support your
+		wellness journey. From in-home convenience to specialized modalities, every session is tailored
+		to help you move better and feel your best.
 	</p>
 </section>
 
-<section class="triangle p-8" style="--triangle-color: var(--color-base-200);">
-	<div class="mx-auto max-w-7xl">
+<div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
+
+<!-- Service Offerings -->
+<section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
+	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h2
-			class="text-primary text-shadow-base-200 mb-6 text-center text-3xl font-bold text-balance uppercase text-shadow-lg"
+			class="text-primary text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
 		>
-			What We Bring to the Table
+			Service Offerings
 		</h2>
-		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-			{#each services as service}
-				<div
-					class="service-card card bg-base-100/70 border-primary overflow-hidden shadow-lg transition-all hover:shadow-xl {$isTouchDevice
-						? 'border-1'
-						: 'border-2'}"
-				>
-					<div class="card-body relative p-4 md:p-6">
-						<div class="mb-4 flex items-center gap-3">
-							<div class={`${service.icon} icon-md text-primary icon`}></div>
-							<h3 class="text-primary text-left text-xl font-semibold uppercase">
-								{service.title}
-							</h3>
-						</div>
-						<p class="service-description {$isTouchDevice ? 'text-base' : 'text-lg'}">
-							{service.description}
-						</p>
+	</div>
+	<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl w-full">
+		{#each offerings as offering (offering.id)}
+			<div class="card bg-base-100 shadow-lg">
+				<div class="card-body">
+					<div class="flex items-center gap-3 pb-4">
+						<span class="icon icon-md text-primary {offering.icon}"></span>
+						<h3 class="card-title text-primary">{offering.serviceName}</h3>
+					</div>
+					<p class="opacity-80">{offering.description}</p>
+					{#if offering.packages && offering.packages.length}
+						<ul class="mt-4 mx-auto flex gap-4 flex-col text-center">
+							{#if offering.id == 'therapeutic-massage'}
+								{#each offering.packages as pkg}
+									<li class="pb-1 flex items-center gap-2">
+										<span class="icon icon-xs text-primary icon-clock"></span>
+										<span class="font-medium text-lg">{pkg.name}</span> – <span
+											class="font-bold text-lg">{formatPrice(pkg.price)}</span
+										>
+									</li>
+								{/each}
+							{/if}
+							{#if offering.id == 'chair-massage'}
+								{#each offering.packages as pkg}
+									<li class="pb-1 flex flex-col">
+										<div class="flex gap-2 items-center">
+											<span class="icon icon-xs text-primary icon-clock"></span>
+											<span class="font-medium text-lg">{pkg.name}</span> – <span
+												class="font-bold text-lg">{formatPrice(pkg.price)}</span
+											>
+										</div>
+										<div class="text-sm opacity-70">{pkg.description}</div>
+									</li>
+								{/each}
+							{/if}
+							{#if offering.id == 'packages'}
+								{#each offering.packages as pkg}
+									<li class="pb-1 flex items-center gap-2">
+										<span class="icon icon-xs text-primary icon-clock"></span>
+										<span class="font-medium text-lg">{pkg.name}</span> – <span
+											class="font-bold text-lg">{formatPrice(pkg.price)}</span
+										>
+									</li>
+								{/each}
+							{/if}
+						</ul>
+					{/if}
+				</div>
+			</div>
+		{/each}
+	</div>
+</section>
 
-						{#if $isTouchDevice}
-							<!-- Always visible on touch devices -->
-							<div class="mt-4">
-								<p class="text-base-content/70 {$isTouchDevice ? 'text-xs' : 'text-sm'}">
-									{service.details}
-								</p>
-							</div>
-						{:else}
-							<!-- Hidden until hover on non-touch devices -->
-							<div class="details-container">
-								<div class="details-content h-full py-2">
-									<p class="text-base-content/70 text-sm">{service.details}</p>
-								</div>
-							</div>
-						{/if}
+<div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
 
-						{#if !$isTouchDevice}
-							<svg
-								class="text-base-content/40 details-caret absolute right-0 bottom-0 left-0 mx-auto size-8"
-								viewBox="0 0 30 20"
-							>
-								<path
-									stroke="currentColor"
-									fill="none"
-									stroke-linecap="square"
-									stroke-linejoin="miter"
-									stroke-width="3"
-									d="m0 15 15 -8 15 8"
-								/>
-							</svg>
-						{/if}
+<!-- Modalities -->
+<section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
+	<div class="mx-auto max-w-4xl py-6 text-balance">
+		<h2
+			class="text-primary text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
+		>
+			Modalities & Techniques
+		</h2>
+		<p class="text-center mt-4 text-lg opacity-90">
+			Every session draws from a range of evidence-based techniques to address your unique needs
+		</p>
+	</div>
+	<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-6xl w-full">
+		{#each modalities as modality (modality.id)}
+			<div
+				class="modality-card bg-base-100 border-primary border-2 rounded-lg p-6 shadow-md hover:shadow-xl transition-all hover:scale-105"
+			>
+				<div class="flex items-start gap-3">
+					<span class="icon icon-sm text-primary icon-check-badge mt-1"></span>
+					<div>
+						<h3 class="text-primary font-bold text-lg mb-2">{modality.name}</h3>
+						<p class="text-sm opacity-80">{modality.description}</p>
 					</div>
 				</div>
-			{/each}
+			</div>
+		{/each}
+	</div>
+</section>
+
+<div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
+
+<!-- How It Works -->
+<section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
+	<div class="mx-auto max-w-4xl py-6 text-balance">
+		<h2
+			class="text-primary text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
+		>
+			How It Works
+		</h2>
+		<p class="text-center mt-4 text-lg opacity-90">
+			Bringing professional massage therapy to you—simple, seamless, and stress-free
+		</p>
+	</div>
+
+	<div class="max-w-5xl w-full grid gap-8 md:grid-cols-2">
+		<!-- Mobile Setup -->
+		<div class="card bg-base-100 shadow-xl">
+			<div class="card-body">
+				<div class="flex items-center gap-3 mb-4 justify-center">
+					<span class="icon icon-lg text-primary icon-home-modern"></span>
+					<h3 class="card-title text-primary text-2xl">Mobile Setup</h3>
+				</div>
+				<div class="space-y-4">
+					{#each mobileSetupSteps as step (step.id)}
+						<div>
+							<h4 class="font-semibold text-lg">{step.title}</h4>
+							<p class="opacity-80">
+								{step.description}
+							</p>
+						</div>
+					{/each}
+				</div>
+			</div>
+		</div>
+
+		<!-- Client Prep -->
+		<div class="card bg-base-100 shadow-xl">
+			<div class="card-body">
+				<div class="flex items-center gap-3 mb-4 justify-center">
+					<span class="icon icon-lg text-primary icon-light-bulb"></span>
+					<h3 class="card-title text-primary text-2xl">Client Prep Tips</h3>
+				</div>
+				<div class="space-y-4">
+					{#each clientPrepTips as tip (tip.id)}
+						<div>
+							<h4 class="font-semibold text-lg">{tip.title}</h4>
+							<p class="opacity-80">
+								{tip.description}
+							</p>
+						</div>
+					{/each}
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
 
-<!-- Pricing Section -->
-<section class="bg-blur px-8 pt-16 pb-8">
-	<div class="mx-auto max-w-7xl">
+<div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
+
+<!-- Service Areas -->
+<section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
+	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h2
-			class="text-primary text-shadow-primary-content mb-8 text-center text-4xl font-semibold uppercase text-shadow-md"
+			class="text-primary text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
 		>
-			Our Packages
+			Service Areas
 		</h2>
-		<p class="mx-auto mb-8 max-w-2xl text-center">
-			Explore our transparent, value-packed packages for website development and hosting. Whether
-			you're just starting out or ready to scale, we offer solutions tailored to help your business
-			shine online—with no hidden fees or surprises.
+		<p class="text-center mt-4 text-lg opacity-90">
+			Proudly serving the greater Kansas City metro area
 		</p>
+	</div>
 
-		<!-- Development Packages -->
-		<div class="mt-12 mb-12">
-			<h3
-				class="text-primary text-shadow-primary-content mb-2 text-center text-2xl font-bold uppercase text-shadow-md md:text-3xl"
-			>
-				Website Development
-			</h3>
-			<p
-				class="text-base-content/70 text-sahdow-md text-shadow-base-content mx-auto mb-8 max-w-2xl text-center text-sm"
-			>
-				From simple brochure sites to advanced, custom solutions, our website development packages
-				are designed to fit your business goals and budget. Every package includes mobile-friendly
-				design, essential SEO, and features to help your brand stand out online.
-			</p>
-			<div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
-				{#each developmentPricing.packages as pkg, i}
-					<PricingCard
-						name={pkg.name}
-						priceMin={pkg.priceMin}
-						priceMax={pkg.priceMax}
-						includedFeatures={pkg.includedFeatures}
-						featured={pkg.featured}
-						tagline={pkg.tagline}
-						icon={pkg.icon}
-						description={pkg.description}
-						tier={i}
-						pricingData={developmentPricing}
-					/>
-				{/each}
-			</div>
-		</div>
+	<div class="max-w-6xl w-full">
+		<div
+			class="bg-base-100 rounded-2xl shadow-xl p-8 border-primary border-2 relative overflow-hidden"
+		>
+			<!-- Decorative map-like background -->
+			<div
+				class="absolute inset-0 opacity-5 pointer-events-none"
+				style="background-image: radial-gradient(circle at 20% 50%, var(--color-primary) 2px, transparent 2px),
+              radial-gradient(circle at 80% 50%, var(--color-primary) 2px, transparent 2px),
+              radial-gradient(circle at 50% 20%, var(--color-primary) 2px, transparent 2px),
+              radial-gradient(circle at 50% 80%, var(--color-primary) 2px, transparent 2px);
+              background-size: 100px 100px;"
+			></div>
 
-		<!-- Hosting Packages -->
-		<div>
-			<h3
-				class="text-primary text-shadow-primary-content mb-2 pt-4 text-center text-2xl font-bold uppercase text-shadow-md md:text-3xl"
-			>
-				Website Hosting & Maintenance
-			</h3>
-			<p
-				class="text-base-content/70 text-sahdow-md text-shadow-base-content mx-auto mb-8 max-w-2xl text-center text-sm"
-			>
-				Our hosting and maintenance packages keep your website secure, up-to-date, and performing at
-				its best. Enjoy peace of mind with reliable hosting, regular updates, and responsive support
-				- so you can focus on running your business while we handle the technical details.
-			</p>
-			<div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
-				{#each hostingPricing.packages as pkg, i}
-					<PricingCard
-						name={pkg.name}
-						priceMin={pkg.priceMin}
-						priceMax={pkg.priceMax}
-						includedFeatures={pkg.includedFeatures}
-						featured={pkg.featured}
-						tagline={pkg.tagline}
-						icon={pkg.icon}
-						description={pkg.description}
-						tier={i}
-						pricingData={hostingPricing}
-					/>
-				{/each}
+			<div class="relative z-10">
+				<div class="text-center mb-8">
+					<span class="icon icon-xl text-primary icon-map-pin"></span>
+					<p class="mt-4 text-lg opacity-90">
+						Mobile massage services available throughout the Kansas City metro. Travel fees may apply
+						outside the immediate metro area.
+					</p>
+				</div>
+
+				<div class="flex flex-wrap gap-3 justify-center">
+					{#each serviceAreas as area (area.id)}
+						<div
+							class="badge-area bg-primary/10 border-primary border-2 rounded-full px-4 py-3 text-center hover:bg-primary hover:text-primary-content transition-all cursor-default transform hover:scale-105 whitespace-nowrap"
+						>
+							<span class="font-semibold text-sm">{area.name}</span>
+						</div>
+					{/each}
+				</div>
+
+				<div class="mt-8 text-center">
+					<p class="text-sm opacity-70">
+						Don't see your city? <a
+							href="/booking"
+							class="text-primary font-semibold hover:underline">Contact us</a
+						> to check availability in your area.
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
 <style>
-	/* Card hover effect for non-touch devices */
-	@media (hover: hover) {
-		.service-card {
-			height: 100%;
-		}
-
-		.service-card:hover .service-description {
-			transition: opacity 0.2s ease;
-		}
-
-		.details-caret {
-			transform: translateY(0);
-		}
-
-		.service-card:hover .details-caret {
-			opacity: 0;
-			transform: translateY(100%);
-			transition:
-				opacity 0.2s ease,
-				transform 0.2s ease;
-		}
-
-		.service-description {
-			height: 8rem;
-		}
-
-		.card-body {
-			height: 100%;
-			display: flex;
-			flex-direction: column;
-		}
-
-		.details-container {
-			position: absolute;
-			background: var(--color-base-100);
-			bottom: 0;
-			left: 0;
-			right: 0;
-			border-top: 1px solid var(--color-primary);
-			max-height: 100%;
-			transform: translateY(100%);
-			transition: transform 0.3s ease;
-			overflow-y: auto;
-			z-index: 10;
-			box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
-			height: 10.5rem;
-		}
-
-		.service-card:hover .details-container {
-			transform: translateY(0);
-		}
-
-		.details-content {
-			opacity: 0;
-			padding-left: 1.5rem;
-			padding-right: 1.5rem;
-			transition: opacity 0.2s ease 0.1s;
-			border-bottom-right-radius: var(--radius-xl) /* 0.75rem = 12px */;
-			border-bottom-left-radius: var(--radius-xl) /* 0.75rem = 12px */;
-		}
-
-		.service-card:hover .details-content {
-			opacity: 1;
-			background: var(--color-base-100);
-			border-bottom-right-radius: var(--radius-xl) /* 0.75rem = 12px */;
-			border-bottom-left-radius: var(--radius-xl) /* 0.75rem = 12px */;
-		}
+	.modality-card {
+		transition: all 0.3s ease;
 	}
 
-	/* Remove animation for touch devices */
-	@media (hover: none) {
-		.details-container {
-			position: static;
-			padding: 0;
-			margin-top: 1rem;
-			background: transparent;
-		}
-
-		.details-content {
-			opacity: 1;
-		}
+	.badge-area {
+		transition: all 0.2s ease;
 	}
 </style>

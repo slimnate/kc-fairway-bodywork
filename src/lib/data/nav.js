@@ -12,12 +12,16 @@ const navItems = [
 		text: 'Services'
 	},
 	{
+		href: '/about',
+		text: 'About'
+	},
+	{
 		href: '/blog',
 		text: 'Blog'
 	},
 	{
-		href: '/booking',
-		text: 'Book a Consultation',
+		href: 'https://selfcare.noterro.com/',
+		text: 'Book Now',
 		featured: true
 	}
 ];

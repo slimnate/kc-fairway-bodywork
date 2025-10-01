@@ -70,15 +70,20 @@
 			Ready to feel better?
 		</h2>
 	</div>
+	<p class="mx-auto max-w-2xl py-4 text-balance text-center text-lg md:text-xl opacity-90">
+		Imagine waking up tomorrow with less pain, more energy, and a renewed sense of well-being. Whether you need relief from chronic tension, want to recover faster, or simply crave a moment of deep relaxation, your path to feeling your best starts here. Take the first step—your body will thank you.
+	</p>
 	<div class="flex w-full justify-center py-6">
 		<a
-			href="/booking"
+			href="https://selfcare.noterro.com/"
 			class="btn btn-secondary btn-xl w-full rounded-full px-8 py-4 text-xl font-semibold shadow-lg md:w-lg"
 		>
 			Book Now
 		</a>
 	</div>
 </section>
+
+<div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
 
 <!-- Services -->
 
@@ -90,25 +95,44 @@
 			Services
 		</h2>
 	</div>
-	<div class="services-grid grid gap-6">
+	<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl">
 		{#each offerings as offering (offering.id)}
 			<div class="card bg-base-100 shadow">
 				<div class="card-body">
-					<div class="flex items-center gap-3">
+					<div class="flex items-center gap-3 pb-4">
 						<span class="icon icon-md text-primary {offering.icon}"></span>
 						<h3 class="card-title">{offering.serviceName}</h3>
 					</div>
 					<p class="opacity-80">{offering.description}</p>
 					{#if offering.packages && offering.packages.length}
-						<ul class="mt-2 list-inside list-disc">
-							{#each offering.packages as pkg}
-								<li class="pb-1">
-									<span class="font-medium">{pkg.name} – {formatPrice(pkg.price)}</span>
-									{#if pkg.description}
+						<ul class="mt-2 mx-auto flex gap-4 flex-col text-center">
+							{#if offering.id == 'therapeutic-massage'}
+								{#each offering.packages as pkg}
+									<li class="pb-1 flex items-center gap-2">
+										<span class="icon icon-xs text-primary icon-clock"></span>
+										<span class="font-medium text-lg">{pkg.name}</span> – <span class="font-bold text-lg">{formatPrice(pkg.price)}</span>
+									</li>
+								{/each}
+							{/if}
+							{#if offering.id == 'chair-massage'}
+								{#each offering.packages as pkg}
+									<li class="pb-1 flex flex-col">
+										<div class="flex gap-2 items-center">
+											<span class="icon icon-xs text-primary icon-clock"></span>
+											<span class="font-medium text-lg">{pkg.name}</span> – <span class="font-bold text-lg">{formatPrice(pkg.price)}</span>
+										</div>
 										<div class="text-sm opacity-70">{pkg.description}</div>
-									{/if}
-								</li>
-							{/each}
+									</li>
+								{/each}
+							{/if}
+							{#if offering.id == 'packages'}
+								{#each offering.packages as pkg}
+									<li class="pb-1 flex items-center gap-2">
+										<span class="icon icon-xs text-primary icon-clock"></span>
+										<span class="font-medium text-lg">{pkg.name}</span> – <span class="font-bold text-lg">{formatPrice(pkg.price)}</span>
+									</li>
+								{/each}
+							{/if}
 						</ul>
 					{/if}
 				</div>
@@ -122,46 +146,4 @@
 <!-- Reviews -->
 
 <style>
-	.differentiator-grid,
-	.industries-grid {
-		--grid-cols: 1;
-
-		@media screen and (min-width: 40rem) {
-			--grid-cols: 2;
-		}
-
-		@media screen and (min-width: 64rem) {
-			--grid-cols: 3;
-		}
-
-		@media screen and (min-width: 96rem) {
-			--grid-cols: 5;
-		}
-
-		grid-template-columns: repeat(var(--grid-cols), 256px);
-		grid-template-rows: repeat(auto-fill, 256px);
-	}
-
-	.services-grid {
-		--grid-cols: 1;
-
-		@media screen and (min-width: 40rem) {
-			--grid-cols: 2;
-		}
-
-		@media screen and (min-width: 64rem) {
-			--grid-cols: 3;
-		}
-
-		grid-template-columns: repeat(var(--grid-cols), 256px);
-		grid-template-rows: repeat(auto-fill, 256px);
-	}
-
-	.red {
-		color: red;
-	}
-
-	.blue {
-		color: blue;
-	}
 </style>
