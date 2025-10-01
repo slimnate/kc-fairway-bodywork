@@ -32,18 +32,18 @@ const metadata = {
 	description: 'Sincerely Self Care is a mobile massage serice based in the Kansas City area.',
 	address: null,
 	phone: null,
-	email: 'nathan@spotlitestudios.com',
+	email: 'anthony@sincerelyselfcare.life',
 
 	// The following URLs are placeholders and should be replaced with actual URLs
 	// for your business's social media profiles.
 	// Set values to null and they will not be rendered in the footer.
 	// For example, if you don't have a Facebook page, set fb_url to null.
-	fb_url: 'https://www.facebook.com/examplebusiness',
-	ig_url: 'https://www.instagram.com/examplebusiness',
-	tw_url: 'https://twitter.com/examplebusiness',
-	yt_url: 'https://www.youtube.com/channel/examplebusiness',
-	li_url: 'https://www.linkedin.com/company/examplebusiness',
-	tiktok_url: 'https://www.tiktok.com/@examplebusiness',
+	fb_url: 'https://www.facebook.com/profile.php?id=61576685337269',
+	ig_url: 'https://www.instagram.com/sincerelyselfcare',
+	// tw_url: 'https://twitter.com/examplebusiness',
+	// yt_url: 'https://www.youtube.com/channel/examplebusiness',
+	// li_url: 'https://www.linkedin.com/company/examplebusiness',
+	// tiktok_url: 'https://www.tiktok.com/@examplebusiness',
 
 	// Copyright information
 	cp_year: `${new Date().getFullYear()}`,

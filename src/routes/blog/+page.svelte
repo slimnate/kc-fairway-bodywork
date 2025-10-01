@@ -37,7 +37,7 @@
 			<a href="/" class="btn btn-primary btn-lg">
 				Back to Home
 			</a>
-			<a href="/booking" class="btn btn-outline btn-primary btn-lg">
+			<a href="https://selfcare.noterro.com/" class="btn btn-outline btn-primary btn-lg">
 				Book a Session 
 	</div>
 </section>

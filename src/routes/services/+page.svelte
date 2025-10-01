@@ -232,9 +232,9 @@
 
 				<div class="mt-8 text-center">
 					<p class="text-sm opacity-70">
-						Don't see your city? <a
-							href="/booking"
-							class="text-primary font-semibold hover:underline">Contact us</a
+						Don't see your city? Contuct me at <a
+							href="mailto:anthony@sincerelyselfcare.life"
+							class="text-primary font-semibold hover:underline">anthony@sincerelyselfcare.life</a
 						> to check availability in your area.
 					</p>
 				</div>
