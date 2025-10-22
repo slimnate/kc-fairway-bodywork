@@ -33,7 +33,7 @@
 		/>
 	</div>
 	<div class="mx-auto max-w-2xl py-6 text-balance md:text-lg">
-		<p>
+		<p class="pb-4">
 			Welcome to Sincerely, Selfcare. I specialize in therapeutic massage designed to support
 			recovery, improve mobility, and relieve muscle tension. My focus is on helping clients with
 			postural correction, injury prevention, and pain management through targeted techniques such
