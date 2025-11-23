@@ -42,18 +42,11 @@ export const offerings = [
 	},
 	{
 		id: 'chair-massage',
-		serviceName: 'Chair Massage for Corporate & Events',
-		icon: 'icon-chart-bar',
+		serviceName: 'On-Course Tournament Bodywork',
+		icon: 'icon-trophy',
 		description:
-			'Bring the benefits of massage directly to your workplace or special event. Chair massage reduces stress, improves focus, and supports overall wellness. Ask about special discounted rates for schools and educators.',
-		packages: [
-			{ name: 'Company-paid (per hour)', price: 100, description: 'Billed to company' },
-			{
-				name: 'Employee-paid (per min)',
-				price: 1.65,
-				description: 'Paid individually by each employee'
-			}
-		]
+			'Support golfers during tournaments, league nights, or special events with targeted bodywork designed to improve mobility, reduce tension, and enhance performance. Whether hired by a golf course, a tournament organizer, or individual players, I provide on-site stretch and recovery work to help golfers feel their best before, during, and after play.',
+		packages: []
 	},
 	{
 		id: 'piriformis-treatment',
