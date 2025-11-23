@@ -118,6 +118,14 @@
 									</li>
 								{/each}
 							{/if}
+							{#if offering.id == 'mobile-massage'}
+								{#each offering.packages as pkg}
+									<li class="pb-1 flex items-center gap-2">
+										<span class="icon icon-xs text-primary icon-clock"></span>
+										<span class="font-medium text-lg">{pkg.name}</span> – <span class="font-bold text-lg">{formatPrice(pkg.price)}</span>
+									</li>
+								{/each}
+							{/if}
 						</ul>
 					{/if}
 				</div>

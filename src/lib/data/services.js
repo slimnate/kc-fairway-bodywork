@@ -61,7 +61,7 @@ export const offerings = [
 		serviceName: 'Gift Vouchers',
 		icon: 'icon-link',
 		description:
-			'Give the gift of wellness. A Sincerely, Selfcare gift voucher is a thoughtful way to support a friend, loved one, or colleague with the benefits of massage therapy. Vouchers can be purchased for any service or session length and redeemed for both in-home and studio appointments.',
+			'Give the gift of wellness. A KC Fairway Bodywork gift voucher is a thoughtful way to support a friend, loved one, or colleague with the benefits of massage therapy. Vouchers can be purchased for any service or session length.',
 		packages: []
 	},
 	{
@@ -79,8 +79,11 @@ export const offerings = [
 		serviceName: 'Mobile Massage (In-Home)',
 		icon: 'icon-home-modern',
 		description:
-			'Enjoy professional therapeutic massage in the comfort of your own home. I bring everything needed for a session that fits seamlessly into your routine. Travel fee may apply outside of the Kansas City metro area. Check service area.',
-		packages: []
+			'Enjoy professional therapeutic bodywork in the comfort of your own home. I bring everything needed for a session that fits seamlessly into your routine.',
+		packages: [
+			{ name: '60 minutes', price: 200, description: null },
+			{ name: '90 minutes', price: 250, description: null }
+		]
 	},
 ];
 
