@@ -61,7 +61,7 @@ export const offerings = [
 		serviceName: 'Mobility & Assisted Stretch Session',
 		icon: 'icon-link',
 		description:
-			'Improve flexibility, unlock your rotation, and reduce tension with a focused stretch session designed for golfers. This service targets hips, thoracic spine, shoulders, and core rotation to support a smoother, more powerful swing.'
+			'Improve flexibility, unlock your rotation, and reduce tension with a focused stretch session designed for golfers. This service targets hips, thoracic spine, shoulders, and core rotation to support a smoother, more powerful swing.',
 		packages: []
 	},
 	{

@@ -27,8 +27,8 @@
 /** @type {MetaData} */
 const metadata = {
 	// Contact information
-	name: 'Sincerely, Selfcare',
-	tagline: '<tagline>',
+	name: 'KC Fairway Bodywork',
+	tagline: 'Unlock Motion - Unlock Game',
 	description: 'Sincerely Self Care is a mobile massage serice based in the Kansas City area.',
 	address: null,
 	phone: null,
@@ -40,10 +40,10 @@ const metadata = {
 	// For example, if you don't have a Facebook page, set fb_url to null.
 	fb_url: 'https://www.facebook.com/profile.php?id=61576685337269',
 	ig_url: 'https://www.instagram.com/sincerelyselfcare',
-	// tw_url: 'https://twitter.com/examplebusiness',
-	// yt_url: 'https://www.youtube.com/channel/examplebusiness',
-	// li_url: 'https://www.linkedin.com/company/examplebusiness',
-	// tiktok_url: 'https://www.tiktok.com/@examplebusiness',
+	tw_url: null,
+	yt_url: null,
+	li_url: null,
+	tiktok_url: null,
 
 	// Copyright information
 	cp_year: `${new Date().getFullYear()}`,

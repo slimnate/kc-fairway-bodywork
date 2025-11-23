@@ -10,7 +10,7 @@
  *
  * @typedef {Object} AboutData
  * @property {string} title - The title of the about page.
- * @property {string} aboutText - A brief description of the company.
+ * @property {string|string[]} aboutText - A brief description of the company (can be a string or array of paragraphs).
  * @property {string} mission - The company's mission statement.
  * @property {string} vision - The company's vision statement.
  * @property {Value[]} values - A list of the company's core values.
