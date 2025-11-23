@@ -70,8 +70,8 @@ export const offerings = [
 		icon: 'icon-currency-dollar',
 		description: 'Invest in your health with discounted session bundles designed for ongoing care:',
 		packages: [
-			{ name: '4 × 60-minute sessions', price: 600, description: null },
-			{ name: '4 × 90-minute sessions', price: 800, description: null }
+			{ name: '4 × 60-minute sessions', price: 620, description: null },
+			{ name: '4 × 90-minute sessions', price: 820, description: null }
 		]
 	},
 	{
