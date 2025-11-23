@@ -18,7 +18,10 @@
  */
 export const aboutData = {
 	title: 'About Sincerely,Selfcare',
-	aboutText: 'My name is Anthony Snell, and I created Sincerely, Selfcare with one mission: to help people feel better in their bodies. I specialize in therapeutic massage with a focus on recovery, pain relief, and improving mobility. From athletes to anyone managing tension, injuries, or chronic discomfort, I use techniques like neuromuscular therapy, trigger point work, cupping, heated scraper, and adhesion release to create meaningful, lasting results. Massage isn’t just a service to me—it’s a way to support your health, restore balance, and help you get back to doing what you love.',
+	aboutText: [
+		"I'm Anthony Snell, a performance bodywork specialist dedicated to helping golfers move better and play their best. KC Fairway Bodywork was built with a clear focus: delivering high-quality, results-driven bodywork tailored to the needs of golfers—from weekend players to competitive athletes.",
+		'My work focuses on improving mobility, relieving chronic tension, and supporting recovery so golfers can swing freely and enjoy the game without pain. Using techniques like Neuromuscular Therapy, Structural Integration, trigger point work, and targeted adhesion release, I tailor every session to your movement patterns, your goals, and the demands of the sport.'
+	],
 	mission:
 		'To provide quality bodywork that creates real improvement, encouraging you to be your best.',
 	vision:

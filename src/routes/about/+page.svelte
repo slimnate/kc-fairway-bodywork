@@ -13,7 +13,13 @@
 	</div>
 	<div class="mx-auto max-w-3xl py-6 text-balance text-center px-4 md:text-lg">
 		<h1 class="text-primary text-4xl font-bold uppercase mb-6 md:text-5xl">About</h1>
-		<p>{aboutData.aboutText}</p>
+		{#if Array.isArray(aboutData.aboutText)}
+			{#each aboutData.aboutText as paragraph}
+				<p class="mb-4">{paragraph}</p>
+			{/each}
+		{:else}
+			<p>{aboutData.aboutText}</p>
+		{/if}
 	</div>
 </section>
 
