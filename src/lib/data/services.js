@@ -58,10 +58,10 @@ export const offerings = [
 	},
 	{
 		id: 'gift-vouchers',
-		serviceName: 'Gift Vouchers',
+		serviceName: 'Mobility & Assisted Stretch Session',
 		icon: 'icon-link',
 		description:
-			'Give the gift of wellness. A KC Fairway Bodywork gift voucher is a thoughtful way to support a friend, loved one, or colleague with the benefits of massage therapy. Vouchers can be purchased for any service or session length.',
+			'Improve flexibility, unlock your rotation, and reduce tension with a focused stretch session designed for golfers. This service targets hips, thoracic spine, shoulders, and core rotation to support a smoother, more powerful swing.'
 		packages: []
 	},
 	{
