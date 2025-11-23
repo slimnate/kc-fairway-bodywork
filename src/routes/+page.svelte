@@ -34,10 +34,10 @@
 	</div>
 	<div class="mx-auto max-w-2xl py-6 text-balance md:text-lg">
 		<p class="pb-4">
-			Welcome to KC Fairway Bodywork. My name is Anthony Snell, licensed massage therapist, and owner of KC Fairway Bodywork. I specialize in golfers helping increase mobility, improve game and play more often pain free. yada yada...
+			Welcome to KC Fairway Bodywork — where golfers come to improve mobility, reduce pain, and elevate their performance. I specialize in golf-focused, therapeutic bodywork designed to enhance range of motion, unlock your swing, and support long-term recovery. Using targeted techniques such as Deep Tissue, Neuromuscular therapy, Structural Integration, and mobility-based muscle work, I help golfers move better both on and off the course.
 		</p>
 		<p>
-			Whether you’re an athlete, managing chronic discomfort, or simply looking to move and feel better, I offer in-home sessions across the Kansas City area.
+			Whether you're dealing with tightness, recovering from pain, or looking to play your best more often, every session is built on care, quality, and improvement. If you’re ready to unlock motion and unlock your game, you’re in the right place.
 		</p>
 	</div>
 </section>
@@ -63,11 +63,11 @@
 		<h2
 			class="text-primary text-shadow-primary-content text-3xl font-bold uppercase text-shadow-md md:text-4xl"
 		>
-			Ready to feel better?
+		Elevate Your Performance
 		</h2>
 	</div>
 	<p class="mx-auto max-w-2xl py-4 text-balance text-center text-lg md:text-xl opacity-90">
-		Imagine waking up tomorrow with less pain, more energy, and a renewed sense of well-being. Whether you need relief from chronic tension, want to recover faster, or simply crave a moment of deep relaxation, your path to feeling your best starts here. Take the first step—your body will thank you.
+		Imagine stepping onto the course with more mobility, less pain, and a swing that feels smooth and free. Whether you’re recovering, improving, or preparing for your next round, your path to better golf starts here.
 	</p>
 	<div class="flex w-full justify-center py-6">
 		<a
