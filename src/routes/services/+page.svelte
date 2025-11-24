@@ -24,9 +24,7 @@
 		Massage Therapy Services
 	</h1>
 	<p class="mx-auto mb-12 max-w-3xl text-center text-lg md:text-xl">
-		Personalized therapeutic massage designed to relieve pain, improve mobility, and support your
-		wellness journey. From in-home convenience to specialized modalities, every session is tailored
-		to help you move better and feel your best.
+		Personalized performance bodywork designed to improve mobility, reduce tension, and support better movement on and off the course. Every session is tailored to your swing, your body, and your goals so you can move better, feel better, and play your best.
 	</p>
 </section>
 

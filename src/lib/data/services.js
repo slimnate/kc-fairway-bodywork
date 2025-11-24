@@ -97,7 +97,7 @@ export const modalities = [
 	{
 		id: 'deep-tissue-massage',
 		name: 'Deep Tissue Massage',
-		description: 'Intense pressure for deep muscle tension and stress'
+		description: 'More precise, targeted pressure to release deep muscle tension and improve movement.'
 	},
 	{
 		id: 'sports-massage',
@@ -106,13 +106,13 @@ export const modalities = [
 	},
 	{
 		id: 'swedish-massage',
-		name: 'Swedish Massage',
-		description: 'Gentle, relaxing full-body massage'
+		name: 'Instrument Assisted Soft Tissue Mobilization',
+		description: 'A heated tool helps soften fascia, reduce adhesions, and allow deeper, more effective muscle work.'
 	},
 	{
 		id: 'structural-integration',
 		name: 'Structural Integration (Coming Soon)',
-		description: 'Postural alignment and fascia-focused therapy'
+		description: 'Structural Integration realigns your body by working with the fascia to reduce pain, improve mobility, and help you move with ease'
 	},
 	{
 		id: 'scar-tissue-therapy',
@@ -155,7 +155,7 @@ export const mobileSetupSteps = [
 		id: 'arrival-setup',
 		title: 'Arrival & Setup',
 		description:
-			'Your therapist arrives at your scheduled time with all necessary equipment, including a professional massage table, fresh linens, therapeutic oils, and relaxing music.'
+			'Your therapist will arrive about 20 minutes prior to your scheduled time with all necessary equipment, including a professional massage table, fresh linens, therapeutic oils, and relaxing music.'
 	},
 	{
 		id: 'space-requirements',
@@ -167,7 +167,7 @@ export const mobileSetupSteps = [
 		id: 'quick-setup',
 		title: 'Quick Setup Time',
 		description:
-			'Setup takes just 5-10 minutes. Your therapist will transform the space into a peaceful treatment room, complete with ambient lighting and calming music if desired.'
+			'Setup takes just about 10 - 15 minutes. Your therapist will transform the space into a peaceful treatment room, complete with calming music if desired.'
 	},
 	{
 		id: 'no-cleanup',
