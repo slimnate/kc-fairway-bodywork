@@ -45,7 +45,7 @@ export const offerings = [
 		serviceName: 'On-Course Tournament Bodywork',
 		icon: 'icon-trophy',
 		description:
-			'Support golfers during tournaments, league nights, or special events with targeted bodywork designed to improve mobility, reduce tension, and enhance performance. Whether hired by a golf course, a tournament organizer, or individual players, I provide on-site stretch and recovery work to help golfers feel their best before, during, and after play.',
+			'Support golfers during tournaments, league nights, or special events with targeted bodywork and stretching designed to improve mobility, reduce tension, and enhance performance. Whether hired by a golf course, a tournament organizer, or individual players, I provide on-site stretch and recovery work to help golfers feel their best before, during, and after play.',
 		packages: []
 	},
 	{

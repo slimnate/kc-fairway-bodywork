@@ -130,7 +130,7 @@
 		<h2
 			class="text-primary text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
 		>
-			How It Works
+			Mobile Massage Therapy: How It Works
 		</h2>
 		<p class="text-center mt-4 text-lg opacity-90">
 			Bringing professional massage therapy to you—simple, seamless, and stress-free
