@@ -60,26 +60,26 @@
 	default: false;
 	prefersdark: false;
 	color-scheme: 'light';
-	--color-base-100: oklch(0.9863 0.02 93.5);
-	--color-base-200: oklch(0.9611 0.0221 80.69);
-	--color-base-300: oklch(0.726 0.048 71.26);
-	--color-base-content: oklch(0.1971 0.0414 269.71);
-	--color-primary: oklch(0.4747 0.076 66.22);
-	--color-primary-content: oklch(0.9863 0.02 93.5);
-	--color-secondary: oklch(0.5401 0.0834 136.59);
-	--color-secondary-content: oklch(0.9863 0.02 93.5);
+	--color-base-100: oklch(0.37 0.057 149);
+	--color-base-200: oklch(0.29 0.047 160);
+	--color-base-300: oklch(0.29 0.047 160);
+	--color-base-content: oklch(0.63 0.097 91);
+	--color-primary: oklch(1.00 0.000 90);
+	--color-primary-content: oklch(0.63 0.097 91);
+	--color-secondary: oklch(0.63 0.097 91);
+	--color-secondary-content: oklch(0.29 0.047 160);
 	--color-accent: #553876;
-	--color-accent-content: oklch(0.9863 0.02 93.5);
+	--color-accent-content: oklch(0.29 0.047 160);
 	--color-neutral: oklch(14% 0.005 285.823);
-	--color-neutral-content: oklch(0.9863 0.02 93.5);
+	--color-neutral-content: oklch(0.63 0.097 91);
 	--color-info: oklch(0.5342 0.108 240.19);
-	--color-info-content: oklch(0.1971 0.0414 269.71);
+	--color-info-content: oklch(0.63 0.097 91);
 	--color-success: oklch(0.5401 0.0834 136.59);
-	--color-success-content: oklch(0.9863 0.02 93.5);
+	--color-success-content: oklch(0.29 0.047 160);
 	--color-warning: oklch(82% 0.189 84.429);
-	--color-warning-content: oklch(0.1971 0.0414 269.71);
+	--color-warning-content: oklch(0.63 0.097 91);
 	--color-error: oklch(71% 0.194 13.428);
-	--color-error-content: oklch(0.1971 0.0414 269.71);
+	--color-error-content: oklch(0.63 0.097 91);
 	--radius-selector: 0.5rem;
 	--radius-field: 0.25rem;
 	--radius-box: 0.5rem;
@@ -182,4 +182,12 @@ body {
 	border: none;
 	border-top: 2px solid var(--bc);
 	margin: 2em 0;
+}
+
+.icon-custom {
+	color: oklch(0.63 0.097 91);
+}
+
+.border-custom {
+	border-color: oklch(0.63 0.097 91);
 }
