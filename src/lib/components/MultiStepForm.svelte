@@ -322,7 +322,7 @@
 		name="booking"
 		method="POST"
 		data-netlify="true"
-		class="card bg-base-100/70 shadow-primary-content/20 border-primary min-h-[40vh] border-2 shadow-xl"
+		class="card bg-base-100/70 shadow-primary-content/20 border-custom min-h-[40vh] border-2 shadow-xl"
 	>
 		<div class="card-body flex flex-col justify-between">
 			<!-- Step 1: Contact Info -->

@@ -73,7 +73,7 @@
 		role="button"
 		tabindex="0"
 		class="rounded-lg border-2 border-dashed p-6 text-center transition-colors {dragOver
-			? 'border-primary bg-primary/5'
+			? 'border-custom bg-primary/5'
 			: 'border-base-300'}"
 		on:dragover={handleDragOver}
 		on:dragleave={handleDragLeave}

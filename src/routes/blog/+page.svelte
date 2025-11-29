@@ -25,7 +25,7 @@
 <section class="bg-base-200 flex flex-col items-center justify-center px-6 py-24 min-h-[60vh]">
 	<div class="mx-auto max-w-2xl text-center">
 		<div class="mb-8">
-			<span class="icon icon-xl text-primary icon-document-text mx-auto"></span>
+			<span class="icon icon-xl icon-custom icon-document-text mx-auto"></span>
 		</div>
 		<h2 class="text-primary mb-6 text-3xl font-bold uppercase md:text-4xl">Coming Soon</h2>
 		<p class="text-base-content/80 mb-8 text-lg">

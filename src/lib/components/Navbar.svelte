@@ -69,7 +69,7 @@
 <HamburgerButton
 	bind:btnElement={hamburgerButtonElement}
 	bind:isOpen
-	classes="md:hidden text-primary top-2 left-2 fixed z-9999"
+	classes="md:hidden icon-custom top-2 left-2 fixed z-9999"
 />
 
 <nav
@@ -113,7 +113,7 @@
 			{/if}
 			<li class:featured class="relative shrink-0 md:mt-0 md:mb-0 md:flex md:items-center">
 				<a
-					class="text-primary peer mx-auto inline-flex justify-start rounded-none border-none bg-transparent p-4 px-5 text-2xl font-semibold uppercase text-shadow-xs md:text-xl md:font-normal md:py-2"
+					class="nav-link peer mx-auto inline-flex justify-start rounded-none border-none bg-transparent p-4 px-5 text-2xl font-semibold uppercase text-shadow-xs md:text-xl md:font-normal md:py-2"
 					onclick={closeNavMenu}
 					{href}
 				>
@@ -149,6 +149,10 @@
 		);
 		backdrop-filter: blur(10px);
 		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.nav-link {
+		color: oklch(0.63 0.097 91);
 	}
 
 	@media screen and (max-width: 767px) {

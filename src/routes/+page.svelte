@@ -85,8 +85,8 @@
 			<div class="card bg-base-100 shadow">
 				<div class="card-body">
 					<div class="flex items-center gap-3 pb-4">
-						<span class="icon icon-md text-primary {offering.icon}"></span>
-						<h3 class="card-title">{offering.serviceName}</h3>
+						<span class="icon icon-md icon-custom {offering.icon}"></span>
+						<h3 class="card-title home-service-name">{offering.serviceName}</h3>
 					</div>
 					<p class="opacity-80">{offering.description}</p>
 					{#if offering.packages && offering.packages.length}
@@ -94,7 +94,7 @@
 							{#if offering.id == 'therapeutic-massage'}
 								{#each offering.packages as pkg}
 									<li class="pb-1 flex items-center gap-2">
-										<span class="icon icon-xs text-primary icon-clock"></span>
+										<span class="icon icon-xs icon-custom icon-clock"></span>
 										<span class="font-medium text-lg">{pkg.name}</span> – <span class="font-bold text-lg">{formatPrice(pkg.price)}</span>
 									</li>
 								{/each}
@@ -103,7 +103,7 @@
 								{#each offering.packages as pkg}
 									<li class="pb-1 flex flex-col">
 										<div class="flex gap-2 items-center">
-											<span class="icon icon-xs text-primary icon-clock"></span>
+											<span class="icon icon-xs icon-custom icon-clock"></span>
 											<span class="font-medium text-lg">{pkg.name}</span> – <span class="font-bold text-lg">{formatPrice(pkg.price)}</span>
 										</div>
 										<div class="text-sm opacity-70">{pkg.description}</div>
@@ -113,7 +113,7 @@
 							{#if offering.id == 'packages'}
 								{#each offering.packages as pkg}
 									<li class="pb-1 flex items-center gap-2">
-										<span class="icon icon-xs text-primary icon-clock"></span>
+										<span class="icon icon-xs icon-custom icon-clock"></span>
 										<span class="font-medium text-lg">{pkg.name}</span> – <span class="font-bold text-lg">{formatPrice(pkg.price)}</span>
 									</li>
 								{/each}
@@ -121,7 +121,7 @@
 							{#if offering.id == 'mobile-massage'}
 								{#each offering.packages as pkg}
 									<li class="pb-1 flex items-center gap-2">
-										<span class="icon icon-xs text-primary icon-clock"></span>
+										<span class="icon icon-xs icon-custom icon-clock"></span>
 										<span class="font-medium text-lg">{pkg.name}</span> – <span class="font-bold text-lg">{formatPrice(pkg.price)}</span>
 									</li>
 								{/each}
@@ -139,4 +139,7 @@
 <!-- Reviews -->
 
 <style>
+	.home-service-name {
+		color: oklch(0.63 0.097 91);
+	}
 </style>

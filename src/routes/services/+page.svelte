@@ -19,7 +19,7 @@
 
 <section class="bg-base-200 px-4 py-12 pt-24">
 	<h1
-		class="text-primary text-shadow-primary-content mb-6 text-center text-4xl font-bold text-balance uppercase text-shadow-lg md:text-5xl"
+		class="services-page-title text-shadow-primary-content mb-6 text-center text-4xl font-bold text-balance uppercase text-shadow-lg md:text-5xl"
 	>
 		Massage Therapy Services
 	</h1>
@@ -34,7 +34,7 @@
 <section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h2
-			class="text-primary text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
+			class="services-page-title text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
 		>
 			Service Offerings
 		</h2>
@@ -44,8 +44,8 @@
 			<div class="card bg-base-100 shadow-lg">
 				<div class="card-body">
 					<div class="flex items-center gap-3 pb-4">
-						<span class="icon icon-md text-primary {offering.icon}"></span>
-						<h3 class="card-title text-primary">{offering.serviceName}</h3>
+						<span class="icon icon-md icon-custom {offering.icon}"></span>
+						<h3 class="card-title service-name">{offering.serviceName}</h3>
 					</div>
 					<p class="opacity-80">{offering.description}</p>
 					{#if offering.packages && offering.packages.length}
@@ -53,8 +53,8 @@
 							{#if offering.id == 'therapeutic-massage'}
 								{#each offering.packages as pkg}
 									<li class="pb-1 flex items-center gap-2">
-										<span class="icon icon-xs text-primary icon-clock"></span>
-										<span class="font-medium text-lg">{pkg.name}</span> – <span
+										<span class="icon icon-xs icon-custom icon-clock"></span>
+										<span class="font-medium text-lg package-name {(pkg.name === '30 minutes' || pkg.name === '60 minutes' || pkg.name === '90 minutes') ? 'package-name-white' : ''}">{pkg.name}</span> – <span
 											class="font-bold text-lg">{formatPrice(pkg.price)}</span
 										>
 									</li>
@@ -64,8 +64,8 @@
 								{#each offering.packages as pkg}
 									<li class="pb-1 flex flex-col">
 										<div class="flex gap-2 items-center">
-											<span class="icon icon-xs text-primary icon-clock"></span>
-											<span class="font-medium text-lg">{pkg.name}</span> – <span
+											<span class="icon icon-xs icon-custom icon-clock"></span>
+											<span class="font-medium text-lg package-name">{pkg.name}</span> – <span
 												class="font-bold text-lg">{formatPrice(pkg.price)}</span
 											>
 										</div>
@@ -76,8 +76,8 @@
 							{#if offering.id == 'packages'}
 								{#each offering.packages as pkg}
 									<li class="pb-1 flex items-center gap-2">
-										<span class="icon icon-xs text-primary icon-clock"></span>
-										<span class="font-medium text-lg">{pkg.name}</span> – <span
+										<span class="icon icon-xs icon-custom icon-clock"></span>
+										<span class="font-medium text-lg package-name {(pkg.name === '4 × 60-minute sessions' || pkg.name === '4 × 90-minute sessions') ? 'package-name-white' : ''}">{pkg.name}</span> – <span
 											class="font-bold text-lg">{formatPrice(pkg.price)}</span
 										>
 									</li>
@@ -97,7 +97,7 @@
 <section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h2
-			class="text-primary text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
+			class="services-page-title text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
 		>
 			Modalities & Techniques
 		</h2>
@@ -108,12 +108,12 @@
 	<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-6xl w-full">
 		{#each modalities as modality (modality.id)}
 			<div
-				class="modality-card bg-base-100 border-primary border-2 rounded-lg p-6 shadow-md hover:shadow-xl transition-all hover:scale-105"
+				class="modality-card bg-base-100 border-custom border-2 rounded-lg p-6 shadow-md hover:shadow-xl transition-all hover:scale-105"
 			>
 				<div class="flex items-start gap-3">
-					<span class="icon icon-sm text-primary icon-check-badge mt-1"></span>
+					<span class="icon icon-sm icon-custom icon-check-badge mt-1"></span>
 					<div>
-						<h3 class="text-primary font-bold text-lg mb-2">{modality.name}</h3>
+						<h3 class="modality-name font-bold text-lg mb-2">{modality.name}</h3>
 						<p class="text-sm opacity-80">{modality.description}</p>
 					</div>
 				</div>
@@ -128,7 +128,7 @@
 <section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h2
-			class="text-primary text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
+			class="services-page-title text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
 		>
 			Mobile Massage Therapy: How It Works
 		</h2>
@@ -142,7 +142,7 @@
 		<div class="card bg-base-100 shadow-xl">
 			<div class="card-body">
 				<div class="flex items-center gap-3 mb-4 justify-center">
-					<span class="icon icon-lg text-primary icon-home-modern"></span>
+					<span class="icon icon-lg icon-custom icon-home-modern"></span>
 					<h3 class="card-title text-primary text-2xl">Mobile Setup</h3>
 				</div>
 				<div class="space-y-4">
@@ -162,7 +162,7 @@
 		<div class="card bg-base-100 shadow-xl">
 			<div class="card-body">
 				<div class="flex items-center gap-3 mb-4 justify-center">
-					<span class="icon icon-lg text-primary icon-light-bulb"></span>
+					<span class="icon icon-lg icon-custom icon-light-bulb"></span>
 					<h3 class="card-title text-primary text-2xl">Client Prep Tips</h3>
 				</div>
 				<div class="space-y-4">
@@ -186,7 +186,7 @@
 <section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h2
-			class="text-primary text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
+			class="services-page-title text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
 		>
 			Service Areas
 		</h2>
@@ -197,7 +197,7 @@
 
 	<div class="max-w-6xl w-full">
 		<div
-			class="bg-base-100 rounded-2xl shadow-xl p-8 border-primary border-2 relative overflow-hidden"
+			class="bg-base-100 rounded-2xl shadow-xl p-8 border-custom border-2 relative overflow-hidden"
 		>
 			<!-- Decorative map-like background -->
 			<div
@@ -211,7 +211,7 @@
 
 			<div class="relative z-10">
 				<div class="text-center mb-8">
-					<span class="icon icon-xl text-primary icon-map-pin"></span>
+					<span class="icon icon-xl icon-custom icon-map-pin"></span>
 					<p class="mt-4 text-lg opacity-90">
 						Mobile massage services available throughout the Kansas City metro. Travel fees may apply
 						outside the immediate metro area.
@@ -221,9 +221,9 @@
 				<div class="flex flex-wrap gap-3 justify-center">
 					{#each serviceAreas as area (area.id)}
 						<div
-							class="badge-area bg-primary/10 border-primary border-2 rounded-full px-4 py-3 text-center hover:bg-primary hover:text-primary-content transition-all cursor-default transform hover:scale-105 whitespace-nowrap"
+							class="badge-area bg-primary/10 border-custom border-2 rounded-full px-4 py-3 text-center hover:bg-primary hover:text-primary-content transition-all cursor-default transform hover:scale-105 whitespace-nowrap"
 						>
-							<span class="font-semibold text-sm">{area.name}</span>
+							<span class="font-semibold text-sm area-name">{area.name}</span>
 						</div>
 					{/each}
 				</div>
@@ -248,5 +248,29 @@
 
 	.badge-area {
 		transition: all 0.2s ease;
+	}
+
+	.services-page-title {
+		color: oklch(0.63 0.097 91);
+	}
+
+	.service-name {
+		color: oklch(0.63 0.097 91);
+	}
+
+	.package-name {
+		color: oklch(0.63 0.097 91);
+	}
+
+	.package-name-white {
+		color: oklch(1.00 0.000 90);
+	}
+
+	.modality-name {
+		color: oklch(0.63 0.097 91);
+	}
+
+	.area-name {
+		color: oklch(0.63 0.097 91);
 	}
 </style>

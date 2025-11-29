@@ -45,7 +45,7 @@
 	}));
 </script>
 
-<div class="card bg-base-100/70 border-primary border-2 shadow-lg">
+<div class="card bg-base-100/70 border-custom border-2 shadow-lg">
 	<div class="relative flex h-full flex-col px-4 py-8">
 		{#if featured}
 			<div class="badge badge-warning badge-xl badge-dash absolute top-3 left-3">Most Popular</div>
@@ -53,7 +53,7 @@
 
 		<!-- Icon and package name -->
 		<div class=" flex flex-col items-center gap-3 text-left">
-			<div class="icon md:icon-lg icon-md text-primary {icon}"></div>
+			<div class="icon md:icon-lg icon-md icon-custom {icon}"></div>
 			<h2 class="text-2xl font-bold md:text-3xl">{name}</h2>
 		</div>
 

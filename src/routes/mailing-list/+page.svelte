@@ -73,10 +73,10 @@
 <section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
 	<div class="mx-auto max-w-2xl w-full">
 		{#if isSuccess}
-			<div class="card bg-base-100 shadow-xl border-primary border-2">
+			<div class="card bg-base-100 shadow-xl border-custom border-2">
 				<div class="card-body text-center">
 					<div class="mb-4">
-						<span class="icon icon-xl text-primary icon-check-circle mx-auto"></span>
+						<span class="icon icon-xl icon-custom icon-check-circle mx-auto"></span>
 					</div>
 					<h2 class="text-primary text-2xl font-bold mb-4">Thank You for Subscribing!</h2>
 					<p class="text-lg mb-6">
@@ -90,7 +90,7 @@
 				</div>
 			</div>
 		{:else}
-			<div class="card bg-base-100 shadow-xl border-primary border-2">
+			<div class="card bg-base-100 shadow-xl border-custom border-2">
 				<div class="card-body">
 					<h2 class="card-title text-primary text-2xl justify-center mb-6">Subscribe Now</h2>
 
