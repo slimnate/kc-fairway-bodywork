@@ -3,6 +3,14 @@
 	import { aboutData } from '$lib/data/about.js';
 </script>
 
+<svelte:head>
+	<title>About - KC Fairway Bodywork</title>
+	<meta
+		name="description"
+		content="Learn more about KC Fairway Bodywork and our mission to help you move better and play your best."
+	/>
+</svelte:head>
+
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
 	<div class="mx-auto max-w-4xl text-balance md:py-6">
 		<img
