@@ -42,15 +42,15 @@
 	</div>
 </section>
 
-<div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
+<div class="section-divider mx-auto h-[2px] w-[80vw]"></div>
 
 
-<div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
+<div class="section-divider mx-auto h-[2px] w-[80vw]"></div>
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-12">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h2
-			class="text-primary text-shadow-primary-content text-3xl font-bold uppercase text-shadow-md md:text-4xl"
+			class="home-page-header text-3xl font-bold uppercase md:text-4xl"
 		>
 		Elevate Your Performance
 		</h2>
@@ -68,14 +68,14 @@
 	</div>
 </section>
 
-<div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
+<div class="section-divider mx-auto h-[2px] w-[80vw]"></div>
 
 <!-- Services -->
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-12">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h2
-			class="text-primary text-shadow-primary-content text-3xl font-bold uppercase text-shadow-md md:text-4xl"
+			class="home-page-header text-3xl font-bold uppercase md:text-4xl"
 		>
 			Services
 		</h2>
@@ -141,5 +141,13 @@
 <style>
 	.home-service-name {
 		color: oklch(0.63 0.097 91);
+	}
+
+	.home-page-header {
+		color: oklch(0.63 0.097 91);
+	}
+
+	.section-divider {
+		background-color: oklch(0.63 0.097 91);
 	}
 </style>

@@ -19,7 +19,7 @@
 		<div class="flex h-full flex-col items-center justify-center gap-12 text-center">
 			<div class="flex basis-3/4 items-end self-center text-balance">
 				<span
-					class="text-shadow-primary-content text-3xl font-semibold tracking-wide text-shadow-sm sm:text-4xl md:text-5xl"
+					class="text-3xl font-semibold tracking-wide sm:text-4xl md:text-5xl"
 				>
 					{subtitle}</span
 				>

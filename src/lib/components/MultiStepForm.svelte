@@ -296,24 +296,24 @@
 	<!-- Steps Progress -->
 	<ul class="steps steps-horizontal mb-8 w-full" bind:this={stepsContainer}>
 		<li class="step {currentStep >= 1 ? 'step-primary' : ''}">
-			<span class="text-shadow-primary-content tracking-wide text-shadow-md">Contact Info</span>
+			<span class="tracking-wide">Contact Info</span>
 		</li>
 		<li class="step {currentStep >= 2 ? 'step-primary' : ''}">
-			<span class="text-shadow-primary-content tracking-wide text-shadow-md">Business Info</span>
+			<span class="tracking-wide">Business Info</span>
 		</li>
 		<li class="step {currentStep >= 3 ? 'step-primary' : ''}">
-			<span class="text-shadow-primary-content tracking-wide text-shadow-md">Project Scope</span>
+			<span class="tracking-wide">Project Scope</span>
 		</li>
 		<li class="step {currentStep >= 4 ? 'step-primary' : ''}">
-			<span class="text-shadow-primary-content tracking-wide text-shadow-md"
+			<span class="tracking-wide"
 				>Services & Packages</span
 			>
 		</li>
 		<li class="step {currentStep >= 5 ? 'step-primary' : ''}">
-			<span class="text-shadow-primary-content tracking-wide text-shadow-md">Final Steps</span>
+			<span class="tracking-wide">Final Steps</span>
 		</li>
 		<li class="step {currentStep >= 6 ? 'step-primary' : ''}">
-			<span class="text-shadow-primary-content tracking-wide text-shadow-md">Review</span>
+			<span class="tracking-wide">Review</span>
 		</li>
 	</ul>
 
@@ -322,7 +322,7 @@
 		name="booking"
 		method="POST"
 		data-netlify="true"
-		class="card bg-base-100/70 shadow-primary-content/20 border-custom min-h-[40vh] border-2 shadow-xl"
+		class="card bg-base-100/70 shadow-primary-content/20 min-h-[40vh] shadow-xl"
 	>
 		<div class="card-body flex flex-col justify-between">
 			<!-- Step 1: Contact Info -->
