@@ -21,42 +21,7 @@
 }
 
 @plugin "daisyui/theme" {
-	name: 'spotlite';
-	default: false;
-	prefersdark: false;
-	color-scheme: 'dark';
-	--color-base-100: oklch(14% 0 0);
-	--color-base-200: oklch(20% 0 0);
-	--color-base-300: oklch(26% 0 0);
-	--color-base-content: oklch(97% 0 0);
-	--color-primary: oklch(0.7056 0.1495 234.92); /* #00adef */
-	--color-primary-content: oklch(0.1822 0 0);
-	--color-secondary: oklch(0.4495 0.1474 255.27);
-	--color-secondary-content: oklch(0.9883 0.0161 172.66);
-	--color-accent: oklch(70% 0.183 293.541);
-	--color-accent-content: oklch(0.1822 0 0);
-	--color-neutral: oklch(0.45 0 0);
-	--color-neutral-content: oklch(98% 0 0);
-	--color-info: oklch(74% 0.16 232.661);
-	--color-info-content: oklch(0.1822 0 0);
-	--color-success: oklch(0.8221 0.1563 158.86);
-	--color-success-content: oklch(0.1822 0 0);
-	--color-warning: #f3b700;
-	--color-warning-content: oklch(0.1822 0 0);
-	--color-error: oklch(0.5009 0.1981 30.48);
-	--color-error-content: oklch(0.1822 0 0);
-	--radius-selector: 0.25rem;
-	--radius-field: 0.5rem;
-	--radius-box: 1rem;
-	--size-selector: 0.25rem;
-	--size-field: 0.25rem;
-	--border: 1px;
-	--depth: 0;
-	--noise: 0;
-}
-
-@plugin "daisyui/theme" {
-	name: 'sincerely-selfcare';
+	name: 'kc-fairway-bodywork';
 	default: false;
 	prefersdark: false;
 	color-scheme: 'light';
