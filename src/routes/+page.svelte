@@ -36,9 +36,6 @@
 
 <div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
 
-
-<div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
-
 <section class="bg-base-200 flex flex-col items-center justify-center py-12">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h2
