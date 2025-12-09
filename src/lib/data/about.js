@@ -10,7 +10,7 @@
  *
  * @typedef {Object} AboutData
  * @property {string} title - The title of the about page.
- * @property {string|string[]} aboutText - A brief description of the company (can be a string or array of paragraphs).
+ * @property {string[]} aboutText - A brief description of the company (can be a string or array of paragraphs).
  * @property {string} mission - The company's mission statement.
  * @property {string} vision - The company's vision statement.
  * @property {Value[]} values - A list of the company's core values.
@@ -19,7 +19,7 @@
 export const aboutData = {
 	title: 'About Sincerely,Selfcare',
 	aboutText: [
-		"I'm Anthony Snell, a performance bodywork specialist dedicated to helping golfers move better and play their best. KC Fairway Bodywork was built with a clear focus: delivering high-quality, results-driven bodywork tailored to the needs of golfers—from weekend players to competitive athletes.",
+		'I\'m Anthony Snell, a performance bodywork specialist dedicated to helping golfers move better and play their best. KC Fairway Bodywork was built with a clear focus: delivering high-quality, results-driven bodywork tailored to the needs of golfers—from weekend players to competitive athletes.',
 		'My work focuses on improving mobility, relieving chronic tension, and supporting recovery so golfers can swing freely and enjoy the game without pain. Using techniques like Neuromuscular Therapy, Structural Integration, trigger point work, and targeted adhesion release, I tailor every session to your movement patterns, your goals, and the demands of the sport.'
 	],
 	mission:
