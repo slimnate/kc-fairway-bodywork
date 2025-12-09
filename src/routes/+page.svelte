@@ -1,15 +1,7 @@
 <script>
 	import metaData from '$lib/data/meta.js';
 
-	import PricingCard from '$lib/components/PricingCard.svelte';
-	import ReviewCarousel from '$lib/components/ReviewCarousel.svelte';
-	import HomePageHero from '$lib/components/HomePageHero.svelte';
-
-	import { developmentPricing, hostingPricing } from '$lib/data/pricing.js';
-	import { reviews } from '$lib/data/reviews.js';
-	import { industries } from '$lib/data/industries';
 	import { offerings } from '$lib/data/services.js';
-	import { differentiators } from '$lib/data/differentiators';
 
 	/**
 	 * @param {number|string} price
