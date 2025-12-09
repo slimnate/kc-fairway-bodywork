@@ -33,11 +33,7 @@
 		</p>
 	</div>
 </section>
-
-<div class="section-divider mx-auto h-[2px] w-[80vw]"></div>
-
-
-<div class="section-divider mx-auto h-[2px] w-[80vw]"></div>
+<div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-12">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
@@ -124,26 +120,4 @@
 			</div>
 		{/each}
 	</div>
-<<<<<<< HEAD
 </section>
-
-<!-- Blog Posts-->
-
-<!-- Reviews -->
-
-<style>
-	.home-service-name {
-		color: oklch(0.63 0.097 91);
-	}
-
-	.home-page-header {
-		color: oklch(0.63 0.097 91);
-	}
-
-	.section-divider {
-		background-color: oklch(0.63 0.097 91);
-	}
-</style>
-=======
-</section>
->>>>>>> 2993662 (Don't need to define a new class 'home-service-name', just use the theme class 'text-secondary' that has the same value. This will help you if you ever change the theme colors in the future, so that you will not have to hunt down this one place where the color didn't actually change)
