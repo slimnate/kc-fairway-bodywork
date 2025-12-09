@@ -39,5 +39,7 @@
 			</a>
 			<a href="https://selfcare.noterro.com/" class="btn btn-outline btn-primary btn-lg">
 				Book a Session 
+			</a>
+		</div>
 	</div>
 </section>
