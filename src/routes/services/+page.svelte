@@ -19,7 +19,7 @@
 
 <section class="bg-base-200 px-4 py-12 pt-24">
 	<h1
-		class="text-secondary text-shadow-primary-content mb-6 text-center text-4xl font-bold text-balance uppercase text-shadow-lg md:text-5xl"
+		class="text-secondary mb-6 text-center text-4xl font-bold text-balance uppercase md:text-5xl"
 	>
 		Massage Therapy Services
 	</h1>
@@ -28,13 +28,13 @@
 	</p>
 </section>
 
-<div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
+<div class="section-divider mx-auto h-[2px] w-[80vw]"></div>
 
 <!-- Service Offerings -->
 <section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h2
-			class="text-secondary text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
+			class="text-secondary text-center text-3xl font-bold uppercase md:text-4xl"
 		>
 			Service Offerings
 		</h2>
@@ -97,7 +97,7 @@
 <section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h2
-			class="text-secondary text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
+			class="text-secondary text-center text-3xl font-bold uppercase md:text-4xl"
 		>
 			Modalities & Techniques
 		</h2>
@@ -108,7 +108,7 @@
 	<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-6xl w-full">
 		{#each modalities as modality (modality.id)}
 			<div
-				class="modality-card bg-base-100 border-custom border-2 rounded-lg p-6 shadow-md hover:shadow-xl transition-all hover:scale-105"
+				class="modality-card bg-base-100 rounded-lg p-6 shadow-md hover:shadow-xl transition-all hover:scale-105"
 			>
 				<div class="flex items-start gap-3">
 					<span class="icon icon-sm icon-custom icon-check-badge mt-1"></span>
@@ -128,7 +128,7 @@
 <section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h2
-			class="text-secondary text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
+			class="text-secondary text-center text-3xl font-bold uppercase md:text-4xl"
 		>
 			Mobile Massage Therapy: How It Works
 		</h2>
@@ -186,7 +186,7 @@
 <section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h2
-			class="text-secondary text-shadow-primary-content text-center text-3xl font-bold uppercase text-shadow-md md:text-4xl"
+			class="text-secondary text-center text-3xl font-bold uppercase md:text-4xl"
 		>
 			Service Areas
 		</h2>
@@ -197,7 +197,7 @@
 
 	<div class="max-w-6xl w-full">
 		<div
-			class="bg-base-100 rounded-2xl shadow-xl p-8 border-custom border-2 relative overflow-hidden"
+			class="bg-base-100 rounded-2xl shadow-xl p-8 relative overflow-hidden"
 		>
 			<!-- Decorative map-like background -->
 			<div
@@ -221,7 +221,7 @@
 				<div class="flex flex-wrap gap-3 justify-center">
 					{#each serviceAreas as area (area.id)}
 						<div
-							class="badge-area bg-primary/10 border-custom border-2 rounded-full px-4 py-3 text-center hover:bg-primary hover:text-primary-content transition-all cursor-default transform hover:scale-105 whitespace-nowrap"
+							class="badge-area bg-primary/10 rounded-full px-4 py-3 text-center hover:bg-primary hover:text-primary-content transition-all cursor-default transform hover:scale-105 whitespace-nowrap"
 						>
 							<span class="font-semibold text-sm text-secondary">{area.name}</span>
 						</div>
@@ -240,13 +240,3 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	.modality-card {
-		transition: all 0.3s ease;
-	}
-
-	.badge-area {
-		transition: all 0.2s ease;
-	}
-</style>

@@ -67,13 +67,13 @@
 	</div>
 </section>
 
-<div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
+<div class="section-divider mx-auto h-[2px] w-[80vw]"></div>
 
 <!-- Form Section -->
 <section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
 	<div class="mx-auto max-w-2xl w-full">
 		{#if isSuccess}
-			<div class="card bg-base-100 shadow-xl border-custom border-2">
+			<div class="card bg-base-100 shadow-xl">
 				<div class="card-body text-center">
 					<div class="mb-4">
 						<span class="icon icon-xl icon-custom icon-check-circle mx-auto"></span>
@@ -90,7 +90,7 @@
 				</div>
 			</div>
 		{:else}
-			<div class="card bg-base-100 shadow-xl border-custom border-2">
+			<div class="card bg-base-100 shadow-xl">
 				<div class="card-body">
 					<h2 class="card-title text-primary text-2xl justify-center mb-6">Subscribe Now</h2>
 
@@ -208,4 +208,10 @@
 		{/if}
 	</div>
 </section>
+
+<style>
+	.section-divider {
+		background-color: oklch(0.63 0.097 91);
+	}
+</style>
 

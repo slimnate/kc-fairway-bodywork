@@ -73,7 +73,7 @@
 />
 
 <nav
-	class="text-shadow-primary-content fixed z-50 flex w-full flex-col text-shadow-sm md:flex-row md:justify-between transition-all duration-300"
+	class="fixed z-50 flex w-full flex-col md:flex-row md:justify-between transition-all duration-300"
 	class:open={isOpen}
 	class:scrolled={isScrolled}
 >
@@ -86,7 +86,7 @@
 		<li class="relative shrink-0 md:hidden">
 			<a
 				href="/"
-				class="text-primary peer mx-auto inline-flex justify-start rounded-none border-none bg-transparent p-4 px-5 text-2xl font-semibold uppercase text-shadow-xs md:text-xl md:font-normal md:py-2"
+				class="text-primary peer mx-auto inline-flex justify-start rounded-none border-none bg-transparent p-4 px-5 text-2xl font-semibold uppercase md:text-xl md:font-normal md:py-2"
 				onclick={closeNavMenu}
 			>
 				Home
@@ -113,7 +113,7 @@
 			{/if}
 			<li class:featured class="relative shrink-0 md:mt-0 md:mb-0 md:flex md:items-center">
 				<a
-					class="nav-link peer mx-auto inline-flex justify-start rounded-none border-none bg-transparent p-4 px-5 text-2xl font-semibold uppercase text-shadow-xs md:text-xl md:font-normal md:py-2"
+					class="nav-link peer mx-auto inline-flex justify-start rounded-none border-none bg-transparent p-4 px-5 text-2xl font-semibold uppercase md:text-xl md:font-normal md:py-2"
 					onclick={closeNavMenu}
 					{href}
 				>

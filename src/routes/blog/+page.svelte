@@ -9,7 +9,7 @@
 <!-- Hero Section -->
 <section class="bg-base-200 px-6 py-12 pt-24 text-center">
 	<h1
-		class="text-primary text-shadow-primary-content mb-6 text-4xl font-bold uppercase text-shadow-md md:text-5xl"
+		class="blog-header mb-6 text-4xl font-bold uppercase md:text-5xl"
 	>
 		Wellness Blog
 	</h1>
@@ -19,7 +19,7 @@
 	</p>
 </section>
 
-<div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
+<div class="section-divider mx-auto h-[2px] w-[80vw]"></div>
 
 <!-- Coming Soon Section -->
 <section class="bg-base-200 flex flex-col items-center justify-center px-6 py-24 min-h-[60vh]">
@@ -27,7 +27,7 @@
 		<div class="mb-8">
 			<span class="icon icon-xl icon-custom icon-document-text mx-auto"></span>
 		</div>
-		<h2 class="text-primary mb-6 text-3xl font-bold uppercase md:text-4xl">Coming Soon</h2>
+		<h2 class="blog-header mb-6 text-3xl font-bold uppercase md:text-4xl">Coming Soon</h2>
 		<p class="text-base-content/80 mb-8 text-lg">
 			We're working on creating valuable content about massage therapy, wellness, pain management,
 			and self-care practices. Check back soon for expert insights and practical tips to support
@@ -38,8 +38,18 @@
 				Back to Home
 			</a>
 			<a href="https://selfcare.noterro.com/" class="btn btn-outline btn-primary btn-lg">
-				Book a Session 
+				Book a Session
 			</a>
 		</div>
 	</div>
 </section>
+
+<style>
+	.blog-header {
+		color: oklch(0.63 0.097 91);
+	}
+
+	.section-divider {
+		background-color: oklch(0.63 0.097 91);
+	}
+</style>

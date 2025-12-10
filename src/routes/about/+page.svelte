@@ -27,13 +27,13 @@
 	</div>
 </section>
 
-<div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
+<div class="section-divider mx-auto h-[2px] w-[80vw]"></div>
 
 <!-- Mission & Vision -->
 <section class="bg-base-200 p-12">
 		<div class="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
 			<!-- Mission Card -->
-			<div class="card card-border bg-base-100 shadow-xl">
+			<div class="card about-page-box bg-base-100 shadow-xl">
 				<div class="card-body">
 					<div class="flex items-center gap-3 mb-2">
 						<span class="icon icon-md icon-custom icon-light-bulb"></span>
@@ -44,7 +44,7 @@
 			</div>
 
 			<!-- Vision Card -->
-			<div class="card card-border bg-base-100 shadow-xl">
+			<div class="card about-page-box bg-base-100 shadow-xl">
 				<div class="card-body">
 					<div class="flex items-center gap-3 mb-2">
 						<span class="icon icon-md icon-custom icon-eye"></span>
@@ -56,7 +56,7 @@
 	</div>
 </section>
 
-<div class="bg-primary mx-auto h-[2px] w-[80vw]"></div>
+<div class="section-divider mx-auto h-[2px] w-[80vw]"></div>
 
 <!-- Values Section -->
 <section class="bg-base-200 p-12">
@@ -64,7 +64,7 @@
 			<h2 class="values-title text-center text-3xl font-bold uppercase mb-8">Values</h2>
 			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
 				{#each aboutData.values as value}
-					<div class="card bg-base-100 shadow-xl border-custom border-2">
+					<div class="card about-page-box bg-base-100 shadow-xl">
 						<div class="card-body">
 							<h3 class="card-title value-title text-lg {(value.title === 'Care that Drives Improvement' || value.title === 'Quality You Can Feel' || value.title === 'Encouragement that Elevates') ? 'value-title-custom' : 'text-primary'}">{value.title}</h3>
 							<p class="text-sm opacity-80">{value.description}</p>
@@ -75,7 +75,7 @@
 	</div>
 </section>
 
-<!-- <div class="bg-primary mx-auto h-[2px] w-[80vw]"></div> -->
+<!-- <div class="section-divider mx-auto h-[2px] w-[80vw]"></div> -->
 
 <!-- Team Section -->
 <!-- <section class="bg-base-200 p-12">
@@ -104,5 +104,13 @@
 
 	.value-title-custom {
 		color: oklch(0.63 0.097 91);
+	}
+
+	.section-divider {
+		background-color: oklch(0.63 0.097 91);
+	}
+
+	.about-page-box {
+		border: 2px solid oklch(0.63 0.097 91);
 	}
 </style>

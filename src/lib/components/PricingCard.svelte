@@ -45,7 +45,7 @@
 	}));
 </script>
 
-<div class="card bg-base-100/70 border-custom border-2 shadow-lg">
+<div class="card bg-base-100/70 shadow-lg">
 	<div class="relative flex h-full flex-col px-4 py-8">
 		{#if featured}
 			<div class="badge badge-warning badge-xl badge-dash absolute top-3 left-3">Most Popular</div>
@@ -61,7 +61,7 @@
 		<p class="text-base-content/70 mb-2 text-xs text-balance italic md:text-sm">{tagline}</p>
 
 		<!-- Price range -->
-		<span class="text-primary mb-2 text-2xl font-semibold text-shadow-lg md:text-3xl"
+		<span class="text-primary mb-2 text-2xl font-semibold md:text-3xl"
 			>{priceDisplay}</span
 		>
 
