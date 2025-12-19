@@ -56,7 +56,7 @@
 								{#each offering.packages as pkg}
 									<li class="pb-1 flex items-center gap-2">
 										<span class="icon icon-xs icon-custom icon-clock"></span>
-										<span class="font-medium text-lg text-secondary {(pkg.name === '30 minutes' || pkg.name === '60 minutes' || pkg.name === '90 minutes') ? 'text-primary' : ''}">{pkg.name}</span> – <span
+										<span class="font-medium text-lg">{pkg.name}</span> – <span
 											class="font-bold text-lg">{formatPrice(pkg.price)}</span
 										>
 									</li>
@@ -79,7 +79,7 @@
 								{#each offering.packages as pkg}
 									<li class="pb-1 flex items-center gap-2">
 										<span class="icon icon-xs icon-custom icon-clock"></span>
-										<span class="font-medium text-lg text-secondary {(pkg.name === '4 × 60-minute sessions' || pkg.name === '4 × 90-minute sessions') ? 'text-primary' : ''}">{pkg.name}</span> – <span
+										<span class="font-medium text-lg">{pkg.name}</span> – <span
 											class="font-bold text-lg">{formatPrice(pkg.price)}</span
 										>
 									</li>
