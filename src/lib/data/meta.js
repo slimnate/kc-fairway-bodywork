@@ -32,7 +32,7 @@ const metadata = {
 	description: 'Sincerely Self Care is a mobile massage serice based in the Kansas City area.',
 	address: null,
 	phone: null,
-	email: 'ajsnell17@gmail.com',
+	email: 'anthony@kcfairway.com',
 
 	// The following URLs are placeholders and should be replaced with actual URLs
 	// for your business's social media profiles.
