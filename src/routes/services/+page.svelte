@@ -17,6 +17,15 @@
 	};
 </script>
 
+
+<svelte:head>
+	<title>Services - KC Fairway Bodywork</title>
+	<meta
+		name="description"
+		content="Personalized performance bodywork designed to improve mobility, reduce tension, and support better movement on and off the course."
+	/>
+</svelte:head>
+
 <section class="bg-base-200 px-4 py-12 pt-24">
 	<h1
 		class="text-secondary mb-6 text-center text-4xl font-bold text-balance uppercase md:text-5xl"
@@ -233,8 +242,8 @@
 				<div class="mt-8 text-center">
 					<p class="text-sm opacity-70">
 						Don't see your city? Contact me at <a
-							href="mailto:anthony@sincerelyselfcare.life"
-							class="text-primary font-semibold hover:underline">anthony@sincerelyselfcare.life</a
+							href="mailto:anthony@kcfairway.com"
+							class="text-primary font-semibold hover:underline">anthony@kcfairway.com</a
 						> to check availability in your area.
 					</p>
 				</div>

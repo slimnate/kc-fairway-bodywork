@@ -11,6 +11,14 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Home - KC Fairway Bodywork</title>
+	<meta
+		name="description"
+		content="Welcome to KC Fairway Bodywork — where golfers come to improve mobility, reduce pain, and elevate their performance. I specialize in golf-focused, therapeutic bodywork designed to enhance range of motion, unlock your swing, and support long-term recovery."
+	/>
+</svelte:head>
+
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<img src="/img/logo.webp" alt="KC Fairway Bodywork Logo" />
