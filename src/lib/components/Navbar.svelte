@@ -106,7 +106,7 @@
 						<img
 							src="/img/logo_256.webp"
 							alt="Sincerely Selfcare Home"
-							class="h-16 w-16 hover:scale-110 transition-transform duration-200"
+							class="h-16 hover:scale-110 transition-transform duration-200"
 						/>
 					</a>
 				</li>
