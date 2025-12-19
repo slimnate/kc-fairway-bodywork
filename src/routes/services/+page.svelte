@@ -17,6 +17,15 @@
 	};
 </script>
 
+
+<svelte:head>
+	<title>Services - KC Fairway Bodywork</title>
+	<meta
+		name="description"
+		content="Personalized performance bodywork designed to improve mobility, reduce tension, and support better movement on and off the course."
+	/>
+</svelte:head>
+
 <section class="bg-base-200 px-4 py-12 pt-24">
 	<h1
 		class="text-secondary mb-6 text-center text-4xl font-bold text-balance uppercase md:text-5xl"

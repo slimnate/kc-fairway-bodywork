@@ -40,16 +40,16 @@
 </script>
 
 <svelte:head>
-	<title>Join Our Mailing List - Sincerely, Selfcare</title>
+	<title>Join Our Mailing List - KC Fairway Bodywork</title>
 	<meta
 		name="description"
-		content="Stay updated with wellness tips, massage therapy insights, and exclusive offers from Sincerely, Selfcare"
+		content="Stay updated with wellness tips, massage therapy insights, and exclusive offers from KC Fairway Bodywork"
 	/>
 </svelte:head>
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
-		<img src="/img/logo.webp" alt="Sincerely Selfcare Logo" class="max-h-128" />
+		<img src="/img/logo.webp" alt="KC Fairway Bodywork Logo" class="max-h-128" />
 	</div>
 	<div class="mx-auto max-w-4xl text-balance md:py-6">
 		<img

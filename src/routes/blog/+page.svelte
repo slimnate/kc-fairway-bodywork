@@ -1,8 +1,8 @@
 <svelte:head>
-	<title>Blog - Sincerely, Selfcare</title>
+	<title>Blog - KC Fairway Bodywork</title>
 	<meta
 		name="description"
-		content="Wellness tips, massage therapy insights, and self-care advice from Sincerely, Selfcare"
+		content="Blog posts about massage therapy, wellness, pain management, and self-care practices."
 	/>
 </svelte:head>
 
