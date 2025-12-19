@@ -1,6 +1,4 @@
 <script>
-	import metaData from '$lib/data/meta.js';
-
 	import { offerings } from '$lib/data/services.js';
 
 	/**

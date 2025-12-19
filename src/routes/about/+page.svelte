@@ -1,5 +1,4 @@
 <script>
-	import TeamMembers from '$lib/components/TeamMembers.svelte';
 	import { aboutData } from '$lib/data/about.js';
 </script>
 
