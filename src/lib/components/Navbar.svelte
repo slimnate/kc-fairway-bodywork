@@ -104,7 +104,7 @@
 				<li class="hidden md:flex md:items-center md:justify-center">
 					<a href="/" class="home-icon-link">
 						<img
-							src="/img/icon_256.webp"
+							src="/img/logo_256.webp"
 							alt="Sincerely Selfcare Home"
 							class="h-16 w-16 hover:scale-110 transition-transform duration-200"
 						/>
