@@ -79,7 +79,7 @@
 		<div class="grid-1 grid gap-8 md:grid-cols-3">
 			<!-- Footer links -->
 			<div class="border-neutral flex flex-col md:col-span-2 md:border-r md:text-center">
-				<h6 class="text-primary mb-4 flex justify-center font-semibold uppercase">Links</h6>
+				<h6 class="text-secondary mb-4 flex justify-center font-semibold uppercase">Links</h6>
 				<div class="grid-1 grid gap-4 sm:grid-cols-2">
 					{#each footerLinks as { href, text }}
 						<a {href} class="drop-shadow-secondary hover:scale-[1.05] hover:drop-shadow-lg"
@@ -91,7 +91,7 @@
 
 			<!-- Contact information -->
 			<div>
-				<h6 class="text-primary mb-4 flex justify-center font-semibold uppercase md:justify-start">
+				<h6 class="text-secondary mb-4 flex justify-center font-semibold uppercase md:justify-start">
 					Contact
 				</h6>
 				{#if address}
@@ -119,6 +119,6 @@
 	<!-- Copyright -->
 	<div class="p-4 text-center text-sm">
 		<span>© {cp_year} </span>
-		<a class="text-primary font-semibold" href={cp_url}>{cp_holder}</a>
+		<a class="text-secondary font-semibold" href={cp_url}>{cp_holder}</a>
 	</div>
 </footer>
