@@ -19,8 +19,8 @@
 export const aboutData = {
 	title: 'About KC Fairway Bodywork',
 	aboutText: [
-		'I\'m Anthony Snell, a performance bodywork specialist dedicated to helping golfers move better and play their best. KC Fairway Bodywork was built with a clear focus: delivering high-quality, results-driven bodywork tailored to the needs of golfers—from weekend players to competitive athletes.',
-		'My work focuses on improving mobility, relieving chronic tension, and supporting recovery so golfers can swing freely and enjoy the game without pain. Using techniques like Neuromuscular Therapy, Structural Integration, trigger point work, and targeted adhesion release, I tailor every session to your movement patterns, your goals, and the demands of the sport.'
+		'I\'m Anthony Snell, a performance bodywork specialist dedicated to helping golfers move better and play their best. My work focuses on improving mobility, relieving chronic tension, and supporting recovery so golfers can swing freely and enjoy the game without pain.',
+		'KC Fairway Bodywork was built with a clear focus: delivering high-quality, results-driven bodywork tailored to the needs of golfers—from weekend players to competitive athletes.'
 	],
 	mission:
 		'To provide quality bodywork that creates real improvement, encouraging you to be your best.',

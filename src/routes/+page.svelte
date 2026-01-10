@@ -32,7 +32,7 @@
 	</div>
 	<div class="mx-auto max-w-2xl py-6 text-balance md:text-lg">
 		<p class="pb-4">
-			Welcome to KC Fairway Bodywork — where golfers come to improve mobility, reduce pain, and elevate their performance. I specialize in golf-focused, therapeutic bodywork designed to enhance range of motion, unlock your swing, and support long-term recovery. Using targeted techniques such as Deep Tissue, Neuromuscular therapy, Structural Integration, and mobility-based muscle work, I help golfers move better both on and off the course.
+			Welcome to KC Fairway Bodywork — where golfers come to improve mobility, reduce pain, and elevate their performance. I specialize in golf-focused, therapeutic bodywork designed to enhance range of motion, unlock your swing, and support long-term recovery. I help golfers move better both on and off the course.
 		</p>
 		<p>
 			Whether you're dealing with tightness, recovering from pain, or looking to play your best more often, every session is built on care, quality, and improvement. If you’re ready to unlock motion and unlock your game, you’re in the right place.
@@ -55,7 +55,7 @@
 	</p>
 	<div class="flex w-full justify-center py-6">
 		<a
-			href="https://selfcare.noterro.com/"
+			href="https://www.massagebook.com/therapists/kc-fairway-bodywork?src=external"
 			class="btn btn-secondary btn-xl w-full rounded-full px-8 py-4 text-xl font-semibold shadow-lg md:w-lg"
 		>
 			Book Now
@@ -114,6 +114,7 @@
 								{/each}
 							{/if}
 							{#if offering.id == 'mobile-massage'}
+								<p class="text-sm opacity-70">Limited time only. Only $10 more for mobile visit.</p>
 								{#each offering.packages as pkg}
 									<li class="pb-1 flex items-center gap-2">
 										<span class="icon icon-xs icon-custom icon-clock"></span>
