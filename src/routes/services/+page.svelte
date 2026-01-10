@@ -58,15 +58,16 @@
 						<span class="icon icon-md icon-custom {offering.icon}"></span>
 						<h3 class="card-title text-secondary">{offering.serviceName}</h3>
 					</div>
-					<p class="opacity-80">{offering.description}</p>
+					<div class="flex flex-col">
+					<p class="opacity-80 text-center">{offering.description}</p>
 					{#if offering.packages && offering.packages.length}
-						<ul class="mt-4 mx-auto flex gap-4 flex-col text-center">
+						<ul class="mt-4 mx-auto flex gap-2 flex-col text-center text-base justify-center">
 							{#if offering.id == 'therapeutic-massage'}
 								{#each offering.packages as pkg}
 									<li class="pb-1 flex items-center gap-2">
 										<span class="icon icon-xs icon-custom icon-clock"></span>
-										<span class="font-medium text-lg">{pkg.name}</span> – <span
-											class="font-bold text-lg">{formatPrice(pkg.price)}</span
+										<span class="font-medium">{pkg.name}</span> – <span
+											class="font-bold">{formatPrice(pkg.price)}</span
 										>
 									</li>
 								{/each}
@@ -76,8 +77,8 @@
 									<li class="pb-1 flex flex-col">
 										<div class="flex gap-2 items-center">
 											<span class="icon icon-xs icon-custom icon-clock"></span>
-											<span class="font-medium text-lg text-secondary">{pkg.name}</span> – <span
-												class="font-bold text-lg">{formatPrice(pkg.price)}</span
+											<span class="font-medium text-secondary">{pkg.name}</span> – <span
+												class="font-bold">{formatPrice(pkg.price)}</span
 											>
 										</div>
 										<div class="text-sm opacity-70">{pkg.description}</div>
@@ -88,8 +89,8 @@
 								{#each offering.packages as pkg}
 									<li class="pb-1 flex items-center gap-2">
 										<span class="icon icon-xs icon-custom icon-clock"></span>
-										<span class="font-medium text-lg">{pkg.name}</span> – <span
-											class="font-bold text-lg">{formatPrice(pkg.price)}</span
+										<span class="font-medium">{pkg.name}</span> – <span
+											class="font-bold">{formatPrice(pkg.price)}</span
 										>
 									</li>
 								{/each}
@@ -99,12 +100,13 @@
 								{#each offering.packages as pkg}
 									<li class="pb-1 flex items-center gap-2">
 										<span class="icon icon-xs icon-custom icon-clock"></span>
-										<span class="font-medium text-lg">{pkg.name}</span> – <span class="font-bold text-lg">{formatPrice(pkg.price)}</span>
+										<span class="font-medium">{pkg.name}</span> – <span class="font-bold">{formatPrice(pkg.price)}</span>
 									</li>
 								{/each}
 							{/if}
 						</ul>
 					{/if}
+					</div>
 				</div>
 			</div>
 		{/each}

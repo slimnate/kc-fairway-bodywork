@@ -37,7 +37,9 @@ export const offerings = [
 		packages: [
 			{ name: '30 minutes', price: 90, description: null },
 			{ name: '60 minutes', price: 175, description: null },
-			{ name: '90 minutes', price: 225, description: null }
+			{ name: '90 minutes', price: 225, description: null },
+			{ name: '120 minutes', price: 275, description: null },
+
 		]
 	},
 	{
