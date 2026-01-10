@@ -32,7 +32,7 @@
 	</div>
 	<div class="mx-auto max-w-2xl py-6 text-balance md:text-lg">
 		<p class="pb-4">
-			Welcome to KC Fairway Bodywork — where golfers come to improve mobility, reduce pain, and elevate their performance. I specialize in golf-focused, therapeutic bodywork designed to enhance range of motion, unlock your swing, and support long-term recovery. Using targeted techniques such as Deep Tissue, Neuromuscular therapy, Structural Integration, and mobility-based muscle work, I help golfers move better both on and off the course.
+			Welcome to KC Fairway Bodywork — where golfers come to improve mobility, reduce pain, and elevate their performance. I specialize in golf-focused, therapeutic bodywork designed to enhance range of motion, unlock your swing, and support long-term recovery. I help golfers move better both on and off the course.
 		</p>
 		<p>
 			Whether you're dealing with tightness, recovering from pain, or looking to play your best more often, every session is built on care, quality, and improvement. If you’re ready to unlock motion and unlock your game, you’re in the right place.
