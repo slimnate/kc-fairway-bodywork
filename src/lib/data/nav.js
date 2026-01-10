@@ -20,7 +20,7 @@ const navItems = [
 		text: 'Blog'
 	},
 	{
-		href: 'https://selfcare.noterro.com/',
+		href: 'https://www.massagebook.com/therapists/kc-fairway-bodywork?src=external',
 		text: 'Book Now',
 		featured: true
 	}
