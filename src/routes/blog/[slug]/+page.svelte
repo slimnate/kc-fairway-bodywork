@@ -37,7 +37,14 @@
 </script>
 
 <svelte:head>
-	<title>{data.post.title} - {meta.name} Blog</title>
+	<title>{data.post.title} - {meta.title}</title>
+	<meta name="description" content="{data.post.excerpt}" />
+	<meta name="keywords" content={data.post.tags.join(', ')} />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow" />
+	<meta name="bingbot" content="index, follow" />
+	<meta name="yandexbot" content="index, follow" />
 </svelte:head>
 
 {#if !data.post}

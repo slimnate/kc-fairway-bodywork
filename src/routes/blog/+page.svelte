@@ -3,6 +3,7 @@
 	import { api } from '../../convex/_generated/api';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
+    import meta from '$lib/data/meta';
 
 	// Read from URL query parameters (automatically updates when URL changes)
 	const selectedTag = $derived($page.url.searchParams.get('tag') || null);
@@ -98,6 +99,17 @@
 		goto(url.pathname + url.search, { noScroll: true });
 	}
 </script>
+
+<svelte:head>
+	<title>Blog - {meta.title}</title>
+	<meta name="description" content="{meta.description}" />
+	<meta name="keywords" content={meta.keywords.join(', ')} />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow" />
+	<meta name="bingbot" content="index, follow" />
+	<meta name="yandexbot" content="index, follow" />
+</svelte:head>
 
 <!-- Hero Section -->
 <section class="bg-blur px-6 py-12 pt-24 text-center">

@@ -1,11 +1,15 @@
 import type { Handle } from '@sveltejs/kit';
-import { env } from '$env/dynamic/private';
+import metadata from '$lib/data/meta.js';
+import { sequence } from '@sveltejs/kit/hooks';
+
 import { configureAuthKit, authKitHandle } from '@workos/authkit-sveltekit';
 import { configureServerAuth } from 'workos-convex-sveltekit';
 import { api } from './convex/_generated/api';
-import { PUBLIC_CONVEX_URL } from '$env/static/public';
-import metadata from '$lib/data/meta.js';
 
+import { env } from '$env/dynamic/private';
+import { PUBLIC_CONVEX_URL } from '$env/static/public';
+
+// Configure AuthKit with SvelteKit's environment variables
 configureServerAuth(
 	{
 		workos: {
@@ -27,24 +31,17 @@ const replacePlaceholders = (html: string, replacements: Record<string, string>)
 	return html;
 };
 
-const authHandle = authKitHandle();
-
-export const handle: Handle = async ({ event, resolve }) => {
-	// First apply auth handling, then apply metadata replacement
-	return authHandle({
-		event,
-		resolve: async (event) => {
-			return resolve(event, {
-				transformPageChunk: ({ html }) => {
-					// Replace placeholders in HTML
-					html = replacePlaceholders(html, {
-						'%meta.title%': metadata.title,
-						'%meta.description%': metadata.description,
-						'%meta.keywords%': metadata.keywords.join(', ')
-					});
-					return html;
-				}
+const handleStringReplacement: Handle = ({ event, resolve }) => {
+	return resolve(event, {
+		transformPageChunk: ({ html }) => {
+			// Replace placeholders in HTML
+			return replacePlaceholders(html, {
+				'%meta.title%': metadata.title,
+				'%meta.description%': metadata.description,
+				'%meta.keywords%': metadata.keywords.join(', ')
 			});
 		}
 	});
 };
+
+export const handle: Handle = sequence(authKitHandle(), handleStringReplacement);
