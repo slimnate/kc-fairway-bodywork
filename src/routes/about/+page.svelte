@@ -1,13 +1,17 @@
 <script>
 	import { aboutData } from '$lib/data/about.js';
+    import meta from '$lib/data/meta';
 </script>
 
 <svelte:head>
-	<title>About - KC Fairway Bodywork</title>
-	<meta
-		name="description"
-		content="Learn more about KC Fairway Bodywork and our mission to help you move better and play your best."
-	/>
+	<title>About - {meta.title}</title>
+	<meta name="description" content="{meta.description}" />
+	<meta name="keywords" content={meta.keywords.join(', ')} />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow" />
+	<meta name="bingbot" content="index, follow" />
+	<meta name="yandexbot" content="index, follow" />
 </svelte:head>
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">

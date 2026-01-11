@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "npx convex codegen && vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -43,12 +43,14 @@
 		"vite": "^6.2.6"
 	},
 	"dependencies": {
-		"@supabase/supabase-js": "^2.55.0",
-		"@tiptap/core": "^3.2.0",
-		"@tiptap/extension-image": "^3.2.0",
-		"@tiptap/extension-link": "^3.2.0",
-		"@tiptap/extension-placeholder": "^3.2.0",
-		"@tiptap/pm": "^3.2.0",
-		"@tiptap/starter-kit": "^3.2.0"
+		"@milkdown/core": "^7.18.0",
+		"@milkdown/crepe": "^7.18.0",
+		"@workos/authkit-sveltekit": "^0.0.1-alpha.0",
+		"convex": "^1.31.3",
+		"convex-svelte": "^0.0.12",
+		"marked": "^17.0.1",
+		"openai": "^6.16.0",
+		"sanitize-html": "^2.17.0",
+		"workos-convex-sveltekit": "^1.0.2"
 	}
 }

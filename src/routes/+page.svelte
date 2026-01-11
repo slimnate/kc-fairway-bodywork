@@ -1,5 +1,6 @@
 <script>
 	import { offerings } from '$lib/data/services.js';
+    import meta from '$lib/data/meta';
 
 	/**
 	 * @param {number|string} price
@@ -12,11 +13,14 @@
 </script>
 
 <svelte:head>
-	<title>Home - KC Fairway Bodywork</title>
-	<meta
-		name="description"
-		content="Welcome to KC Fairway Bodywork — where golfers come to improve mobility, reduce pain, and elevate their performance. I specialize in golf-focused, therapeutic bodywork designed to enhance range of motion, unlock your swing, and support long-term recovery."
-	/>
+	<title>{meta.title}</title>
+	<meta name="description" content="{meta.description}" />
+	<meta name="keywords" content={meta.keywords.join(', ')} />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow" />
+	<meta name="bingbot" content="index, follow" />
+	<meta name="yandexbot" content="index, follow" />
 </svelte:head>
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
