@@ -2,16 +2,16 @@ import { v } from 'convex/values';
 import { mutation, query } from './_generated/server';
 
 /**
-	* Additional users table queries can be added here. Do not remove the store query, it is required to store the user's data into the users table.
+ * Additional users table queries can be added here. Do not remove the store query, it is required to store the user's data into the users table.
  */
 
 export const store = mutation({
 	args: {
 		workosUserId: v.string(),
 		email: v.string(),
-		firstName: v.string(),
-		lastName: v.string(),
-		profilePictureUrl: v.string()
+		firstName: v.optional(v.string()),
+		lastName: v.optional(v.string()),
+		profilePictureUrl: v.optional(v.nullable(v.string()))
 	},
 	handler: async (ctx, args) => {
 		const existingUser = await ctx.db
@@ -26,7 +26,7 @@ export const store = mutation({
 			firstName: args.firstName,
 			lastName: args.lastName,
 			workosUserId: args.workosUserId,
-			profilePictureUrl: args.profilePictureUrl,
+			profilePictureUrl: args.profilePictureUrl ?? '',
 			lastSignInAt: now,
 			updatedAt: now
 		};
@@ -95,7 +95,7 @@ export const getAllUsers = query({
 });
 
 /**
-	* Check if current user has a specific role
+ * Check if current user has a specific role
  */
 export const hasRole = query({
 	args: {
