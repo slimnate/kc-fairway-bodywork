@@ -15,8 +15,14 @@
 			<p class="text-base-content mb-4">
 				{errorMessage || 'An error occurred'}
 			</p>
-			<div class="card-actions justify-center">
-				<button on:click={() => goto('/api/auth/logout')} class="btn btn-primary">Log Out</button>
+			<div class="card-actions justify-center gap-2">
+				{#if errorStatus === 403}
+					<button on:click={() => goto('/api/auth/logout')} class="btn btn-primary">Log Out</button>
+					<button on:click={() => window.history.back()} class="btn btn-outline">Go Back</button>
+				{:else}
+					<button on:click={() => goto('/')} class="btn btn-primary">Go Home</button>
+					<button on:click={() => window.history.back()} class="btn btn-outline">Go Back</button>
+				{/if}
 			</div>
 		</div>
 	</div>
