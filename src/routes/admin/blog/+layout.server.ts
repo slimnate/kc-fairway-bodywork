@@ -4,7 +4,7 @@ import { authKit } from '@workos/authkit-sveltekit';
 import { api } from '../../../convex/_generated/api';
 import { ConvexHttpClient } from 'convex/browser';
 import { PUBLIC_CONVEX_URL } from '$env/static/public';
-import { redirect } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 
 export const load: LayoutServerLoad = authenticatedRequest(authKit, async ({ auth, url }) => {
 	const convex = new ConvexHttpClient(PUBLIC_CONVEX_URL);
@@ -13,10 +13,10 @@ export const load: LayoutServerLoad = authenticatedRequest(authKit, async ({ aut
 	}
 
 	const currentUser = await convex.query(api.users.getCurrentUser, {});
-	const hasAdminRole = currentUser?.roles?.includes('admin') ?? false;
+	const hasAdminRole = currentUser?.roles?.includes('blog') ?? false;
 
 	if (!hasAdminRole) {
-		throw redirect(302, '/');
+		throw error(403, 'You are not authorized to access this page');
 	}
 
 	return {

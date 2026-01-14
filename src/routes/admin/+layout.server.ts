@@ -1,9 +1,9 @@
 import type { LayoutServerLoad } from './$types';
 import { authenticatedRequest } from 'workos-convex-sveltekit';
 import { authKit } from '@workos/authkit-sveltekit';
+import { api } from '../../convex/_generated/api';
 import { ConvexHttpClient } from 'convex/browser';
 import { PUBLIC_CONVEX_URL } from '$env/static/public';
-import { api } from '../../convex/_generated/api';
 
 export const load: LayoutServerLoad = authenticatedRequest(
 	authKit,
@@ -27,14 +27,12 @@ export const load: LayoutServerLoad = authenticatedRequest(
 
 		// Check if user has specific roles
 		const hasBlogRole = currentUser?.roles?.includes('blog') ?? false;
-		const hasBookingsRole = currentUser?.roles?.includes('bookings') ?? false;
 		const hasAdminRole = currentUser?.roles?.includes('admin') ?? false;
 
 		return {
 			user: user,
 			adminUser: currentUser,
 			hasBlogRole: hasBlogRole,
-			hasBookingsRole: hasBookingsRole,
 			hasAdminRole: hasAdminRole
 		};
 	}

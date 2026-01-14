@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "concurrently 'npx convex dev' 'vite dev'",
 		"build": "npx convex codegen && vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
@@ -25,6 +25,7 @@
 		"@tailwindcss/vite": "^4.0.0",
 		"@types/node": "^24.0.13",
 		"autoprefixer": "^10.4.21",
+		"concurrently": "^9.2.1",
 		"daisyui": "^5.0.35",
 		"eslint": "^9.18.0",
 		"eslint-config-prettier": "^10.0.1",
@@ -46,11 +47,11 @@
 		"@milkdown/core": "^7.18.0",
 		"@milkdown/crepe": "^7.18.0",
 		"@workos/authkit-sveltekit": "^0.0.1-alpha.0",
-		"convex": "^1.31.3",
+		"convex": "^1.31.1",
 		"convex-svelte": "^0.0.12",
 		"marked": "^17.0.1",
 		"openai": "^6.16.0",
 		"sanitize-html": "^2.17.0",
-		"workos-convex-sveltekit": "^1.0.2"
+		"workos-convex-sveltekit": "^1.1.1"
 	}
 }

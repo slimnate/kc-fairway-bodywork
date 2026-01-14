@@ -8,6 +8,7 @@ import { mutation, query } from './_generated/server';
 export const store = mutation({
 	args: {
 		workosUserId: v.string(),
+		organizationId: v.optional(v.nullable(v.string())),
 		email: v.string(),
 		firstName: v.optional(v.string()),
 		lastName: v.optional(v.string()),
@@ -22,10 +23,11 @@ export const store = mutation({
 		const now = Date.now();
 
 		const userData = {
-			email: args.email,
-			firstName: args.firstName,
-			lastName: args.lastName,
 			workosUserId: args.workosUserId,
+			organizationId: args.organizationId ?? '',
+			email: args.email,
+			firstName: args.firstName ?? '',
+			lastName: args.lastName ?? '',
 			profilePictureUrl: args.profilePictureUrl ?? '',
 			lastSignInAt: now,
 			updatedAt: now

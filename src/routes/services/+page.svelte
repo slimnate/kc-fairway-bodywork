@@ -23,11 +23,7 @@
 	<title>Services - {meta.title}</title>
 	<meta name="description" content="{meta.description}" />
 	<meta name="keywords" content={meta.keywords.join(', ')} />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="robots" content="index, follow" />
-	<meta name="googlebot" content="index, follow" />
-	<meta name="bingbot" content="index, follow" />
-	<meta name="yandexbot" content="index, follow" />
 </svelte:head>
 
 
