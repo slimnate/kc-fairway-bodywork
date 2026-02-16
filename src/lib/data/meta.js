@@ -29,7 +29,7 @@ const metadata = {
 	// Contact information
 	name: 'KC Fairway Bodywork',
 	tagline: 'Unlock Motion - Unlock Game',
-	description: 'Sincerely Self Care is a mobile massage serice based in the Kansas City area.',
+	description: 'Golf-focused performance bodywork for Kansas City golfers.',
 	address: null,
 	phone: null,
 	email: 'anthony@kcfairway.com',
