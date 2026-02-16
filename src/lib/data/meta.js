@@ -8,8 +8,8 @@
  * @property {string} name - The name of the business.
  * @property {string} tagline - A short tagline or slogan for the business.
  * @property {string} description - A brief description of the business.
- * @property {string|null} address - The physical address of the business.
- * @property {string|null} phone - The phone number of the business.
+ * @property {string} address - The physical address of the business.
+ * @property {string} phone - The phone number of the business.
  * @property {string} email - The email address for contact.
  * @property {string|null} fb_url - The Facebook page URL (set to `null` if not available).
  * @property {string|null} ig_url - The Instagram profile URL (set to `null` if not available).
@@ -30,8 +30,8 @@ const metadata = {
 	name: 'KC Fairway Bodywork',
 	tagline: 'Unlock Motion - Unlock Game',
 	description: 'Golf-focused performance bodywork for Kansas City golfers.',
-	address: null,
-	phone: null,
+	address: '406 W 34th St, Suite 511, Kansas City, MO 64111',
+	phone: '913-280-6028',
 	email: 'anthony@kcfairway.com',
 
 	// The following URLs are placeholders and should be replaced with actual URLs
