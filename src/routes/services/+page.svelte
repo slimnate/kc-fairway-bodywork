@@ -39,7 +39,9 @@
 </section>
 
 <button class="btn btn-secondary btn-xl w-full rounded-full px-8 py-4 text-xl font-semibold shadow-lg md:w-lg mx-auto">
+	<a href="https://www.massagebook.com/therapists/kc-fairway-bodywork?src=external">
 	Book Now
+	</a>
 </button>
 
 <!-- Service Offerings -->

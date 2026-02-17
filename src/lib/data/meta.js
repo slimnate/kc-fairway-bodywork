@@ -8,8 +8,8 @@
  * @property {string} name - The name of the business.
  * @property {string} tagline - A short tagline or slogan for the business.
  * @property {string} description - A brief description of the business.
- * @property {string|null} address - The physical address of the business.
- * @property {string|null} phone - The phone number of the business.
+ * @property {string} address - The physical address of the business.
+ * @property {string} phone - The phone number of the business.
  * @property {string} email - The email address for contact.
  * @property {string|null} fb_url - The Facebook page URL (set to `null` if not available).
  * @property {string|null} ig_url - The Instagram profile URL (set to `null` if not available).
@@ -29,17 +29,17 @@ const metadata = {
 	// Contact information
 	name: 'KC Fairway Bodywork',
 	tagline: 'Unlock Motion - Unlock Game',
-	description: 'Sincerely Self Care is a mobile massage serice based in the Kansas City area.',
-	address: null,
-	phone: null,
+	description: 'Golf-focused performance bodywork for Kansas City golfers.',
+	address: '406 W 34th St, Suite 511, Kansas City, MO 64111',
+	phone: '913-280-6028',
 	email: 'anthony@kcfairway.com',
 
 	// The following URLs are placeholders and should be replaced with actual URLs
 	// for your business's social media profiles.
 	// Set values to null and they will not be rendered in the footer.
 	// For example, if you don't have a Facebook page, set fb_url to null.
-	fb_url: 'https://www.facebook.com/profile.php?id=61576685337269',
-	ig_url: 'https://www.instagram.com/sincerelyselfcare',
+	fb_url: 'https://www.facebook.com/profile.php?id=61586290216445',
+	ig_url: null,
 	tw_url: null,
 	yt_url: null,
 	li_url: null,
