@@ -19,6 +19,15 @@
 	<meta name="robots" content="index, follow" />
 </svelte:head>
 
+<div class="md:hidden flex justify-center px-8 py-4">
+<a href="https://www.massagebook.com/therapists/kc-fairway-bodywork?src=external"
+	target="_blank"
+	rel="noopener noreferrer"
+	class="btn btn-secondary btn-xl rounded-full px-8 py-4 text-xl font-semibold shadow-lg md:w-lg md:hidden">
+	Book Now
+</a>
+</div>
+
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<img src="/img/logo.webp" alt="KC Fairway Bodywork Logo" />
