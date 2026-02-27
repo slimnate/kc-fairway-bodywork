@@ -39,7 +39,7 @@ const metadata = {
 	// Set values to null and they will not be rendered in the footer.
 	// For example, if you don't have a Facebook page, set fb_url to null.
 	fb_url: 'https://www.facebook.com/profile.php?id=61586290216445',
-	ig_url: null,
+	ig_url: 'https://www.instagram.com/kcfairwaybodywork/',
 	tw_url: null,
 	yt_url: null,
 	li_url: null,
