@@ -35,12 +35,12 @@ export const aboutData = {
 		{
 			title: 'Quality You Can Feel',
 			description:
-				'Delivering the level of care and precision golfers deserve.'
+				'Skilled techniques focused on improving mobility and reducing pain.'
 		},
 		{
 			title: 'Encouragement that Elevates',
 			description:
-				'Building confidence through every step of recovery both on and off the course.'
+				'Encouraging clients every step of the way to be their best, both on and off the course.'
 		}
 	],
 	team: [
