@@ -20,7 +20,7 @@ const navItems = [
 		text: 'Blog'
 	},
 	{
-		href: 'https://www.massagebook.com/therapists/kc-fairway-bodywork?src=external',
+		href: 'https://www.massagebook.com/therapists/kc-fairway-bodywork/services?src=external',
 		text: 'Book Now',
 		featured: true
 	}

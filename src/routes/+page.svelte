@@ -20,7 +20,7 @@
 </svelte:head>
 
 <div class="md:hidden flex justify-center px-8 py-4">
-<a href="https://www.massagebook.com/therapists/kc-fairway-bodywork?src=external"
+<a href="https://www.massagebook.com/therapists/kc-fairway-bodywork/services?src=external"
 	target="_blank"
 	rel="noopener noreferrer"
 	class="btn btn-secondary btn-xl rounded-full px-8 py-4 text-xl font-semibold shadow-lg md:w-lg md:hidden">
@@ -64,7 +64,7 @@
 	</p>
 	<div class="flex w-full justify-center py-6">
 		<a
-			href="https://www.massagebook.com/therapists/kc-fairway-bodywork?src=external"
+			href="https://www.massagebook.com/therapists/kc-fairway-bodywork/services?src=external"
 			class="btn btn-secondary btn-xl w-full rounded-full px-8 py-4 text-xl font-semibold shadow-lg md:w-lg"
 		>
 			Book Now
