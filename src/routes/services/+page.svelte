@@ -67,11 +67,27 @@
 						<ul class="mt-4 mx-auto flex gap-2 flex-col text-center text-base justify-center">
 							{#if offering.id == 'therapeutic-massage'}
 								{#each offering.packages as pkg}
-									<li class="pb-1 flex items-center gap-2">
-										<span class="icon icon-xs icon-custom icon-clock"></span>
-										<span class="font-medium">{pkg.name}</span> – <span
-											class="font-bold">{formatPrice(pkg.price)}</span
-										>
+									<li class="pb-1">
+										{#if pkg.href}
+											<a
+												href={pkg.href}
+												class="flex items-center justify-center gap-2 text-base-content no-underline transition-colors hover:text-primary hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-100 rounded-sm"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<span class="icon icon-xs icon-custom icon-clock shrink-0"></span>
+												<span class="font-medium">{pkg.name}</span>
+												<span aria-hidden="true">–</span>
+												<span class="font-bold">{formatPrice(pkg.price)}</span>
+											</a>
+										{:else}
+											<div class="flex items-center justify-center gap-2">
+												<span class="icon icon-xs icon-custom icon-clock"></span>
+												<span class="font-medium">{pkg.name}</span> – <span
+													class="font-bold">{formatPrice(pkg.price)}</span
+												>
+											</div>
+										{/if}
 									</li>
 								{/each}
 							{/if}
