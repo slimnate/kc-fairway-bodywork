@@ -10,6 +10,7 @@
  * @property {string} name - The name of the package
  * @property {number} price - The price of the package
  * @property {string|null} description - A brief description of the package
+ * @property {string} [href] - Optional booking URL for the package
  *
  * @typedef {Object} Modality
  * @property {string} id - Unique identifier for the modality
@@ -35,11 +36,30 @@ export const offerings = [
 		description:
 			'Bodywork designed to improve how you move both on and off the course. Using advanced techniques such as Structural Integration, Neuromuscular Therapy, and adhesion release, this treatment reduces tension and supports long-term mobility.',
 		packages: [
-			{ name: '30 minutes', price: 90, description: null },
-			{ name: '60 minutes', price: 175, description: null },
-			{ name: '90 minutes', price: 225, description: null },
-			{ name: '120 minutes', price: 275, description: null },
-
+			{
+				name: '30 minutes',
+				price: 90,
+				description: null,
+				href: 'https://www.massagebook.com/business/36453921/booking/select-time?src=external&service_id=1923747&ncf_source=friendly_url'
+			},
+			{
+				name: '60 minutes',
+				price: 175,
+				description: null,
+				href: 'https://www.massagebook.com/business/36453921/booking/select-time?src=external&service_id=1923748&ncf_source=friendly_url'
+			},
+			{
+				name: '90 minutes',
+				price: 225,
+				description: null,
+				href: 'https://www.massagebook.com/business/36453921/booking/select-time?src=external&service_id=1923749&ncf_source=friendly_url'
+			},
+			{
+				name: '120 minutes',
+				price: 275,
+				description: null,
+				href: 'https://www.massagebook.com/business/36453921/booking/select-time?src=external&service_id=1923750&ncf_source=friendly_url'
+			}
 		]
 	},
 	{
