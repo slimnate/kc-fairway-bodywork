@@ -92,8 +92,9 @@ export const offerings = [
 		icon: 'icon-currency-dollar',
 		description: 'Invest in your health with discounted session bundles designed for ongoing care:',
 		packages: [
-			{ name: '4 × 60-minute sessions', price: 620, description: null },
-			{ name: '4 × 90-minute sessions', price: 820, description: null }
+			{ name: '3 × 30-minute sessions', price: 340, description: null },
+			{ name: '4 × 60-minute sessions', price: 660, description: null },
+			{ name: '4 × 90-minute sessions', price: 860, description: null }
 		]
 	},
 	{
@@ -133,13 +134,13 @@ export const modalities = [
 	},
 	{
 		id: 'structural-integration',
-		name: 'Structural Integration (Coming Soon)',
+		name: 'Structural Integration',
 		description: 'Structural Integration realigns your body by working with the fascia to reduce pain, improve mobility, and help you move with ease'
 	},
 	{
 		id: 'scar-tissue-therapy',
-		name: 'Scar Tissue Therapy (Coming Soon)',
-		description: 'Specialized techniques for healing and mobility'
+		name: 'Scar Tissue Therapy',
+		description: 'Specialized technique for decreasing pain and improving scar tissue mobility'
 	}
 ];
 
