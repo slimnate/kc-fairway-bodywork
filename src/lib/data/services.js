@@ -92,9 +92,24 @@ export const offerings = [
 		icon: 'icon-currency-dollar',
 		description: 'Invest in your health with discounted session bundles designed for ongoing care:',
 		packages: [
-			{ name: '3 × 30-minute sessions', price: 340, description: null },
-			{ name: '4 × 60-minute sessions', price: 660, description: null },
-			{ name: '4 × 90-minute sessions', price: 860, description: null }
+			{
+				name: '4 × 30-minute sessions',
+				price: 340,
+				description: null,
+				href: 'https://www.massagebook.com/business/36453921/booking/select-time?src=external&service_id=1923782&ncf_source=friendly_url'
+			},
+			{
+				name: '4 × 60-minute sessions',
+				price: 660,
+				description: null,
+				href: 'https://www.massagebook.com/business/36453921/booking/select-time?src=external&service_id=1923774&ncf_source=friendly_url'
+			},
+			{
+				name: '4 × 90-minute sessions',
+				price: 860,
+				description: null,
+				href: 'https://www.massagebook.com/business/36453921/booking/?src=external&service_id=1923783&ncf_source=friendly_url'
+			}
 		]
 	},
 	{
