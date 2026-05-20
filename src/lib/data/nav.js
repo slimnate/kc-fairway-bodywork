@@ -45,6 +45,11 @@ const footerNavItems = [
 		href: '/blog',
 		text: 'Blog'
 	},
+	// Uncomment when real reviews are in src/lib/data/testimonials.js (see README).
+	// {
+	// 	href: '/testimonials',
+	// 	text: 'Testimonials'
+	// },
 	{
 		href: '/faq',
 		text: 'FAQ'

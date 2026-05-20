@@ -244,8 +244,8 @@
 			Service Areas
 		</h2>
 		<p class="text-center mt-4 text-lg opacity-90">
-			Proudly serving Midtown KC, Westport, Country Club Plaza, Brookside, Waldo, and the greater Kansas
-			City metro
+			Studio sessions near Midtown Kansas City (34th and Broadway). Mobile bodywork throughout
+			Westport, Country Club Plaza, Brookside, Waldo, and the greater Kansas City metro.
 		</p>
 	</div>
 

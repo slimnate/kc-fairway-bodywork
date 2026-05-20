@@ -40,7 +40,9 @@ const metadata = {
 		'/':
 			'Golf-focused performance bodywork for Kansas City golfers.',
 		'/services':
-			'Performance bodywork, structural integration, and sports massage for Kansas City golfers. Book 30–120 min sessions.',
+			'Performance bodywork and sports massage for Kansas City golfers. Studio sessions in Midtown KC; mobile bodywork in Westport, the Plaza, Brookside, Waldo, and the metro.',
+		'/testimonials':
+			'Client reviews of golf-focused bodywork at KC Fairway Bodywork in Midtown Kansas City. Leave a review on Google.',
 		'/about':
 			'Meet Anthony Snell, performance bodywork specialist for golfers in Midtown Kansas City.',
 		'/blog':
@@ -51,8 +53,6 @@ const metadata = {
 			'Contact KC Fairway Bodywork in Midtown Kansas City. Call, email, get directions, view hours, or send a message.',
 		'/faq':
 			'Frequently asked questions about golf bodywork, sports massage, structural integration, and booking in Kansas City.',
-		'/testimonials':
-			'Read what clients say about KC Fairway Bodywork — golf-focused performance bodywork in Kansas City.'
 	},
 	address: '406 W 34th St, Suite 511, Kansas City, MO 64111',
 	phone: '913-280-6028',
