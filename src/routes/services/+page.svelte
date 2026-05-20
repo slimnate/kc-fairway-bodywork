@@ -1,5 +1,5 @@
 <script>
-	import meta from '$lib/data/meta';
+	import meta, { getPageDescription } from '$lib/data/meta';
 	import SeoHead from '$lib/components/SeoHead.svelte';
 	import {
 		offerings,
@@ -20,7 +20,7 @@
 </script>
 
 
-<SeoHead title="Services - {meta.title}" description={meta.description} />
+<SeoHead title="Services - {meta.title}" description={getPageDescription('/services')} />
 
 
 <section class="bg-base-200 px-4 py-12 pt-24">

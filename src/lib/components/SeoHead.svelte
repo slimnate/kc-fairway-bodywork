@@ -1,22 +1,25 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import meta, { ogImageUrl } from '$lib/data/meta.js';
+	import meta, { getCanonicalUrl, ogImageUrl } from '$lib/data/meta.js';
 
 	let {
 		title,
 		description = meta.description,
 		keywords = '',
 		ogImage = ogImageUrl,
+		canonical: canonicalOverride,
 		noindex = false
 	}: {
 		title: string;
 		description?: string;
 		keywords?: string;
 		ogImage?: string;
+		/** Override auto-derived canonical (e.g. blog pagination query strings). */
+		canonical?: string;
 		noindex?: boolean;
 	} = $props();
 
-	const canonical = $derived(`${meta.siteUrl}${page.url.pathname || '/'}`);
+	const canonical = $derived(canonicalOverride ?? getCanonicalUrl(page.url.pathname));
 	const robots = $derived(noindex ? 'noindex, nofollow' : 'index, follow');
 	const trimmedKeywords = $derived(keywords.trim());
 </script>

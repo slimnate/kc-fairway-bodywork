@@ -1,6 +1,6 @@
 <script>
 	import { offerings } from '$lib/data/services.js';
-	import meta from '$lib/data/meta';
+	import meta, { getPageDescription } from '$lib/data/meta';
 	import SeoHead from '$lib/components/SeoHead.svelte';
 
 	/**
@@ -13,7 +13,11 @@
 	};
 </script>
 
-<SeoHead title={meta.title} description={meta.description} />
+<SeoHead
+	title={meta.title}
+	description={getPageDescription('/')}
+	keywords={meta.keywords.join(', ')}
+/>
 
 <div class="md:hidden flex justify-center px-8 py-4">
 <a href="https://www.massagebook.com/therapists/kc-fairway-bodywork/services?src=external"
@@ -26,10 +30,8 @@
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
-		<h1 class="text-secondary mb-6 text-3xl font-bold uppercase md:text-4xl">
-			{meta.name}
-		</h1>
-		<img src="/img/logo.webp" alt="KC Fairway Bodywork Logo" />
+		<h1 class="sr-only">{meta.name}</h1>
+		<img src="/img/logo.webp" alt="" aria-hidden="true" />
 	</div>
 	<div class="mx-auto max-w-4xl text-balance mt-[-50px]">
 		<img

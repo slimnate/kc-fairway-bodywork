@@ -1,10 +1,10 @@
 <script>
 	import { aboutData } from '$lib/data/about.js';
-	import meta from '$lib/data/meta';
+	import meta, { getPageDescription } from '$lib/data/meta';
 	import SeoHead from '$lib/components/SeoHead.svelte';
 </script>
 
-<SeoHead title="About - {meta.title}" description={meta.description} />
+<SeoHead title="About - {meta.title}" description={getPageDescription('/about')} />
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
 	<div class="mx-auto max-w-4xl text-balance md:py-6">

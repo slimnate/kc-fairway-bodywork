@@ -7,7 +7,8 @@
  * @typedef {Object} MetaData
  * @property {string} name - The name of the business.
  * @property {string} tagline - A short tagline or slogan for the business.
- * @property {string} description - A brief description of the business.
+ * @property {string} description - Default meta description (homepage and fallback).
+ * @property {Record<string, string>} pageDescriptions - Per-route meta descriptions.
  * @property {string} address - The physical address of the business.
  * @property {string} phone - The phone number of the business.
  * @property {string} email - The email address for contact.
@@ -26,7 +27,7 @@
  * @property {string} cp_holder - The copyright holder's name.
  * @property {string} cp_url - The copyright holder's website URL.
  * @property {string} title - The page title for the site.
- * @property {string[]} keywords - An array of keywords for SEO purposes.
+ * @property {string[]} keywords - Homepage SEO keywords (optional meta tag).
  */
 
 /** @type {MetaData} */
@@ -35,6 +36,18 @@ const metadata = {
 	name: 'KC Fairway Bodywork',
 	tagline: 'Unlock Motion - Unlock Game',
 	description: 'Golf-focused performance bodywork for Kansas City golfers.',
+	pageDescriptions: {
+		'/':
+			'Golf-focused performance bodywork for Kansas City golfers.',
+		'/services':
+			'Performance bodywork, structural integration, and sports massage for Kansas City golfers. Book 30–120 min sessions.',
+		'/about':
+			'Meet Anthony Snell, performance bodywork specialist for golfers in Midtown Kansas City.',
+		'/blog':
+			'Articles on mobility, golf swing improvement, and muscle health from KC Fairway Bodywork.',
+		'/mailing-list':
+			'Stay updated with wellness tips, massage therapy insights, and exclusive offers from KC Fairway Bodywork.'
+	},
 	address: '406 W 34th St, Suite 511, Kansas City, MO 64111',
 	phone: '913-280-6028',
 	email: 'anthony@kcfairway.com',
@@ -61,10 +74,6 @@ const metadata = {
 		'Sa 10:00-16:00'
 	],
 
-	// The following URLs are placeholders and should be replaced with actual URLs
-	// for your business's social media profiles.
-	// Set values to null and they will not be rendered in the footer.
-	// For example, if you don't have a Facebook page, set fb_url to null.
 	fb_url: 'https://www.facebook.com/profile.php?id=61586290216445',
 	ig_url: 'https://www.instagram.com/kcfairwaybodywork/',
 	tw_url: null,
@@ -72,21 +81,41 @@ const metadata = {
 	li_url: null,
 	tiktok_url: null,
 
-	// Copyright information
 	cp_year: `${new Date().getFullYear()}`,
 	cp_holder: 'Spotlite Studios',
 	cp_url: 'https://spotlitestudios.com/',
 
-	// Page metadata
 	title: 'KC Fairway Bodywork - Sports Massage Therapy',
 
-	// SEO Keywords
 	keywords: [
-		// TODO: Add keywords
+		'golf massage Kansas City',
+		'sports massage KC',
+		'performance bodywork',
+		'structural integration',
+		'golf bodywork',
+		'Midtown Kansas City massage'
 	]
 };
 
 /** @type {string} Full URL for Open Graph / Twitter Card image */
 export const ogImageUrl = `${metadata.siteUrl}${metadata.ogImage}`;
+
+/**
+ * @param {string} pathname
+ * @returns {string}
+ */
+export function getPageDescription(pathname) {
+	const path = pathname.replace(/\/$/, '') || '/';
+	return metadata.pageDescriptions[path] ?? metadata.description;
+}
+
+/**
+ * @param {string} pathname
+ * @returns {string}
+ */
+export function getCanonicalUrl(pathname) {
+	const path = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
+	return path === '/' ? `${metadata.siteUrl}/` : `${metadata.siteUrl}${path}`;
+}
 
 export default metadata;

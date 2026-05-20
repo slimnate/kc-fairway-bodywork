@@ -3,7 +3,7 @@
 	import { api } from '../../convex/_generated/api';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
-	import meta from '$lib/data/meta';
+	import meta, { getPageDescription } from '$lib/data/meta';
 	import SeoHead from '$lib/components/SeoHead.svelte';
 
 	// Read from URL query parameters (automatically updates when URL changes)
@@ -101,7 +101,7 @@
 	}
 </script>
 
-<SeoHead title="Blog - {meta.title}" description={meta.description} />
+<SeoHead title="Blog - {meta.title}" description={getPageDescription('/blog')} />
 
 <!-- Hero Section -->
 <section class="bg-blur px-6 py-12 pt-24 text-center">

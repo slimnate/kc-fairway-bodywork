@@ -1,8 +1,6 @@
 <script lang="ts">
+	import meta, { getPageDescription } from '$lib/data/meta';
 	import SeoHead from '$lib/components/SeoHead.svelte';
-
-	const mailingDescription =
-		'Stay updated with wellness tips, massage therapy insights, and exclusive offers from KC Fairway Bodywork';
 
 	let formData = {
 		name: '',
@@ -44,7 +42,10 @@
 	}
 </script>
 
-<SeoHead title="Join Our Mailing List - KC Fairway Bodywork" description={mailingDescription} />
+<SeoHead
+	title="Join Our Mailing List - {meta.title}"
+	description={getPageDescription('/mailing-list')}
+/>
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
