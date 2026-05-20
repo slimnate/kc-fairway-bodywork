@@ -161,6 +161,11 @@ export const modalities = [
 
 /** @type {ServiceArea[]} */
 export const serviceAreas = [
+	{ id: 'midtown-kc', name: 'Midtown KC' },
+	{ id: 'westport', name: 'Westport' },
+	{ id: 'country-club-plaza', name: 'Country Club Plaza' },
+	{ id: 'brookside', name: 'Brookside' },
+	{ id: 'waldo', name: 'Waldo' },
 	{ id: 'kansas-city-mo-ks', name: 'Kansas City (MO & KS)' },
 	{ id: 'overland-park', name: 'Overland Park' },
 	{ id: 'olathe', name: 'Olathe' },

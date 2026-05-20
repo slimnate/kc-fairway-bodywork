@@ -46,7 +46,13 @@ const metadata = {
 		'/blog':
 			'Articles on mobility, golf swing improvement, and muscle health from KC Fairway Bodywork.',
 		'/mailing-list':
-			'Stay updated with wellness tips, massage therapy insights, and exclusive offers from KC Fairway Bodywork.'
+			'Stay updated with wellness tips, massage therapy insights, and exclusive offers from KC Fairway Bodywork.',
+		'/contact':
+			'Contact KC Fairway Bodywork in Midtown Kansas City. Call, email, get directions, view hours, or send a message.',
+		'/faq':
+			'Frequently asked questions about golf bodywork, sports massage, structural integration, and booking in Kansas City.',
+		'/testimonials':
+			'Read what clients say about KC Fairway Bodywork — golf-focused performance bodywork in Kansas City.'
 	},
 	address: '406 W 34th St, Suite 511, Kansas City, MO 64111',
 	phone: '913-280-6028',
@@ -117,5 +123,19 @@ export function getCanonicalUrl(pathname) {
 	const path = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
 	return path === '/' ? `${metadata.siteUrl}/` : `${metadata.siteUrl}${path}`;
 }
+
+/** @returns {string} */
+export function phoneTel() {
+	const digits = metadata.phone.replace(/\D/g, '');
+	return digits.length === 10 ? `+1${digits}` : `+${digits}`;
+}
+
+/** @returns {string} */
+export function mapsEmbedUrl() {
+	return `https://www.google.com/maps?q=${encodeURIComponent(metadata.address)}&output=embed`;
+}
+
+export const BOOKING_URL =
+	'https://www.massagebook.com/therapists/kc-fairway-bodywork/services?src=external';
 
 export default metadata;

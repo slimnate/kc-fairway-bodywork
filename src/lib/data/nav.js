@@ -5,8 +5,34 @@
  * @property {boolean} [featured] - Optional flag to indicate if the item is featured.
  */
 
+/** @type {NavItem} */
+const bookNowItem = {
+	href: 'https://www.massagebook.com/therapists/kc-fairway-bodywork/services?src=external',
+	text: 'Book Now',
+	featured: true
+};
+
+/** Top navbar — primary pages + booking */
 /** @type {NavItem[]} */
-const navItems = [
+const navbarItems = [
+	{
+		href: '/services',
+		text: 'Services'
+	},
+	{
+		href: '/about',
+		text: 'About'
+	},
+	{
+		href: '/blog',
+		text: 'Blog'
+	},
+	bookNowItem
+];
+
+/** Footer links — includes FAQ and Contact */
+/** @type {NavItem[]} */
+const footerNavItems = [
 	{
 		href: '/services',
 		text: 'Services'
@@ -20,10 +46,17 @@ const navItems = [
 		text: 'Blog'
 	},
 	{
-		href: 'https://www.massagebook.com/therapists/kc-fairway-bodywork/services?src=external',
-		text: 'Book Now',
-		featured: true
-	}
+		href: '/faq',
+		text: 'FAQ'
+	},
+	{
+		href: '/contact',
+		text: 'Contact'
+	},
+	bookNowItem
 ];
 
-export { navItems };
+/** @deprecated Use navbarItems or footerNavItems */
+const navItems = footerNavItems;
+
+export { navbarItems, footerNavItems, navItems };

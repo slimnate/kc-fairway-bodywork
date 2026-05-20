@@ -56,9 +56,24 @@
 	/** @type {Props} */
 	let { navItems, siteName } = $props();
 
-	// Calculate grid columns based on whether we're on homepage
+	/** Tailwind needs full class names in source — dynamic `grid-cols-${n}` is not generated. */
+	function gridColsForCount(count: number): string {
+		switch (count) {
+			case 4:
+				return 'md:grid-cols-4';
+			case 5:
+				return 'md:grid-cols-5';
+			case 6:
+				return 'md:grid-cols-6';
+			case 7:
+				return 'md:grid-cols-7';
+			default:
+				return 'md:grid-cols-5';
+		}
+	}
+
 	let gridColsClass = $derived(
-		isHomePage ? `md:grid-cols-${navItems.length}` : `md:grid-cols-${navItems.length + 1}`
+		gridColsForCount(isHomePage ? navItems.length : navItems.length + 1)
 	);
 
 	// Calculate the middle index for inserting the home icon

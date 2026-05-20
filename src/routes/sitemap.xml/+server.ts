@@ -4,7 +4,16 @@ import { PUBLIC_CONVEX_URL } from '$env/static/public';
 import { api } from '../../convex/_generated/api';
 import meta from '$lib/data/meta.js';
 
-const STATIC_PATHS = ['/', '/about', '/services', '/blog', '/mailing-list'];
+const STATIC_PATHS = [
+	'/',
+	'/about',
+	'/services',
+	'/blog',
+	'/contact',
+	'/faq',
+	'/testimonials',
+	'/mailing-list'
+];
 
 function escapeXml(value: string): string {
 	return value

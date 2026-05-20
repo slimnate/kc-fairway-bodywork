@@ -5,7 +5,7 @@
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import StructuredData from '$lib/components/StructuredData.svelte';
-	import { navItems } from '$lib/data/nav.js';
+	import { navbarItems, footerNavItems } from '$lib/data/nav.js';
 	import meta from '$lib/data/meta.js';
 
 	let { children } = $props();
@@ -18,7 +18,7 @@
 {:else}
 	<a href="#main-content" class="skip-link">Skip to main content</a>
 	<StructuredData />
-	<Navbar siteName={meta.name} {navItems} />
+	<Navbar siteName={meta.name} navItems={navbarItems} />
 
 	<div class="bg-base-200 text-primary flex min-h-screen flex-col justify-between px-12">
 		<div class="parallax-bg flex grow flex-col text-center">
@@ -28,7 +28,7 @@
 		</div>
 
 		<Footer
-			footerLinks={navItems}
+			footerLinks={footerNavItems}
 			email={meta.email}
 			address={meta.address}
 			phone={meta.phone}

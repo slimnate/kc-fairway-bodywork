@@ -1,11 +1,12 @@
 <script>
+	import { phoneTel } from '$lib/data/meta.js';
 	import IconHouse from './icons/IconHouse.svelte';
 	import IconFacebook from './icons/IconFacebook.svelte';
 	import IconInstagram from './icons/IconInstagram.svelte';
 	import IconMail from './icons/IconMail.svelte';
 	import IconPhone from './icons/IconPhone.svelte';
 
-	import { navItems } from '$lib/data/nav';
+	import { footerNavItems } from '$lib/data/nav';
 	import IconTwitter from './icons/IconTwitter.svelte';
 	import IconYoutube from './icons/IconYoutube.svelte';
 	import IconLinkedIn from './icons/IconLinkedIn.svelte';
@@ -13,7 +14,7 @@
 	import IconGoogle from './icons/IconGoogle.svelte';
 
 	const {
-		footerLinks = navItems,
+		footerLinks = footerNavItems,
 		email = null,
 		address = null,
 		phone = null,
@@ -134,20 +135,31 @@
 				</p>
 				{#if address}
 					<p class="mb-4 flex items-center justify-center md:justify-start">
-						<span class="text-secondary mr-4"><IconHouse /></span>
-						{address}
+						<span class="text-secondary mr-4 shrink-0"><IconHouse /></span>
+						{#if gbp_url}
+							<a
+								href={gbp_url}
+								class="hover:text-primary text-left hover:underline"
+								target="_blank"
+								rel="noreferrer"
+							>
+								{address}
+							</a>
+						{:else}
+							{address}
+						{/if}
 					</p>
 				{/if}
 				{#if email}
 					<p class="mb-4 flex items-center justify-center md:justify-start">
-						<span class="text-secondary mr-4"><IconMail /></span>
-						{email}
+						<span class="text-secondary mr-4 shrink-0"><IconMail /></span>
+						<a href="mailto:{email}" class="hover:text-primary hover:underline">{email}</a>
 					</p>
 				{/if}
 				{#if phone}
 					<p class="mb-4 flex items-center justify-center md:justify-start">
-						<span class="text-secondary mr-4"> <IconPhone /> </span>
-						{phone}
+						<span class="text-secondary mr-4 shrink-0"><IconPhone /></span>
+						<a href="tel:{phoneTel()}" class="hover:text-primary hover:underline">{phone}</a>
 					</p>
 				{/if}
 				{#if gbp_url}

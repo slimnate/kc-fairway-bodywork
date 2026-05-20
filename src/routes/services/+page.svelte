@@ -30,7 +30,7 @@
 		Massage Therapy Services
 	</h1>
 	<p class="mx-auto max-w-3xl text-center text-lg md:text-xl">
-		Personalized performance bodywork designed to improve mobility, reduce tension, and support better movement on and off the course. Every session is tailored to your swing, your body, and your goals so you can move better, feel better, and play your best.
+		Personalized performance bodywork designed to improve mobility, reduce tension, and support better movement on and off the course. Every session is tailored to your swing, your body, and your goals so you can move better, feel better, and play your best. Studio sessions in Midtown KC; mobile bodywork available in Westport, Country Club Plaza, Brookside, Waldo, and the greater metro.
 	</p>
 </section>
 
@@ -244,7 +244,8 @@
 			Service Areas
 		</h2>
 		<p class="text-center mt-4 text-lg opacity-90">
-			Proudly serving the greater Kansas City metro area
+			Proudly serving Midtown KC, Westport, Country Club Plaza, Brookside, Waldo, and the greater Kansas
+			City metro
 		</p>
 	</div>
 
@@ -266,8 +267,14 @@
 				<div class="text-center mb-8">
 					<span class="icon icon-xl icon-custom icon-map-pin"></span>
 					<p class="mt-4 text-lg opacity-90">
-						Mobile massage services available throughout the Kansas City metro. Travel fees may apply
-						outside the immediate metro area.
+						Mobile massage services available throughout the Kansas City metro—including Midtown,
+						Westport, the Plaza, Brookside, and Waldo. Travel fees may apply outside the immediate
+						metro area.
+					</p>
+					<p class="mt-4 text-sm opacity-80">
+						<a href="/faq" class="text-secondary font-semibold hover:underline">View FAQ</a>
+						<span aria-hidden="true"> · </span>
+						<a href="/contact" class="text-secondary font-semibold hover:underline">Contact</a>
 					</p>
 				</div>
 
