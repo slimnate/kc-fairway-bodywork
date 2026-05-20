@@ -16,12 +16,15 @@
 {#if isAdminRoute}
 	{@render children?.()}
 {:else}
+	<a href="#main-content" class="skip-link">Skip to main content</a>
 	<StructuredData />
 	<Navbar siteName={meta.name} {navItems} />
 
 	<div class="bg-base-200 text-primary flex min-h-screen flex-col justify-between px-12">
 		<div class="parallax-bg flex grow flex-col text-center">
-			{@render children?.()}
+			<main id="main-content" class="flex grow flex-col">
+				{@render children?.()}
+			</main>
 		</div>
 
 		<Footer

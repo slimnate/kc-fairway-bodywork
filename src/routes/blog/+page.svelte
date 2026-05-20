@@ -107,7 +107,7 @@
 <section class="bg-blur px-6 py-12 pt-24 text-center">
 	<div class="mx-auto max-w-4xl">
 		<h1 class="text-secondary mb-6 text-4xl font-bold uppercase md:text-5xl">Blog</h1>
-		<p class="text-base-content/70 mx-auto max-w-2xl text-lg">
+		<p class="text-base-content/85 mx-auto max-w-2xl text-lg">
 			Latest articles and insights from KC Fairway Bodywork
 		</p>
 	</div>
@@ -233,7 +233,7 @@
 								{post.title}
 							</h2>
 							{#if post.excerpt}
-								<p class="text-base-content/70 line-clamp-3 text-sm">{post.excerpt}</p>
+								<p class="text-base-content/85 line-clamp-3 text-sm">{post.excerpt}</p>
 							{/if}
 							<div class="card-actions mt-4 flex items-center justify-between">
 								<div class="flex flex-wrap gap-1">

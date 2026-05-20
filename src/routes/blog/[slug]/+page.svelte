@@ -42,22 +42,7 @@
 	ogImage={data.post.featuredImageUrl ?? ogImageUrl}
 />
 
-{#if !data.post}
-	<section class="bg-blur px-6 py-12">
-		<div class="card bg-base-100/70 mx-auto max-w-2xl border-2 shadow-xl">
-			<div class="card-body py-12 text-center">
-				<h2
-					class="text-primary text-shadow-primary-content mb-4 text-2xl font-bold uppercase text-shadow-md"
-				>
-					Post Not Found
-				</h2>
-				<p class="text-base-content/80 mb-4">The blog post you're looking for doesn't exist.</p>
-				<a href="/blog" class="btn btn-primary">Back to Blog</a>
-			</div>
-		</div>
-	</section>
-{:else}
-	<!-- Hero Section -->
+<!-- Hero Section -->
 	<section class="px-6 pt-32">
 		<div class="bg-base-300/50 mx-auto max-w-6xl rounded-md border-1 px-8">
 			<!-- Featured Image -->
@@ -77,14 +62,12 @@
 
 			<!-- Post Header -->
 			<div class="mb-8 space-y-4">
-				<h1
-					class="text-primary text-shadow-primary-content text-4xl font-bold uppercase text-shadow-md md:text-5xl"
-				>
+				<h1 class="text-secondary text-4xl font-bold uppercase md:text-5xl">
 					{data.post.title}
 				</h1>
 
 				{#if data.post.excerpt}
-					<p class="text-base-content/70 text-xl">{data.post.excerpt}</p>
+					<p class="text-base-content/85 text-xl">{data.post.excerpt}</p>
 				{/if}
 
 				<!-- Meta Information -->
@@ -217,7 +200,6 @@
 			</div>
 		</section>
 	{/if}
-{/if}
 
 <style>
 	:global(.prose img) {

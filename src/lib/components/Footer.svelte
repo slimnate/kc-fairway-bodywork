@@ -117,7 +117,7 @@
 		<div class="grid-1 grid gap-8 md:grid-cols-3">
 			<!-- Footer links -->
 			<div class="border-neutral flex flex-col md:col-span-2 md:border-r md:text-center">
-				<h6 class="text-secondary mb-4 flex justify-center font-semibold uppercase">Links</h6>
+				<p class="text-secondary mb-4 flex justify-center font-semibold uppercase">Links</p>
 				<div class="grid-1 grid gap-4 sm:grid-cols-2">
 					{#each footerLinks as { href, text }}
 						<a {href} class="drop-shadow-secondary hover:scale-[1.05] hover:drop-shadow-lg"
@@ -129,9 +129,9 @@
 
 			<!-- Contact information -->
 			<div>
-				<h6 class="text-secondary mb-4 flex justify-center font-semibold uppercase md:justify-start">
+				<p class="text-secondary mb-4 flex justify-center font-semibold uppercase md:justify-start">
 					Contact
-				</h6>
+				</p>
 				{#if address}
 					<p class="mb-4 flex items-center justify-center md:justify-start">
 						<span class="text-secondary mr-4"><IconHouse /></span>

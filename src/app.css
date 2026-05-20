@@ -21,10 +21,10 @@
 	--color-base-100: oklch(0.37 0.057 149);
 	--color-base-200: oklch(0.29 0.047 160);
 	--color-base-300: oklch(0.29 0.047 160);
-	--color-base-content: oklch(0.63 0.097 91);
+	--color-base-content: oklch(0.74 0.097 91);
 	--color-primary: oklch(1.00 0.000 90);
 	--color-primary-content: oklch(0.63 0.097 91);
-	--color-secondary: oklch(0.63 0.097 91);
+	--color-secondary: oklch(0.76 0.097 91);
 	--color-secondary-content: oklch(0.29 0.047 160);
 	--color-accent: #553876;
 	--color-accent-content: oklch(0.29 0.047 160);
@@ -143,9 +143,42 @@ body {
 }
 
 .icon-custom {
-	color: oklch(0.63 0.097 91);
+	color: oklch(0.74 0.097 91);
 }
 
 .border-custom {
-	border-color: oklch(0.63 0.097 91);
+	border-color: oklch(0.74 0.097 91);
+}
+
+/* Skip link (visible on keyboard focus) */
+.skip-link {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.skip-link:focus {
+	position: fixed;
+	top: 1rem;
+	left: 1rem;
+	z-index: 100;
+	width: auto;
+	height: auto;
+	padding: 0.75rem 1rem;
+	margin: 0;
+	overflow: visible;
+	clip: auto;
+	white-space: normal;
+	border-radius: var(--radius-box);
+	background-color: var(--color-primary);
+	color: var(--color-base-200);
+	font-weight: 600;
+	text-decoration: none;
+	box-shadow: 0 4px 12px rgb(0 0 0 / 0.35);
 }
