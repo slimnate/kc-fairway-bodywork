@@ -11,6 +11,11 @@
  * @property {string} address - The physical address of the business.
  * @property {string} phone - The phone number of the business.
  * @property {string} email - The email address for contact.
+ * @property {string} siteUrl - Canonical site origin (no trailing slash).
+ * @property {string} gbp_url - Google Maps / Business Profile link.
+ * @property {string} ogImage - Path to Open Graph preview image (under static/).
+ * @property {string[]} openingHoursDisplay - Human-readable hours per day.
+ * @property {string[]} openingHours - Schema.org openingHours strings.
  * @property {string|null} fb_url - The Facebook page URL (set to `null` if not available).
  * @property {string|null} ig_url - The Instagram profile URL (set to `null` if not available).
  * @property {string|null} tw_url - The Twitter profile URL (set to `null` if not available).
@@ -33,6 +38,28 @@ const metadata = {
 	address: '406 W 34th St, Suite 511, Kansas City, MO 64111',
 	phone: '913-280-6028',
 	email: 'anthony@kcfairway.com',
+
+	siteUrl: 'https://kcfairway.com',
+	gbp_url: 'https://maps.app.goo.gl/mJfcy9fLrpFssiYRA',
+	ogImage: '/img/og-preview.jpg',
+
+	openingHoursDisplay: [
+		'Monday: 10:00 AM – 7:30 PM',
+		'Tuesday: 10:00 AM – 7:30 PM',
+		'Wednesday: 10:00 AM – 7:30 PM',
+		'Thursday: 10:00 AM – 7:30 PM',
+		'Friday: 10:00 AM – 7:00 PM',
+		'Saturday: 10:00 AM – 4:00 PM',
+		'Sunday: Closed'
+	],
+	openingHours: [
+		'Mo 10:00-19:30',
+		'Tu 10:00-19:30',
+		'We 10:00-19:30',
+		'Th 10:00-19:30',
+		'Fr 10:00-19:00',
+		'Sa 10:00-16:00'
+	],
 
 	// The following URLs are placeholders and should be replaced with actual URLs
 	// for your business's social media profiles.
@@ -58,5 +85,8 @@ const metadata = {
 		// TODO: Add keywords
 	]
 };
+
+/** @type {string} Full URL for Open Graph / Twitter Card image */
+export const ogImageUrl = `${metadata.siteUrl}${metadata.ogImage}`;
 
 export default metadata;

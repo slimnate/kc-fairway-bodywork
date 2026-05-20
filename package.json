@@ -4,7 +4,8 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "concurrently 'npx convex dev' 'vite dev'",
+		"dev": "node scripts/dev.mjs",
+		"dev:no-admin": "node scripts/dev.mjs --no-admin",
 		"build": "npx convex codegen && vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
