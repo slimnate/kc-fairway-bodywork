@@ -1,6 +1,8 @@
 <script lang="ts">
 	import meta, { getPageDescription } from '$lib/data/meta';
 	import SeoHead from '$lib/components/SeoHead.svelte';
+	import { staticImages } from '$lib/data/images';
+	import SnellyPortrait from '$lib/components/SnellyPortrait.svelte';
 
 	let formData = {
 		name: '',
@@ -49,14 +51,18 @@
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
-		<img src="/img/logo.webp" alt="KC Fairway Bodywork Logo" class="max-h-128" />
-	</div>
-	<div class="mx-auto max-w-4xl text-balance md:py-6">
 		<img
-			src="/img/snelly.jpg"
-			alt="Snelly the Massage Snail"
-			class="mt-6 max-h-50 rounded-full opacity-80 md:max-h-64"
+			src={staticImages.logo.src}
+			width={staticImages.logo.width}
+			height={staticImages.logo.height}
+			loading="lazy"
+			decoding="async"
+			alt="KC Fairway Bodywork Logo"
+			class="max-h-128 h-auto w-full"
 		/>
+	</div>
+	<div class="mx-auto w-full max-w-4xl px-4 text-balance md:py-6">
+		<SnellyPortrait class="mt-6" />
 	</div>
 	<div class="mx-auto max-w-3xl py-6 text-balance text-center px-4 md:text-lg">
 		<h1 class="text-primary text-4xl font-bold uppercase mb-6 md:text-5xl">Join Our Mailing List</h1>

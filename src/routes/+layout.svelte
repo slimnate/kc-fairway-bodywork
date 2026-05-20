@@ -1,25 +1,12 @@
 <script lang="ts">
 	import '../app.css';
-	import { browser } from '$app/environment';
 	import { page } from '$app/state';
-
-	import { configureClientAuth } from 'workos-convex-sveltekit';
-	import { PUBLIC_ADMIN_ENABLED, PUBLIC_CONVEX_URL } from '$env/static/public';
-	import { setupConvex, useConvexClient } from 'convex-svelte';
 
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import StructuredData from '$lib/components/StructuredData.svelte';
 	import { navItems } from '$lib/data/nav.js';
 	import meta from '$lib/data/meta.js';
-
-	const adminEnabled = PUBLIC_ADMIN_ENABLED !== 'false';
-
-	if (adminEnabled) {
-		configureClientAuth(setupConvex, useConvexClient, browser, PUBLIC_CONVEX_URL as string);
-	} else if (browser) {
-		setupConvex(PUBLIC_CONVEX_URL as string);
-	}
 
 	let { children } = $props();
 
@@ -58,7 +45,13 @@
 
 <style>
 	.parallax-bg {
-		background-attachment: fixed;
 		background-size: cover;
+	}
+
+	/* fixed attachment hurts mobile scroll/LCP; desktop only */
+	@media (min-width: 768px) {
+		.parallax-bg {
+			background-attachment: fixed;
+		}
 	}
 </style>

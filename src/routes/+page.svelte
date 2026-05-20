@@ -2,6 +2,8 @@
 	import { offerings } from '$lib/data/services.js';
 	import meta, { getPageDescription } from '$lib/data/meta';
 	import SeoHead from '$lib/components/SeoHead.svelte';
+	import { staticImages } from '$lib/data/images';
+	import SnellyPortrait from '$lib/components/SnellyPortrait.svelte';
 
 	/**
 	 * @param {number|string} price
@@ -19,6 +21,10 @@
 	keywords={meta.keywords.join(', ')}
 />
 
+<svelte:head>
+	<link rel="preload" as="image" href={staticImages.logo.src} fetchpriority="high" />
+</svelte:head>
+
 <div class="md:hidden flex justify-center px-8 py-4">
 <a href="https://www.massagebook.com/therapists/kc-fairway-bodywork/services?src=external"
 	target="_blank"
@@ -31,14 +37,19 @@
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h1 class="sr-only">{meta.name}</h1>
-		<img src="/img/logo.webp" alt="" aria-hidden="true" />
-	</div>
-	<div class="mx-auto max-w-4xl text-balance mt-[-50px]">
 		<img
-			src="/img/snelly.jpg"
-			alt="Snelly the Massage Snail"
-			class="mt-6 max-h-50 rounded-full opacity-80 md:max-h-64"
+			src={staticImages.logo.src}
+			width={staticImages.logo.width}
+			height={staticImages.logo.height}
+			fetchpriority="high"
+			decoding="async"
+			class="h-auto w-full max-w-4xl"
+			alt=""
+			aria-hidden="true"
 		/>
+	</div>
+	<div class="mx-auto mt-[-50px] w-full max-w-4xl px-4 text-balance">
+		<SnellyPortrait class="mt-6" />
 	</div>
 	<div class="mx-auto max-w-2xl py-6 text-balance md:text-lg">
 		<p class="pb-4">

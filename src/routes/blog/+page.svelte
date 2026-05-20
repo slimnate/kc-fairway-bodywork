@@ -106,11 +106,7 @@
 <!-- Hero Section -->
 <section class="bg-blur px-6 py-12 pt-24 text-center">
 	<div class="mx-auto max-w-4xl">
-		<h1
-			class="text-primary text-shadow-primary-content mb-4 text-4xl font-bold uppercase text-shadow-md md:text-5xl"
-		>
-			Blog
-		</h1>
+		<h1 class="text-secondary mb-6 text-4xl font-bold uppercase md:text-5xl">Blog</h1>
 		<p class="text-base-content/70 mx-auto max-w-2xl text-lg">
 			Latest articles and insights from KC Fairway Bodywork
 		</p>
@@ -224,6 +220,10 @@
 								<img
 									src={post.featuredImageUrl}
 									alt={post.title}
+									width="1200"
+									height="630"
+									loading="lazy"
+									decoding="async"
 									class="h-full w-full object-cover transition-transform group-hover:scale-105"
 								/>
 							</figure>

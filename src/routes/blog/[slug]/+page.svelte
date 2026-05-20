@@ -25,8 +25,6 @@
 	);
 	const relatedPostsLoading = $derived(relatedPostsQuery?.isLoading);
 
-	$inspect(relatedPosts);
-
 	function formatDate(timestamp: number | undefined) {
 		if (!timestamp) return '';
 		return new Date(timestamp).toLocaleDateString('en-US', {
@@ -68,6 +66,10 @@
 					<img
 						src={data.coverImageUrl}
 						alt={data.post.title}
+						width="1200"
+						height="630"
+						fetchpriority="high"
+						decoding="async"
 						class="h-auto max-h-[400px] w-full max-w-[1200px] object-contain"
 					/>
 				</div>
@@ -93,6 +95,10 @@
 								<img
 									src={data.post.author.profilePictureUrl}
 									alt="{data.post.author.firstName} {data.post.author.lastName}"
+									width="40"
+									height="40"
+									loading="lazy"
+									decoding="async"
 									class="h-10 w-10 rounded-full"
 								/>
 							{:else}
