@@ -1,5 +1,4 @@
 import type { Handle, HandleServerError } from '@sveltejs/kit';
-import metadata from '$lib/data/meta.js';
 import { sequence } from '@sveltejs/kit/hooks';
 import { isAdminEnabled } from '$lib/server/admin-enabled.js';
 
@@ -29,26 +28,6 @@ if (adminEnabled) {
 	);
 }
 
-const replacePlaceholders = (html: string, replacements: Record<string, string>): string => {
-	for (const [placeholder, value] of Object.entries(replacements)) {
-		html = html.replace(new RegExp(placeholder, 'g'), value);
-	}
-	return html;
-};
-
-const handleStringReplacement: Handle = ({ event, resolve }) => {
-	return resolve(event, {
-		transformPageChunk: ({ html }) => {
-			// Replace placeholders in HTML
-			return replacePlaceholders(html, {
-				'%meta.title%': metadata.title,
-				'%meta.description%': metadata.description,
-				'%meta.keywords%': metadata.keywords.join(', ')
-			});
-		}
-	});
-};
-
 const blockAdminRoutes: Handle = async ({ event, resolve }) => {
 	if (
 		!adminEnabled &&
@@ -60,12 +39,11 @@ const blockAdminRoutes: Handle = async ({ event, resolve }) => {
 };
 
 export const handle: Handle = adminEnabled
-	? sequence(authKitHandle(), handleStringReplacement)
-	: sequence(blockAdminRoutes, handleStringReplacement);
+	? sequence(authKitHandle())
+	: sequence(blockAdminRoutes);
 
 // Handle errors that occur during server-side rendering or in load functions
 export const handleError: HandleServerError = ({ error, event, status, message }) => {
-	// Log the error for debugging
 	console.error('Server error:', {
 		error,
 		status,
@@ -75,7 +53,7 @@ export const handleError: HandleServerError = ({ error, event, status, message }
 	});
 
 	return {
-		message: (error as any)?.body?.message || message || 'An error occurred',
-		status: ((error as any)?.status as number) || status || 500
+		message: (error as { body?: { message?: string } })?.body?.message || message || 'An error occurred',
+		status: ((error as { status?: number })?.status as number) || status || 500
 	};
 };

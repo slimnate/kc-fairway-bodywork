@@ -10,6 +10,7 @@
 	import IconYoutube from './icons/IconYoutube.svelte';
 	import IconLinkedIn from './icons/IconLinkedIn.svelte';
 	import IconTikTok from './icons/IconTikTok.svelte';
+	import IconGoogle from './icons/IconGoogle.svelte';
 
 	const {
 		footerLinks = navItems,
@@ -22,6 +23,7 @@
 		yt_url = null,
 		li_url = null,
 		tiktok_url = null,
+		gbp_url = null,
 		cp_url = null,
 		cp_holder = null,
 		cp_year = null
@@ -41,32 +43,68 @@
 			</div>
 			<div class="text-secondary flex justify-center">
 				{#if fb_url}
-					<a href={fb_url} class="mr-6 hover:scale-[1.05]" target="_blank" rel="noreferrer">
+					<a
+						href={fb_url}
+						class="mr-6 hover:scale-[1.05]"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="Facebook"
+					>
 						<IconFacebook />
 					</a>
 				{/if}
 				{#if ig_url}
-					<a href={ig_url} class="mr-6 hover:scale-[1.05]" target="_blank" rel="noreferrer">
+					<a
+						href={ig_url}
+						class="mr-6 hover:scale-[1.05]"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="Instagram"
+					>
 						<IconInstagram />
 					</a>
 				{/if}
 				{#if tw_url}
-					<a href={tw_url} class="mr-6 hover:scale-[1.05]" target="_blank" rel="noreferrer">
+					<a
+						href={tw_url}
+						class="mr-6 hover:scale-[1.05]"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="Twitter"
+					>
 						<IconTwitter />
 					</a>
 				{/if}
 				{#if yt_url}
-					<a href={yt_url} class="mr-6 hover:scale-[1.05]" target="_blank" rel="noreferrer">
+					<a
+						href={yt_url}
+						class="mr-6 hover:scale-[1.05]"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="YouTube"
+					>
 						<IconYoutube />
 					</a>
 				{/if}
 				{#if li_url}
-					<a href={li_url} class="mr-6 hover:scale-[1.05]" target="_blank" rel="noreferrer">
+					<a
+						href={li_url}
+						class="mr-6 hover:scale-[1.05]"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="LinkedIn"
+					>
 						<IconLinkedIn />
 					</a>
 				{/if}
 				{#if tiktok_url}
-					<a href={tiktok_url} class="mr-6 hover:scale-[1.05]" target="_blank" rel="noreferrer">
+					<a
+						href={tiktok_url}
+						class="mr-6 hover:scale-[1.05]"
+						target="_blank"
+						rel="noreferrer"
+						aria-label="TikTok"
+					>
 						<IconTikTok />
 					</a>
 				{/if}
@@ -110,6 +148,19 @@
 					<p class="mb-4 flex items-center justify-center md:justify-start">
 						<span class="text-secondary mr-4"> <IconPhone /> </span>
 						{phone}
+					</p>
+				{/if}
+				{#if gbp_url}
+					<p class="mb-4 flex items-center justify-center md:justify-start">
+						<span class="text-secondary mr-4"><IconGoogle /></span>
+						<a
+							href={gbp_url}
+							class="text-secondary font-semibold hover:underline"
+							target="_blank"
+							rel="noreferrer"
+						>
+							Find us on Google
+						</a>
 					</p>
 				{/if}
 			</div>

@@ -1,5 +1,6 @@
 <script>
 	import meta from '$lib/data/meta';
+	import SeoHead from '$lib/components/SeoHead.svelte';
 	import {
 		offerings,
 		modalities,
@@ -19,12 +20,7 @@
 </script>
 
 
-<svelte:head>
-	<title>Services - {meta.title}</title>
-	<meta name="description" content="{meta.description}" />
-	<meta name="keywords" content={meta.keywords.join(', ')} />
-	<meta name="robots" content="index, follow" />
-</svelte:head>
+<SeoHead title="Services - {meta.title}" description={meta.description} />
 
 
 <section class="bg-base-200 px-4 py-12 pt-24">

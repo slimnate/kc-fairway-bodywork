@@ -3,7 +3,8 @@
 	import { useQuery } from 'convex-svelte';
 	import { api } from '../../../convex/_generated/api';
 	import type { PageData } from './$types';
-	import meta from '$lib/data/meta';
+	import meta, { ogImageUrl } from '$lib/data/meta';
+	import SeoHead from '$lib/components/SeoHead.svelte';
 
 	const slug = $derived($page.params.slug);
 
@@ -36,12 +37,12 @@
 	}
 </script>
 
-<svelte:head>
-	<title>{data.post.title} - {meta.title}</title>
-	<meta name="description" content="{data.post.excerpt}" />
-	<meta name="keywords" content={data.post.tags.join(', ')} />
-	<meta name="robots" content="index, follow" />
-</svelte:head>
+<SeoHead
+	title="{data.post.title} - {meta.title}"
+	description={data.post.excerpt ?? meta.description}
+	keywords={data.post.tags.join(', ')}
+	ogImage={data.post.featuredImageUrl ?? ogImageUrl}
+/>
 
 {#if !data.post}
 	<section class="bg-blur px-6 py-12">

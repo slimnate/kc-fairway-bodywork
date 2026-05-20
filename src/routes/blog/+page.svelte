@@ -3,7 +3,8 @@
 	import { api } from '../../convex/_generated/api';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
-    import meta from '$lib/data/meta';
+	import meta from '$lib/data/meta';
+	import SeoHead from '$lib/components/SeoHead.svelte';
 
 	// Read from URL query parameters (automatically updates when URL changes)
 	const selectedTag = $derived($page.url.searchParams.get('tag') || null);
@@ -100,12 +101,7 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Blog - {meta.title}</title>
-	<meta name="description" content="{meta.description}" />
-	<meta name="keywords" content={meta.keywords.join(', ')} />
-	<meta name="robots" content="index, follow" />
-</svelte:head>
+<SeoHead title="Blog - {meta.title}" description={meta.description} />
 
 <!-- Hero Section -->
 <section class="bg-blur px-6 py-12 pt-24 text-center">
@@ -116,7 +112,7 @@
 			Blog
 		</h1>
 		<p class="text-base-content/70 mx-auto max-w-2xl text-lg">
-			Latest articles and insights from Spotlite Studios
+			Latest articles and insights from KC Fairway Bodywork
 		</p>
 	</div>
 </section>

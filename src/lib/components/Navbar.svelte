@@ -105,7 +105,7 @@
 					<a href="/" class="home-icon-link">
 						<img
 							src="/img/logo_256.webp"
-							alt="Sincerely Selfcare Home"
+							alt="KC Fairway Bodywork home"
 							class="h-16 hover:scale-110 transition-transform duration-200"
 						/>
 					</a>

@@ -1,14 +1,10 @@
 <script>
 	import { aboutData } from '$lib/data/about.js';
-    import meta from '$lib/data/meta';
+	import meta from '$lib/data/meta';
+	import SeoHead from '$lib/components/SeoHead.svelte';
 </script>
 
-<svelte:head>
-	<title>About - {meta.title}</title>
-	<meta name="description" content="{meta.description}" />
-	<meta name="keywords" content={meta.keywords.join(', ')} />
-	<meta name="robots" content="index, follow" />
-</svelte:head>
+<SeoHead title="About - {meta.title}" description={meta.description} />
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
 	<div class="mx-auto max-w-4xl text-balance md:py-6">

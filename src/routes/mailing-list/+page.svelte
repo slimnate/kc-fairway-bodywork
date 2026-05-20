@@ -1,4 +1,9 @@
 <script lang="ts">
+	import SeoHead from '$lib/components/SeoHead.svelte';
+
+	const mailingDescription =
+		'Stay updated with wellness tips, massage therapy insights, and exclusive offers from KC Fairway Bodywork';
+
 	let formData = {
 		name: '',
 		email: '',
@@ -39,13 +44,7 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Join Our Mailing List - KC Fairway Bodywork</title>
-	<meta
-		name="description"
-		content="Stay updated with wellness tips, massage therapy insights, and exclusive offers from KC Fairway Bodywork"
-	/>
-</svelte:head>
+<SeoHead title="Join Our Mailing List - KC Fairway Bodywork" description={mailingDescription} />
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
@@ -61,7 +60,7 @@
 	<div class="mx-auto max-w-3xl py-6 text-balance text-center px-4 md:text-lg">
 		<h1 class="text-primary text-4xl font-bold uppercase mb-6 md:text-5xl">Join Our Mailing List</h1>
 		<p class="mb-8">
-			Stay connected with Sincerely, Selfcare! Receive wellness tips, massage therapy insights,
+			Stay connected with KC Fairway Bodywork! Receive wellness tips, massage therapy insights,
 			self-care advice, and exclusive offers delivered straight to your inbox.
 		</p>
 	</div>
@@ -180,7 +179,7 @@
 							<!-- Privacy Notice -->
 							<div class="text-sm opacity-70 text-center">
 								<p>
-									By subscribing, you agree to receive emails from Sincerely, Selfcare. You can
+									By subscribing, you agree to receive emails from KC Fairway Bodywork. You can
 									unsubscribe at any time. We respect your privacy and will never share your
 									information.
 								</p>

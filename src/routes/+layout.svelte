@@ -9,6 +9,7 @@
 
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import StructuredData from '$lib/components/StructuredData.svelte';
 	import { navItems } from '$lib/data/nav.js';
 	import meta from '$lib/data/meta.js';
 
@@ -28,6 +29,7 @@
 {#if isAdminRoute}
 	{@render children?.()}
 {:else}
+	<StructuredData />
 	<Navbar siteName={meta.name} {navItems} />
 
 	<div class="bg-base-200 text-primary flex min-h-screen flex-col justify-between px-12">
@@ -46,6 +48,7 @@
 			yt_url={meta.yt_url}
 			li_url={meta.li_url}
 			tiktok_url={meta.tiktok_url}
+			gbp_url={meta.gbp_url}
 			cp_url={meta.cp_url}
 			cp_holder={meta.cp_holder}
 			cp_year={meta.cp_year}

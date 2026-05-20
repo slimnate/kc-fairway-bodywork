@@ -1,6 +1,7 @@
 <script>
 	import { offerings } from '$lib/data/services.js';
-    import meta from '$lib/data/meta';
+	import meta from '$lib/data/meta';
+	import SeoHead from '$lib/components/SeoHead.svelte';
 
 	/**
 	 * @param {number|string} price
@@ -12,12 +13,7 @@
 	};
 </script>
 
-<svelte:head>
-	<title>{meta.title}</title>
-	<meta name="description" content="{meta.description}" />
-	<meta name="keywords" content={meta.keywords.join(', ')} />
-	<meta name="robots" content="index, follow" />
-</svelte:head>
+<SeoHead title={meta.title} description={meta.description} />
 
 <div class="md:hidden flex justify-center px-8 py-4">
 <a href="https://www.massagebook.com/therapists/kc-fairway-bodywork/services?src=external"
@@ -30,6 +26,9 @@
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
+		<h1 class="text-secondary mb-6 text-3xl font-bold uppercase md:text-4xl">
+			{meta.name}
+		</h1>
 		<img src="/img/logo.webp" alt="KC Fairway Bodywork Logo" />
 	</div>
 	<div class="mx-auto max-w-4xl text-balance mt-[-50px]">
