@@ -3,6 +3,7 @@
 	import SeoHead from '$lib/components/SeoHead.svelte';
 	import {
 		offerings,
+		mobileMassageOffering,
 		modalities,
 		serviceAreas,
 		mobileSetupSteps,
@@ -126,15 +127,6 @@
 									</li>
 								{/each}
 							{/if}
-							{#if offering.id == 'mobile-massage'}
-								<p class="text-sm opacity-70">Limited time only. Only $10 more for mobile visit.</p>
-								{#each offering.packages as pkg}
-									<li class="pb-1 flex items-center gap-2">
-										<span class="icon icon-xs icon-custom icon-clock"></span>
-										<span class="font-medium">{pkg.name}</span> – <span class="font-bold">{formatPrice(pkg.price)}</span>
-									</li>
-								{/each}
-							{/if}
 						</ul>
 					{/if}
 					</div>
@@ -177,14 +169,43 @@
 
 <div class="bg-secondary mx-auto h-[2px] w-[80vw]"></div>
 
-<!-- How It Works -->
+<!-- Mobile Massage Therapy -->
 <section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h2
 			class="text-secondary text-center text-3xl font-bold uppercase md:text-4xl"
 		>
-			Mobile Massage Therapy: How It Works
+			Mobile Massage Therapy
 		</h2>
+	</div>
+
+	<div class="card bg-base-100 shadow-lg max-w-2xl w-full">
+		<div class="card-body">
+			<div class="flex items-center gap-3 pb-4">
+				<span class="icon icon-md icon-custom {mobileMassageOffering.icon}"></span>
+				<h3 class="card-title text-secondary">{mobileMassageOffering.serviceName}</h3>
+			</div>
+			<p class="opacity-80 text-center">{mobileMassageOffering.description}</p>
+			{#if mobileMassageOffering.packages && mobileMassageOffering.packages.length}
+				<ul class="mt-4 mx-auto flex gap-2 flex-col text-center text-base justify-center">
+					<p class="text-sm opacity-70">Limited time only. Only $10 more for mobile visit.</p>
+					{#each mobileMassageOffering.packages as pkg}
+						<li class="pb-1 flex items-center justify-center gap-2">
+							<span class="icon icon-xs icon-custom icon-clock"></span>
+							<span class="font-medium">{pkg.name}</span> – <span class="font-bold">{formatPrice(pkg.price)}</span>
+						</li>
+					{/each}
+				</ul>
+			{/if}
+		</div>
+	</div>
+
+	<div class="mx-auto max-w-4xl py-6 text-balance">
+		<h3
+			class="text-secondary text-center text-2xl font-bold uppercase md:text-3xl"
+		>
+			How It Works
+		</h3>
 		<p class="text-center mt-4 text-lg opacity-90">
 			Bringing professional massage therapy to you—simple, seamless, and stress-free
 		</p>

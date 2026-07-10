@@ -71,22 +71,6 @@ export const offerings = [
 		packages: []
 	},
 	{
-		id: 'piriformis-treatment',
-		serviceName: 'Structural Integration',
-		icon: 'icon-building-storefront',
-		description:
-			'Structural Integration is a bodywork method that realigns the body for better posture, easier movement, and less pain. It works with the fascia--the conective tissue around your muscles--to release tension, improve mobility, and rebalance your whole system.',
-		packages: []
-	},
-	{
-		id: 'gift-vouchers',
-		serviceName: 'Mobility & Assisted Stretch Session',
-		icon: 'icon-link',
-		description:
-			'Improve flexibility, unlock your rotation, and reduce tension with a focused stretch session designed for golfers. This service targets hips, thoracic spine, shoulders, and core rotation to support a smoother, more powerful swing.',
-		packages: []
-	},
-	{
 		id: 'packages',
 		serviceName: 'Packages (self-care investment)',
 		icon: 'icon-currency-dollar',
@@ -111,19 +95,21 @@ export const offerings = [
 				href: 'https://www.massagebook.com/business/36453921/booking/?src=external&service_id=1923783&ncf_source=friendly_url'
 			}
 		]
-	},
-	{
-		id: 'mobile-massage',
-		serviceName: 'Mobile Massage (In-Home)',
-		icon: 'icon-home-modern',
-		description:
-			'Enjoy professional therapeutic bodywork in the comfort of your own home. I bring everything needed for a session that fits seamlessly into your routine.',
-		packages: [
-			{ name: '60 minutes', price: 185, description: null },
-			{ name: '90 minutes', price: 235, description: null }
-		]
-	},
+	}
 ];
+
+/** @type {Service} */
+export const mobileMassageOffering = {
+	id: 'mobile-massage',
+	serviceName: 'Mobile Massage (In-Home)',
+	icon: 'icon-home-modern',
+	description:
+		'Enjoy professional therapeutic bodywork in the comfort of your own home. I bring everything needed for a session that fits seamlessly into your routine.',
+	packages: [
+		{ name: '60 minutes', price: 185, description: null },
+		{ name: '90 minutes', price: 235, description: null }
+	]
+};
 
 /** @type {Modality[]} */
 export const modalities = [
