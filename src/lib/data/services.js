@@ -99,6 +99,19 @@ export const offerings = [
 	}
 ];
 
+/** @type {{ title: string; subtitle: string; description: string; pricing: string; packagesLink: { text: string; href: string } }} */
+export const fairwayPerformancePlan = {
+	title: 'Fairway performance plan',
+	subtitle: 'Monthly membership',
+	description:
+		'A monthly membership built to keep you on top of your health and performance. Enjoy preferred rates, priority booking, and automatic birthday and holiday perks. Pause anytime — there\u2019s no long-term contract.',
+	pricing: 'Starting at $80/month',
+	packagesLink: {
+		text: 'Discounted packages also available \u2192',
+		href: '/services'
+	}
+};
+
 /** @type {Service[]} */
 export const servicePageOfferings = [
 	offerings[0],

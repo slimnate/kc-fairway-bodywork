@@ -1,5 +1,5 @@
 <script>
-	import { offerings } from '$lib/data/services.js';
+	import { offerings, fairwayPerformancePlan } from '$lib/data/services.js';
 	import meta, { getPageDescription } from '$lib/data/meta';
 	import SeoHead from '$lib/components/SeoHead.svelte';
 	import { staticImages } from '$lib/data/images';
@@ -98,6 +98,31 @@
 	</div>
 	<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl">
 		{#each offerings as offering (offering.id)}
+			{#if offering.id === 'packages'}
+				<div class="card bg-base-100 shadow text-center">
+					<div class="card-body items-center gap-4">
+						<div
+							class="flex size-16 items-center justify-center rounded-full border-2 border-secondary text-secondary"
+						>
+							<span class="icon icon-md icon-custom icon-shield-check"></span>
+						</div>
+						<div class="space-y-1">
+							<h3 class="text-secondary text-xl font-bold">{fairwayPerformancePlan.title}</h3>
+							<p class="text-sm font-bold">{fairwayPerformancePlan.subtitle}</p>
+						</div>
+						<p class="opacity-80 leading-relaxed">
+							{fairwayPerformancePlan.description}
+						</p>
+						<p class="text-base-content font-semibold">{fairwayPerformancePlan.pricing}</p>
+						<a
+							href={fairwayPerformancePlan.packagesLink.href}
+							class="text-secondary text-sm font-medium underline underline-offset-4 transition-opacity hover:opacity-80"
+						>
+							{fairwayPerformancePlan.packagesLink.text}
+						</a>
+					</div>
+				</div>
+			{:else}
 			<div class="card bg-base-100 shadow">
 				<div class="card-body">
 					<div class="flex items-center gap-3 pb-4">
@@ -142,36 +167,11 @@
 									</li>
 								{/each}
 							{/if}
-							{#if offering.id == 'packages'}
-								{#each offering.packages as pkg}
-									<li class="pb-1">
-										{#if pkg.href}
-											<a
-												href={pkg.href}
-												class="flex items-center justify-center gap-2 text-base-content no-underline transition-colors hover:text-primary hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-100 rounded-sm text-lg"
-												target="_blank"
-												rel="noopener noreferrer"
-											>
-												<span class="icon icon-xs icon-custom icon-clock shrink-0"></span>
-												<span class="font-medium">{pkg.name}</span>
-												<span aria-hidden="true">–</span>
-												<span class="font-bold">{formatPrice(pkg.price)}</span>
-											</a>
-										{:else}
-											<div class="flex items-center justify-center gap-2">
-												<span class="icon icon-xs icon-custom icon-clock"></span>
-												<span class="font-medium text-lg">{pkg.name}</span> – <span
-													class="font-bold text-lg">{formatPrice(pkg.price)}</span
-												>
-											</div>
-										{/if}
-									</li>
-								{/each}
-							{/if}
 						</ul>
 					{/if}
 				</div>
 			</div>
+			{/if}
 		{/each}
 	</div>
 </section>
