@@ -1,38 +1,13 @@
 <!doctype html>
 <html lang="en" data-theme="kc-fairway-bodywork">
 	<head>
-		<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLJEJD5KB6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LLJEJD5KB6');
-</script>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.ico" />
-		<meta charset="UTF-8" />
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="robots" content="index, follow" />
 		<meta name="author" content="Spotlite Studios" />
-		<meta name="description" content="%meta.description%" />
-		<meta name="keywords" content="%meta.keywords%" />
 
-		<!-- Open Graph (Facebook, LinkedIn, etc. - https://ogp.me/) -->
-		<!-- <meta property="og:title" content="%meta.title%" />
-		<meta property="og:description" content="%meta.description%" />
-		<meta property="og:image" content="https://spotlitestudios.com/images/og-preview.jpg" />
-		<meta property="og:url" content="https://spotlitestudios.com" />
-		<meta property="og:type" content="website" /> -->
-
-		<!-- Twitter Card -->
-		<!-- <meta name="twitter:title" content="%meta.title%" />
-		<meta name="twitter:description" content="%meta.description%" />
-		<meta name="twitter:image" content="https://spotlitestudios.com/images/twitter-preview.jpg" />
-		<meta name="twitter:card" content="summary_large_image" /> -->
+		<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 
 		<!-- Theme Color for Mobile Browsers -->
 		<meta name="theme-color" content="#133223" />
@@ -42,13 +17,10 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 		<link rel="manifest" href="/site.webmanifest" />
 
-		<!-- Page Title -->
-		<title>%meta.title%</title>
-
-		<!-- Custom fonts go here -->
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
+		<script defer src="/gtag-deferred.js"></script>
 	</body>
 </html>

@@ -5,8 +5,16 @@
  * @property {boolean} [featured] - Optional flag to indicate if the item is featured.
  */
 
+/** @type {NavItem} */
+const bookNowItem = {
+	href: 'https://www.massagebook.com/therapists/kc-fairway-bodywork/services?src=external',
+	text: 'Book Now',
+	featured: true
+};
+
+/** Top navbar — primary pages + booking */
 /** @type {NavItem[]} */
-const navItems = [
+const navbarItems = [
 	{
 		href: '/services',
 		text: 'Services'
@@ -19,11 +27,41 @@ const navItems = [
 		href: '/blog',
 		text: 'Blog'
 	},
-	{
-		href: 'https://www.massagebook.com/therapists/kc-fairway-bodywork/services?src=external',
-		text: 'Book Now',
-		featured: true
-	}
+	bookNowItem
 ];
 
-export { navItems };
+/** Footer links — includes FAQ and Contact */
+/** @type {NavItem[]} */
+const footerNavItems = [
+	{
+		href: '/services',
+		text: 'Services'
+	},
+	{
+		href: '/about',
+		text: 'About'
+	},
+	{
+		href: '/blog',
+		text: 'Blog'
+	},
+	// Uncomment when real reviews are in src/lib/data/testimonials.js (see README).
+	// {
+	// 	href: '/testimonials',
+	// 	text: 'Testimonials'
+	// },
+	{
+		href: '/faq',
+		text: 'FAQ'
+	},
+	{
+		href: '/contact',
+		text: 'Contact'
+	},
+	bookNowItem
+];
+
+/** @deprecated Use navbarItems or footerNavItems */
+const navItems = footerNavItems;
+
+export { navbarItems, footerNavItems, navItems };

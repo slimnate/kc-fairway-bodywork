@@ -7,10 +7,16 @@
  * @typedef {Object} MetaData
  * @property {string} name - The name of the business.
  * @property {string} tagline - A short tagline or slogan for the business.
- * @property {string} description - A brief description of the business.
+ * @property {string} description - Default meta description (homepage and fallback).
+ * @property {Record<string, string>} pageDescriptions - Per-route meta descriptions.
  * @property {string} address - The physical address of the business.
  * @property {string} phone - The phone number of the business.
  * @property {string} email - The email address for contact.
+ * @property {string} siteUrl - Canonical site origin (no trailing slash).
+ * @property {string} gbp_url - Google Maps / Business Profile link.
+ * @property {string} ogImage - Path to Open Graph preview image (under static/).
+ * @property {string[]} openingHoursDisplay - Human-readable hours per day.
+ * @property {string[]} openingHours - Schema.org openingHours strings.
  * @property {string|null} fb_url - The Facebook page URL (set to `null` if not available).
  * @property {string|null} ig_url - The Instagram profile URL (set to `null` if not available).
  * @property {string|null} tw_url - The Twitter profile URL (set to `null` if not available).
@@ -21,7 +27,7 @@
  * @property {string} cp_holder - The copyright holder's name.
  * @property {string} cp_url - The copyright holder's website URL.
  * @property {string} title - The page title for the site.
- * @property {string[]} keywords - An array of keywords for SEO purposes.
+ * @property {string[]} keywords - Homepage SEO keywords (optional meta tag).
  */
 
 /** @type {MetaData} */
@@ -30,14 +36,50 @@ const metadata = {
 	name: 'KC Fairway Bodywork',
 	tagline: 'Unlock Motion - Unlock Game',
 	description: 'Golf-focused performance bodywork for Kansas City golfers.',
+	pageDescriptions: {
+		'/':
+			'Golf-focused performance bodywork for Kansas City golfers.',
+		'/services':
+			'Performance bodywork and sports massage for Kansas City golfers. Studio sessions in Midtown KC; mobile bodywork in Westport, the Plaza, Brookside, Waldo, and the metro.',
+		'/testimonials':
+			'Client reviews of golf-focused bodywork at KC Fairway Bodywork in Midtown Kansas City. Leave a review on Google.',
+		'/about':
+			'Meet Anthony Snell, performance bodywork specialist for golfers in Midtown Kansas City.',
+		'/blog':
+			'Articles on mobility, golf swing improvement, and muscle health from KC Fairway Bodywork.',
+		'/mailing-list':
+			'Stay updated with wellness tips, massage therapy insights, and exclusive offers from KC Fairway Bodywork.',
+		'/contact':
+			'Contact KC Fairway Bodywork in Midtown Kansas City. Call, email, get directions, view hours, or send a message.',
+		'/faq':
+			'Frequently asked questions about golf bodywork, sports massage, structural integration, and booking in Kansas City.',
+	},
 	address: '406 W 34th St, Suite 511, Kansas City, MO 64111',
 	phone: '913-280-6028',
 	email: 'anthony@kcfairway.com',
 
-	// The following URLs are placeholders and should be replaced with actual URLs
-	// for your business's social media profiles.
-	// Set values to null and they will not be rendered in the footer.
-	// For example, if you don't have a Facebook page, set fb_url to null.
+	siteUrl: 'https://kcfairway.com',
+	gbp_url: 'https://maps.app.goo.gl/mJfcy9fLrpFssiYRA',
+	ogImage: '/img/og-preview.jpg',
+
+	openingHoursDisplay: [
+		'Monday: 10:00 AM – 7:30 PM',
+		'Tuesday: 10:00 AM – 7:30 PM',
+		'Wednesday: 10:00 AM – 7:30 PM',
+		'Thursday: 10:00 AM – 7:30 PM',
+		'Friday: 10:00 AM – 7:00 PM',
+		'Saturday: 10:00 AM – 4:00 PM',
+		'Sunday: Closed'
+	],
+	openingHours: [
+		'Mo 10:00-19:30',
+		'Tu 10:00-19:30',
+		'We 10:00-19:30',
+		'Th 10:00-19:30',
+		'Fr 10:00-19:00',
+		'Sa 10:00-16:00'
+	],
+
 	fb_url: 'https://www.facebook.com/profile.php?id=61586290216445',
 	ig_url: 'https://www.instagram.com/kcfairwaybodywork/',
 	tw_url: null,
@@ -45,18 +87,55 @@ const metadata = {
 	li_url: null,
 	tiktok_url: null,
 
-	// Copyright information
 	cp_year: `${new Date().getFullYear()}`,
 	cp_holder: 'Spotlite Studios',
 	cp_url: 'https://spotlitestudios.com/',
 
-	// Page metadata
 	title: 'KC Fairway Bodywork - Sports Massage Therapy',
 
-	// SEO Keywords
 	keywords: [
-		// TODO: Add keywords
+		'golf massage Kansas City',
+		'sports massage KC',
+		'performance bodywork',
+		'structural integration',
+		'golf bodywork',
+		'Midtown Kansas City massage'
 	]
 };
+
+/** @type {string} Full URL for Open Graph / Twitter Card image */
+export const ogImageUrl = `${metadata.siteUrl}${metadata.ogImage}`;
+
+/**
+ * @param {string} pathname
+ * @returns {string}
+ */
+export function getPageDescription(pathname) {
+	const path = pathname.replace(/\/$/, '') || '/';
+	return metadata.pageDescriptions[path] ?? metadata.description;
+}
+
+/**
+ * @param {string} pathname
+ * @returns {string}
+ */
+export function getCanonicalUrl(pathname) {
+	const path = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
+	return path === '/' ? `${metadata.siteUrl}/` : `${metadata.siteUrl}${path}`;
+}
+
+/** @returns {string} */
+export function phoneTel() {
+	const digits = metadata.phone.replace(/\D/g, '');
+	return digits.length === 10 ? `+1${digits}` : `+${digits}`;
+}
+
+/** @returns {string} */
+export function mapsEmbedUrl() {
+	return `https://www.google.com/maps?q=${encodeURIComponent(metadata.address)}&output=embed`;
+}
+
+export const BOOKING_URL =
+	'https://www.massagebook.com/therapists/kc-fairway-bodywork/services?src=external';
 
 export default metadata;

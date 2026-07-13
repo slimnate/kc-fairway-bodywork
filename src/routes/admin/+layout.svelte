@@ -1,8 +1,15 @@
+<svelte:head>
+	<meta name="robots" content="noindex, nofollow" />
+</svelte:head>
+
 <script lang="ts">
 	import { page } from '$app/state';
 	import type { PageData } from './$types';
 	import Toast from '$lib/components/Toast.svelte';
 	import meta from '$lib/data/meta';
+	import { configureAdminConvexAuth } from '$lib/convex/client';
+
+	configureAdminConvexAuth();
 
 	const { data, children }: { data: PageData; children: any } = $props();
 

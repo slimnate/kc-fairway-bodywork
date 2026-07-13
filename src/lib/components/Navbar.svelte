@@ -56,9 +56,24 @@
 	/** @type {Props} */
 	let { navItems, siteName } = $props();
 
-	// Calculate grid columns based on whether we're on homepage
+	/** Tailwind needs full class names in source — dynamic `grid-cols-${n}` is not generated. */
+	function gridColsForCount(count: number): string {
+		switch (count) {
+			case 4:
+				return 'md:grid-cols-4';
+			case 5:
+				return 'md:grid-cols-5';
+			case 6:
+				return 'md:grid-cols-6';
+			case 7:
+				return 'md:grid-cols-7';
+			default:
+				return 'md:grid-cols-5';
+		}
+	}
+
 	let gridColsClass = $derived(
-		isHomePage ? `md:grid-cols-${navItems.length}` : `md:grid-cols-${navItems.length + 1}`
+		gridColsForCount(isHomePage ? navItems.length : navItems.length + 1)
 	);
 
 	// Calculate the middle index for inserting the home icon
@@ -105,8 +120,12 @@
 					<a href="/" class="home-icon-link">
 						<img
 							src="/img/logo_256.webp"
-							alt="Sincerely Selfcare Home"
-							class="h-16 hover:scale-110 transition-transform duration-200"
+							width="256"
+							height="128"
+							loading="lazy"
+							decoding="async"
+							alt="KC Fairway Bodywork home"
+							class="h-16 w-auto hover:scale-110 transition-transform duration-200"
 						/>
 					</a>
 				</li>

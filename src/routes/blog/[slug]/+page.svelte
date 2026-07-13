@@ -3,7 +3,8 @@
 	import { useQuery } from 'convex-svelte';
 	import { api } from '../../../convex/_generated/api';
 	import type { PageData } from './$types';
-	import meta from '$lib/data/meta';
+	import meta, { ogImageUrl } from '$lib/data/meta';
+	import SeoHead from '$lib/components/SeoHead.svelte';
 
 	const slug = $derived($page.params.slug);
 
@@ -24,8 +25,6 @@
 	);
 	const relatedPostsLoading = $derived(relatedPostsQuery?.isLoading);
 
-	$inspect(relatedPosts);
-
 	function formatDate(timestamp: number | undefined) {
 		if (!timestamp) return '';
 		return new Date(timestamp).toLocaleDateString('en-US', {
@@ -36,29 +35,14 @@
 	}
 </script>
 
-<svelte:head>
-	<title>{data.post.title} - {meta.title}</title>
-	<meta name="description" content="{data.post.excerpt}" />
-	<meta name="keywords" content={data.post.tags.join(', ')} />
-	<meta name="robots" content="index, follow" />
-</svelte:head>
+<SeoHead
+	title="{data.post.title} - {meta.title}"
+	description={data.post.excerpt ?? meta.description}
+	keywords={data.post.tags.join(', ')}
+	ogImage={data.post.featuredImageUrl ?? ogImageUrl}
+/>
 
-{#if !data.post}
-	<section class="bg-blur px-6 py-12">
-		<div class="card bg-base-100/70 mx-auto max-w-2xl border-2 shadow-xl">
-			<div class="card-body py-12 text-center">
-				<h2
-					class="text-primary text-shadow-primary-content mb-4 text-2xl font-bold uppercase text-shadow-md"
-				>
-					Post Not Found
-				</h2>
-				<p class="text-base-content/80 mb-4">The blog post you're looking for doesn't exist.</p>
-				<a href="/blog" class="btn btn-primary">Back to Blog</a>
-			</div>
-		</div>
-	</section>
-{:else}
-	<!-- Hero Section -->
+<!-- Hero Section -->
 	<section class="px-6 pt-32">
 		<div class="bg-base-300/50 mx-auto max-w-6xl rounded-md border-1 px-8">
 			<!-- Featured Image -->
@@ -67,6 +51,10 @@
 					<img
 						src={data.coverImageUrl}
 						alt={data.post.title}
+						width="1200"
+						height="630"
+						fetchpriority="high"
+						decoding="async"
 						class="h-auto max-h-[400px] w-full max-w-[1200px] object-contain"
 					/>
 				</div>
@@ -74,14 +62,12 @@
 
 			<!-- Post Header -->
 			<div class="mb-8 space-y-4">
-				<h1
-					class="text-primary text-shadow-primary-content text-4xl font-bold uppercase text-shadow-md md:text-5xl"
-				>
+				<h1 class="text-secondary text-4xl font-bold uppercase md:text-5xl">
 					{data.post.title}
 				</h1>
 
 				{#if data.post.excerpt}
-					<p class="text-base-content/70 text-xl">{data.post.excerpt}</p>
+					<p class="text-base-content/85 text-xl">{data.post.excerpt}</p>
 				{/if}
 
 				<!-- Meta Information -->
@@ -92,6 +78,10 @@
 								<img
 									src={data.post.author.profilePictureUrl}
 									alt="{data.post.author.firstName} {data.post.author.lastName}"
+									width="40"
+									height="40"
+									loading="lazy"
+									decoding="async"
 									class="h-10 w-10 rounded-full"
 								/>
 							{:else}
@@ -210,7 +200,6 @@
 			</div>
 		</section>
 	{/if}
-{/if}
 
 <style>
 	:global(.prose img) {

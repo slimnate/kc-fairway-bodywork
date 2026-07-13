@@ -1,6 +1,9 @@
 <script>
-	import { offerings } from '$lib/data/services.js';
-    import meta from '$lib/data/meta';
+	import { offerings, fairwayPerformancePlan } from '$lib/data/services.js';
+	import meta, { getPageDescription } from '$lib/data/meta';
+	import SeoHead from '$lib/components/SeoHead.svelte';
+	import { staticImages } from '$lib/data/images';
+	import SnellyPortrait from '$lib/components/SnellyPortrait.svelte';
 
 	/**
 	 * @param {number|string} price
@@ -12,11 +15,14 @@
 	};
 </script>
 
+<SeoHead
+	title={meta.title}
+	description={getPageDescription('/')}
+	keywords={meta.keywords.join(', ')}
+/>
+
 <svelte:head>
-	<title>{meta.title}</title>
-	<meta name="description" content="{meta.description}" />
-	<meta name="keywords" content={meta.keywords.join(', ')} />
-	<meta name="robots" content="index, follow" />
+	<link rel="preload" as="image" href={staticImages.logo.src} fetchpriority="high" />
 </svelte:head>
 
 <div class="md:hidden flex justify-center px-8 py-4">
@@ -30,14 +36,20 @@
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
-		<img src="/img/logo.webp" alt="KC Fairway Bodywork Logo" />
-	</div>
-	<div class="mx-auto max-w-4xl text-balance mt-[-50px]">
+		<h1 class="sr-only">{meta.name}</h1>
 		<img
-			src="/img/snelly.jpg"
-			alt="Snelly the Massage Snail"
-			class="mt-6 max-h-50 rounded-full opacity-80 md:max-h-64"
+			src={staticImages.logo.src}
+			width={staticImages.logo.width}
+			height={staticImages.logo.height}
+			fetchpriority="high"
+			decoding="async"
+			class="h-auto w-full max-w-4xl"
+			alt=""
+			aria-hidden="true"
 		/>
+	</div>
+	<div class="mx-auto mt-[-50px] w-full max-w-4xl px-4 text-balance">
+		<SnellyPortrait class="mt-6" />
 	</div>
 	<div class="mx-auto max-w-2xl py-6 text-balance md:text-lg">
 		<p class="pb-4">
@@ -86,6 +98,27 @@
 	</div>
 	<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl">
 		{#each offerings as offering (offering.id)}
+			{#if offering.id === 'packages'}
+				<div class="card bg-base-100 shadow">
+					<div class="card-body gap-4">
+						<div class="flex items-center gap-3 pb-4">
+							<span class="icon icon-md icon-custom icon-shield-check"></span>
+							<h3 class="card-title text-secondary">{fairwayPerformancePlan.title}</h3>
+						</div>
+						<p class="text-sm font-bold">{fairwayPerformancePlan.subtitle}</p>
+						<p class="opacity-80 leading-relaxed">
+							{fairwayPerformancePlan.description}
+						</p>
+						<p class="text-secondary font-semibold">{fairwayPerformancePlan.pricing}</p>
+						<a
+							href={fairwayPerformancePlan.packagesLink.href}
+							class="text-secondary text-sm font-medium underline underline-offset-4 transition-opacity hover:opacity-80"
+						>
+							{fairwayPerformancePlan.packagesLink.text}
+						</a>
+					</div>
+				</div>
+			{:else}
 			<div class="card bg-base-100 shadow">
 				<div class="card-body">
 					<div class="flex items-center gap-3 pb-4">
@@ -130,45 +163,11 @@
 									</li>
 								{/each}
 							{/if}
-							{#if offering.id == 'packages'}
-								{#each offering.packages as pkg}
-									<li class="pb-1">
-										{#if pkg.href}
-											<a
-												href={pkg.href}
-												class="flex items-center justify-center gap-2 text-base-content no-underline transition-colors hover:text-primary hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-100 rounded-sm text-lg"
-												target="_blank"
-												rel="noopener noreferrer"
-											>
-												<span class="icon icon-xs icon-custom icon-clock shrink-0"></span>
-												<span class="font-medium">{pkg.name}</span>
-												<span aria-hidden="true">–</span>
-												<span class="font-bold">{formatPrice(pkg.price)}</span>
-											</a>
-										{:else}
-											<div class="flex items-center justify-center gap-2">
-												<span class="icon icon-xs icon-custom icon-clock"></span>
-												<span class="font-medium text-lg">{pkg.name}</span> – <span
-													class="font-bold text-lg">{formatPrice(pkg.price)}</span
-												>
-											</div>
-										{/if}
-									</li>
-								{/each}
-							{/if}
-							{#if offering.id == 'mobile-massage'}
-								<p class="text-sm opacity-70">Limited time only. Only $10 more for mobile visit.</p>
-								{#each offering.packages as pkg}
-									<li class="pb-1 flex items-center gap-2">
-										<span class="icon icon-xs icon-custom icon-clock"></span>
-										<span class="font-medium text-lg">{pkg.name}</span> – <span class="font-bold text-lg">{formatPrice(pkg.price)}</span>
-									</li>
-								{/each}
-							{/if}
 						</ul>
 					{/if}
 				</div>
 			</div>
+			{/if}
 		{/each}
 	</div>
 </section>

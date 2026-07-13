@@ -1,7 +1,10 @@
 <script>
-	import meta from '$lib/data/meta';
+	import meta, { getPageDescription } from '$lib/data/meta';
+	import SeoHead from '$lib/components/SeoHead.svelte';
 	import {
-		offerings,
+		servicePageOfferings,
+		fairwayPerformancePlan,
+		mobileMassageOffering,
 		modalities,
 		serviceAreas,
 		mobileSetupSteps,
@@ -19,12 +22,7 @@
 </script>
 
 
-<svelte:head>
-	<title>Services - {meta.title}</title>
-	<meta name="description" content="{meta.description}" />
-	<meta name="keywords" content={meta.keywords.join(', ')} />
-	<meta name="robots" content="index, follow" />
-</svelte:head>
+<SeoHead title="Services - {meta.title}" description={getPageDescription('/services')} />
 
 
 <section class="bg-base-200 px-4 py-12 pt-24">
@@ -34,7 +32,7 @@
 		Massage Therapy Services
 	</h1>
 	<p class="mx-auto max-w-3xl text-center text-lg md:text-xl">
-		Personalized performance bodywork designed to improve mobility, reduce tension, and support better movement on and off the course. Every session is tailored to your swing, your body, and your goals so you can move better, feel better, and play your best.
+		Personalized performance bodywork designed to improve mobility, reduce tension, and support better movement on and off the course. Every session is tailored to your swing, your body, and your goals so you can move better, feel better, and play your best. Studio sessions in Midtown KC; mobile bodywork available in Westport, Country Club Plaza, Brookside, Waldo, and the greater metro.
 	</p>
 </section>
 
@@ -54,7 +52,36 @@
 		</h2>
 	</div>
 	<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl w-full">
-		{#each offerings as offering (offering.id)}
+		{#each servicePageOfferings as offering (offering.id)}
+			{#if offering.isFairwayPlan}
+				<div class="card bg-base-100 shadow-lg">
+					<div class="card-body gap-4">
+						<div class="flex items-center gap-3 pb-4">
+							<span class="icon icon-md icon-custom icon-shield-check"></span>
+							<h3 class="card-title text-secondary">{fairwayPerformancePlan.title}</h3>
+						</div>
+						<p class="opacity-80 text-center text-sm">{fairwayPerformancePlan.tagline}</p>
+						<p class="opacity-80 text-sm">
+							{fairwayPerformancePlan.introBefore}<span class="font-bold"
+								>{fairwayPerformancePlan.introHighlight}</span
+							>{fairwayPerformancePlan.introAfter}
+						</p>
+						<ul class="mx-auto w-fit space-y-2 text-left text-sm">
+							{#each fairwayPerformancePlan.benefits as benefit}
+								<li class="flex items-start gap-2">
+									<span
+										class="icon icon-xs icon-custom icon-check mt-0.5 shrink-0 text-secondary"
+									></span>
+									<span class="opacity-80">{benefit}</span>
+								</li>
+							{/each}
+						</ul>
+						<div class="border-secondary/30 w-full border-t pt-4 text-center">
+							<p class="text-secondary font-bold">{fairwayPerformancePlan.pricing}</p>
+						</div>
+					</div>
+				</div>
+			{:else}
 			<div class="card bg-base-100 shadow-lg">
 				<div class="card-body">
 					<div class="flex items-center gap-3 pb-4">
@@ -130,20 +157,12 @@
 									</li>
 								{/each}
 							{/if}
-							{#if offering.id == 'mobile-massage'}
-								<p class="text-sm opacity-70">Limited time only. Only $10 more for mobile visit.</p>
-								{#each offering.packages as pkg}
-									<li class="pb-1 flex items-center gap-2">
-										<span class="icon icon-xs icon-custom icon-clock"></span>
-										<span class="font-medium">{pkg.name}</span> – <span class="font-bold">{formatPrice(pkg.price)}</span>
-									</li>
-								{/each}
-							{/if}
 						</ul>
 					{/if}
 					</div>
 				</div>
 			</div>
+			{/if}
 		{/each}
 	</div>
 </section>
@@ -181,14 +200,43 @@
 
 <div class="bg-secondary mx-auto h-[2px] w-[80vw]"></div>
 
-<!-- How It Works -->
+<!-- Mobile Massage Therapy -->
 <section class="bg-base-200 flex flex-col items-center justify-center py-12 px-4">
 	<div class="mx-auto max-w-4xl py-6 text-balance">
 		<h2
 			class="text-secondary text-center text-3xl font-bold uppercase md:text-4xl"
 		>
-			Mobile Massage Therapy: How It Works
+			Mobile Massage Therapy
 		</h2>
+	</div>
+
+	<div class="card bg-base-100 shadow-lg max-w-2xl w-full">
+		<div class="card-body">
+			<div class="flex items-center gap-3 pb-4">
+				<span class="icon icon-md icon-custom {mobileMassageOffering.icon}"></span>
+				<h3 class="card-title text-secondary">{mobileMassageOffering.serviceName}</h3>
+			</div>
+			<p class="opacity-80 text-center">{mobileMassageOffering.description}</p>
+			{#if mobileMassageOffering.packages && mobileMassageOffering.packages.length}
+				<ul class="mt-4 mx-auto flex gap-2 flex-col text-center text-base justify-center">
+					<p class="text-sm opacity-70">Limited time only. Only $10 more for mobile visit.</p>
+					{#each mobileMassageOffering.packages as pkg}
+						<li class="pb-1 flex items-center justify-center gap-2">
+							<span class="icon icon-xs icon-custom icon-clock"></span>
+							<span class="font-medium">{pkg.name}</span> – <span class="font-bold">{formatPrice(pkg.price)}</span>
+						</li>
+					{/each}
+				</ul>
+			{/if}
+		</div>
+	</div>
+
+	<div class="mx-auto max-w-4xl py-6 text-balance">
+		<h3
+			class="text-secondary text-center text-2xl font-bold uppercase md:text-3xl"
+		>
+			How It Works
+		</h3>
 		<p class="text-center mt-4 text-lg opacity-90">
 			Bringing professional massage therapy to you—simple, seamless, and stress-free
 		</p>
@@ -248,7 +296,8 @@
 			Service Areas
 		</h2>
 		<p class="text-center mt-4 text-lg opacity-90">
-			Proudly serving the greater Kansas City metro area
+			Studio sessions near Midtown Kansas City (34th and Broadway). Mobile bodywork throughout
+			Westport, Country Club Plaza, Brookside, Waldo, and the greater Kansas City metro.
 		</p>
 	</div>
 
@@ -270,8 +319,14 @@
 				<div class="text-center mb-8">
 					<span class="icon icon-xl icon-custom icon-map-pin"></span>
 					<p class="mt-4 text-lg opacity-90">
-						Mobile massage services available throughout the Kansas City metro. Travel fees may apply
-						outside the immediate metro area.
+						Mobile massage services available throughout the Kansas City metro—including Midtown,
+						Westport, the Plaza, Brookside, and Waldo. Travel fees may apply outside the immediate
+						metro area.
+					</p>
+					<p class="mt-4 text-sm opacity-80">
+						<a href="/faq" class="text-secondary font-semibold hover:underline">View FAQ</a>
+						<span aria-hidden="true"> · </span>
+						<a href="/contact" class="text-secondary font-semibold hover:underline">Contact</a>
 					</p>
 				</div>
 

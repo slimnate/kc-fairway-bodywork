@@ -5,6 +5,8 @@
  * @property {string} icon - The icon class associated with the service
  * @property {string} description - A brief description of the service
  * @property {Package[]} packages - An array of packages associated with the service
+ * @property {boolean} [isPlaceholder] - When true, renders an empty card placeholder on the services page
+ * @property {boolean} [isFairwayPlan] - When true, renders the Fairway performance plan card on the services page
  *
  * @typedef {Object} Package
  * @property {string} name - The name of the package
@@ -71,22 +73,6 @@ export const offerings = [
 		packages: []
 	},
 	{
-		id: 'piriformis-treatment',
-		serviceName: 'Structural Integration',
-		icon: 'icon-building-storefront',
-		description:
-			'Structural Integration is a bodywork method that realigns the body for better posture, easier movement, and less pain. It works with the fascia--the conective tissue around your muscles--to release tension, improve mobility, and rebalance your whole system.',
-		packages: []
-	},
-	{
-		id: 'gift-vouchers',
-		serviceName: 'Mobility & Assisted Stretch Session',
-		icon: 'icon-link',
-		description:
-			'Improve flexibility, unlock your rotation, and reduce tension with a focused stretch session designed for golfers. This service targets hips, thoracic spine, shoulders, and core rotation to support a smoother, more powerful swing.',
-		packages: []
-	},
-	{
 		id: 'packages',
 		serviceName: 'Packages (self-care investment)',
 		icon: 'icon-currency-dollar',
@@ -111,19 +97,78 @@ export const offerings = [
 				href: 'https://www.massagebook.com/business/36453921/booking/?src=external&service_id=1923783&ncf_source=friendly_url'
 			}
 		]
+	}
+];
+
+/** @type {{ title: string; tagline: string; introBefore: string; introHighlight: string; introAfter: string; benefits: string[]; pricing: string; subtitle: string; description: string; packagesLink: { text: string; href: string } }} */
+export const fairwayPerformancePlan = {
+	title: 'Fairway performance plan',
+	tagline: 'Move better. Recover faster. Play longer.',
+	introBefore: 'A ',
+	introHighlight: 'monthly membership',
+	introAfter: ' for ongoing care:',
+	benefits: [
+		'1 bodywork session per month',
+		'Discounted member rates on extra sessions',
+		'Priority booking access',
+		'Automatic birthday and holiday perks',
+		'Session rollover, up to 3 months',
+		'Share or gift sessions',
+		'Pause anytime, no long-term contract'
+	],
+	pricing: 'Starting at $80/month',
+	subtitle: 'Monthly membership',
+	description:
+		'A monthly membership built to keep you on top of your health and performance. Enjoy preferred rates, priority booking, and automatic birthday and holiday perks. Pause anytime — there\u2019s no long-term contract.',
+	packagesLink: {
+		text: 'Discounted packages also available \u2192',
+		href: '/services'
+	}
+};
+
+/** @type {Service[]} */
+export const servicePageOfferings = [
+	offerings[0],
+	offerings[1],
+	{
+		id: 'fairway-performance-plan',
+		serviceName: 'Fairway performance plan',
+		icon: 'icon-shield-check',
+		description: '',
+		packages: [],
+		isFairwayPlan: true
 	},
 	{
-		id: 'mobile-massage',
-		serviceName: 'Mobile Massage (In-Home)',
-		icon: 'icon-home-modern',
+		id: 'structural-integration',
+		serviceName: 'Structural Integration',
+		icon: 'icon-building-storefront',
 		description:
-			'Enjoy professional therapeutic bodywork in the comfort of your own home. I bring everything needed for a session that fits seamlessly into your routine.',
-		packages: [
-			{ name: '60 minutes', price: 185, description: null },
-			{ name: '90 minutes', price: 235, description: null }
-		]
+			'Structural Integration is a bodywork method that realigns the body for better posture, easier movement, and less pain. It works with the fascia--the conective tissue around your muscles--to release tension, improve mobility, and rebalance your whole system.',
+		packages: []
 	},
+	{
+		id: 'mobility-assisted-stretch',
+		serviceName: 'Mobility and Assisted Stretch',
+		icon: 'icon-link',
+		description:
+			'Improve flexibility, unlock your rotation, and reduce tension with a focused stretch session designed for golfers. This service targets hips, thoracic spine, shoulders, and core rotation to support a smoother, more powerful swing.',
+		packages: []
+	},
+	offerings[2]
 ];
+
+/** @type {Service} */
+export const mobileMassageOffering = {
+	id: 'mobile-massage',
+	serviceName: 'Mobile Massage (In-Home)',
+	icon: 'icon-home-modern',
+	description:
+		'Enjoy professional therapeutic bodywork in the comfort of your own home. I bring everything needed for a session that fits seamlessly into your routine.',
+	packages: [
+		{ name: '60 minutes', price: 185, description: null },
+		{ name: '90 minutes', price: 235, description: null }
+	]
+};
 
 /** @type {Modality[]} */
 export const modalities = [
@@ -161,6 +206,11 @@ export const modalities = [
 
 /** @type {ServiceArea[]} */
 export const serviceAreas = [
+	{ id: 'midtown-kc', name: 'Midtown KC' },
+	{ id: 'westport', name: 'Westport' },
+	{ id: 'country-club-plaza', name: 'Country Club Plaza' },
+	{ id: 'brookside', name: 'Brookside' },
+	{ id: 'waldo', name: 'Waldo' },
 	{ id: 'kansas-city-mo-ks', name: 'Kansas City (MO & KS)' },
 	{ id: 'overland-park', name: 'Overland Park' },
 	{ id: 'olathe', name: 'Olathe' },

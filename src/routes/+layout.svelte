@@ -1,18 +1,19 @@
 <script lang="ts">
 	import '../app.css';
-	import { browser } from '$app/environment';
 	import { page } from '$app/state';
-
-	import { configureClientAuth } from 'workos-convex-sveltekit';
-	import { PUBLIC_CONVEX_URL } from '$env/static/public';
-	import { setupConvex, useConvexClient } from 'convex-svelte';
+	import { env } from '$env/dynamic/public';
+	import { setupConvex } from 'convex-svelte';
 
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { navItems } from '$lib/data/nav.js';
+	import StructuredData from '$lib/components/StructuredData.svelte';
+	import { navbarItems, footerNavItems } from '$lib/data/nav.js';
 	import meta from '$lib/data/meta.js';
 
-	configureClientAuth(setupConvex, useConvexClient, browser, PUBLIC_CONVEX_URL as string);
+	// Persistent Convex context for the whole app (SSR-safe; client disabled on server).
+	// Do not gate this behind route mounts — that breaks CSR return to /blog.
+	const convexUrl = env.PUBLIC_CONVEX_URL;
+	if (convexUrl) setupConvex(convexUrl);
 
 	let { children } = $props();
 
@@ -22,15 +23,19 @@
 {#if isAdminRoute}
 	{@render children?.()}
 {:else}
-	<Navbar siteName={meta.name} {navItems} />
+	<a href="#main-content" class="skip-link">Skip to main content</a>
+	<StructuredData />
+	<Navbar siteName={meta.name} navItems={navbarItems} />
 
 	<div class="bg-base-200 text-primary flex min-h-screen flex-col justify-between px-12">
 		<div class="parallax-bg flex grow flex-col text-center">
-			{@render children?.()}
+			<main id="main-content" class="flex grow flex-col">
+				{@render children?.()}
+			</main>
 		</div>
 
 		<Footer
-			footerLinks={navItems}
+			footerLinks={footerNavItems}
 			email={meta.email}
 			address={meta.address}
 			phone={meta.phone}
@@ -40,6 +45,7 @@
 			yt_url={meta.yt_url}
 			li_url={meta.li_url}
 			tiktok_url={meta.tiktok_url}
+			gbp_url={meta.gbp_url}
 			cp_url={meta.cp_url}
 			cp_holder={meta.cp_holder}
 			cp_year={meta.cp_year}
@@ -49,7 +55,13 @@
 
 <style>
 	.parallax-bg {
-		background-attachment: fixed;
 		background-size: cover;
+	}
+
+	/* fixed attachment hurts mobile scroll/LCP; desktop only */
+	@media (min-width: 768px) {
+		.parallax-bg {
+			background-attachment: fixed;
+		}
 	}
 </style>

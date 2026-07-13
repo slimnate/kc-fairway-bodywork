@@ -1,22 +1,15 @@
 <script>
 	import { aboutData } from '$lib/data/about.js';
-    import meta from '$lib/data/meta';
+	import meta, { getPageDescription } from '$lib/data/meta';
+	import SeoHead from '$lib/components/SeoHead.svelte';
+	import SnellyPortrait from '$lib/components/SnellyPortrait.svelte';
 </script>
 
-<svelte:head>
-	<title>About - {meta.title}</title>
-	<meta name="description" content="{meta.description}" />
-	<meta name="keywords" content={meta.keywords.join(', ')} />
-	<meta name="robots" content="index, follow" />
-</svelte:head>
+<SeoHead title="About - {meta.title}" description={getPageDescription('/about')} />
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
-	<div class="mx-auto max-w-4xl text-balance md:py-6">
-		<img
-			src="/img/snelly.jpg"
-			alt="Snelly the Massage Snail"
-			class="mt-6 max-h-50 rounded-full opacity-80 md:max-h-64"
-		/>
+	<div class="mx-auto w-full max-w-4xl px-4 text-balance md:py-6">
+		<SnellyPortrait class="mt-6" />
 	</div>
 	<div class="mx-auto max-w-3xl py-6 text-balance text-center px-4 md:text-lg">
 		<h1 class="text-secondary text-4xl font-bold uppercase mb-6 md:text-5xl">About</h1>
