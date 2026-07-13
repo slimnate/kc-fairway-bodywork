@@ -99,21 +99,17 @@
 	<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl">
 		{#each offerings as offering (offering.id)}
 			{#if offering.id === 'packages'}
-				<div class="card bg-base-100 shadow text-center">
-					<div class="card-body items-center gap-4">
-						<div
-							class="flex size-16 items-center justify-center rounded-full border-2 border-secondary text-secondary"
-						>
+				<div class="card bg-base-100 shadow">
+					<div class="card-body gap-4">
+						<div class="flex items-center gap-3 pb-4">
 							<span class="icon icon-md icon-custom icon-shield-check"></span>
+							<h3 class="card-title text-secondary">{fairwayPerformancePlan.title}</h3>
 						</div>
-						<div class="space-y-1">
-							<h3 class="text-secondary text-xl font-bold">{fairwayPerformancePlan.title}</h3>
-							<p class="text-sm font-bold">{fairwayPerformancePlan.subtitle}</p>
-						</div>
+						<p class="text-sm font-bold">{fairwayPerformancePlan.subtitle}</p>
 						<p class="opacity-80 leading-relaxed">
 							{fairwayPerformancePlan.description}
 						</p>
-						<p class="text-base-content font-semibold">{fairwayPerformancePlan.pricing}</p>
+						<p class="text-secondary font-semibold">{fairwayPerformancePlan.pricing}</p>
 						<a
 							href={fairwayPerformancePlan.packagesLink.href}
 							class="text-secondary text-sm font-medium underline underline-offset-4 transition-opacity hover:opacity-80"

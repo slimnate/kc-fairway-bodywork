@@ -6,6 +6,7 @@
  * @property {string} description - A brief description of the service
  * @property {Package[]} packages - An array of packages associated with the service
  * @property {boolean} [isPlaceholder] - When true, renders an empty card placeholder on the services page
+ * @property {boolean} [isFairwayPlan] - When true, renders the Fairway performance plan card on the services page
  *
  * @typedef {Object} Package
  * @property {string} name - The name of the package
@@ -99,13 +100,26 @@ export const offerings = [
 	}
 ];
 
-/** @type {{ title: string; subtitle: string; description: string; pricing: string; packagesLink: { text: string; href: string } }} */
+/** @type {{ title: string; tagline: string; introBefore: string; introHighlight: string; introAfter: string; benefits: string[]; pricing: string; subtitle: string; description: string; packagesLink: { text: string; href: string } }} */
 export const fairwayPerformancePlan = {
 	title: 'Fairway performance plan',
+	tagline: 'Move better. Recover faster. Play longer.',
+	introBefore: 'A ',
+	introHighlight: 'monthly membership',
+	introAfter: ' for ongoing care:',
+	benefits: [
+		'1 bodywork session per month',
+		'Discounted member rates on extra sessions',
+		'Priority booking access',
+		'Automatic birthday and holiday perks',
+		'Session rollover, up to 3 months',
+		'Share or gift sessions',
+		'Pause anytime, no long-term contract'
+	],
+	pricing: 'Starting at $80/month',
 	subtitle: 'Monthly membership',
 	description:
 		'A monthly membership built to keep you on top of your health and performance. Enjoy preferred rates, priority booking, and automatic birthday and holiday perks. Pause anytime — there\u2019s no long-term contract.',
-	pricing: 'Starting at $80/month',
 	packagesLink: {
 		text: 'Discounted packages also available \u2192',
 		href: '/services'
@@ -116,7 +130,14 @@ export const fairwayPerformancePlan = {
 export const servicePageOfferings = [
 	offerings[0],
 	offerings[1],
-	offerings[2],
+	{
+		id: 'fairway-performance-plan',
+		serviceName: 'Fairway performance plan',
+		icon: 'icon-shield-check',
+		description: '',
+		packages: [],
+		isFairwayPlan: true
+	},
 	{
 		id: 'structural-integration',
 		serviceName: 'Structural Integration',
@@ -133,14 +154,7 @@ export const servicePageOfferings = [
 			'Improve flexibility, unlock your rotation, and reduce tension with a focused stretch session designed for golfers. This service targets hips, thoracic spine, shoulders, and core rotation to support a smoother, more powerful swing.',
 		packages: []
 	},
-	{
-		id: 'mobile-massage-placeholder',
-		serviceName: 'Mobile Massage (In-Home)',
-		icon: 'icon-home-modern',
-		description: '',
-		packages: [],
-		isPlaceholder: true
-	}
+	offerings[2]
 ];
 
 /** @type {Service} */

@@ -3,6 +3,7 @@
 	import SeoHead from '$lib/components/SeoHead.svelte';
 	import {
 		servicePageOfferings,
+		fairwayPerformancePlan,
 		mobileMassageOffering,
 		modalities,
 		serviceAreas,
@@ -52,8 +53,34 @@
 	</div>
 	<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl w-full">
 		{#each servicePageOfferings as offering (offering.id)}
-			{#if offering.isPlaceholder}
-				<div class="card bg-base-100 shadow-lg min-h-48" aria-hidden="true"></div>
+			{#if offering.isFairwayPlan}
+				<div class="card bg-base-100 shadow-lg">
+					<div class="card-body gap-4">
+						<div class="flex items-center gap-3 pb-4">
+							<span class="icon icon-md icon-custom icon-shield-check"></span>
+							<h3 class="card-title text-secondary">{fairwayPerformancePlan.title}</h3>
+						</div>
+						<p class="opacity-80 text-center text-sm">{fairwayPerformancePlan.tagline}</p>
+						<p class="opacity-80 text-sm">
+							{fairwayPerformancePlan.introBefore}<span class="font-bold"
+								>{fairwayPerformancePlan.introHighlight}</span
+							>{fairwayPerformancePlan.introAfter}
+						</p>
+						<ul class="mx-auto w-fit space-y-2 text-left text-sm">
+							{#each fairwayPerformancePlan.benefits as benefit}
+								<li class="flex items-start gap-2">
+									<span
+										class="icon icon-xs icon-custom icon-check mt-0.5 shrink-0 text-secondary"
+									></span>
+									<span class="opacity-80">{benefit}</span>
+								</li>
+							{/each}
+						</ul>
+						<div class="border-secondary/30 w-full border-t pt-4 text-center">
+							<p class="text-secondary font-bold">{fairwayPerformancePlan.pricing}</p>
+						</div>
+					</div>
+				</div>
 			{:else}
 			<div class="card bg-base-100 shadow-lg">
 				<div class="card-body">
