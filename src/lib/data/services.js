@@ -5,6 +5,7 @@
  * @property {string} icon - The icon class associated with the service
  * @property {string} description - A brief description of the service
  * @property {Package[]} packages - An array of packages associated with the service
+ * @property {boolean} [isPlaceholder] - When true, renders an empty card placeholder on the services page
  *
  * @typedef {Object} Package
  * @property {string} name - The name of the package
@@ -95,6 +96,37 @@ export const offerings = [
 				href: 'https://www.massagebook.com/business/36453921/booking/?src=external&service_id=1923783&ncf_source=friendly_url'
 			}
 		]
+	}
+];
+
+/** @type {Service[]} */
+export const servicePageOfferings = [
+	offerings[0],
+	offerings[1],
+	offerings[2],
+	{
+		id: 'structural-integration',
+		serviceName: 'Structural Integration',
+		icon: 'icon-building-storefront',
+		description:
+			'Structural Integration is a bodywork method that realigns the body for better posture, easier movement, and less pain. It works with the fascia--the conective tissue around your muscles--to release tension, improve mobility, and rebalance your whole system.',
+		packages: []
+	},
+	{
+		id: 'mobility-assisted-stretch',
+		serviceName: 'Mobility and Assisted Stretch',
+		icon: 'icon-link',
+		description:
+			'Improve flexibility, unlock your rotation, and reduce tension with a focused stretch session designed for golfers. This service targets hips, thoracic spine, shoulders, and core rotation to support a smoother, more powerful swing.',
+		packages: []
+	},
+	{
+		id: 'mobile-massage-placeholder',
+		serviceName: 'Mobile Massage (In-Home)',
+		icon: 'icon-home-modern',
+		description: '',
+		packages: [],
+		isPlaceholder: true
 	}
 ];
 

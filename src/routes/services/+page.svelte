@@ -2,7 +2,7 @@
 	import meta, { getPageDescription } from '$lib/data/meta';
 	import SeoHead from '$lib/components/SeoHead.svelte';
 	import {
-		offerings,
+		servicePageOfferings,
 		mobileMassageOffering,
 		modalities,
 		serviceAreas,
@@ -51,7 +51,10 @@
 		</h2>
 	</div>
 	<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl w-full">
-		{#each offerings as offering (offering.id)}
+		{#each servicePageOfferings as offering (offering.id)}
+			{#if offering.isPlaceholder}
+				<div class="card bg-base-100 shadow-lg min-h-48" aria-hidden="true"></div>
+			{:else}
 			<div class="card bg-base-100 shadow-lg">
 				<div class="card-body">
 					<div class="flex items-center gap-3 pb-4">
@@ -132,6 +135,7 @@
 					</div>
 				</div>
 			</div>
+			{/if}
 		{/each}
 	</div>
 </section>
