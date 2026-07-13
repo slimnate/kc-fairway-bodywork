@@ -3,24 +3,15 @@ import { configureClientAuth } from 'workos-convex-sveltekit';
 import { env } from '$env/dynamic/public';
 import { setupConvex, useConvexClient } from 'convex-svelte';
 
-let initialized = false;
-
 /**
- * Initialize Convex on routes that need it (blog, admin).
- * Always calls setupConvex so useQuery has context during SSR
- * (convex-svelte disables the client when not in the browser).
- * WorkOS client auth is wired only in the browser when admin is enabled.
+ * Wire WorkOS token auth for admin routes only.
+ * Public pages should rely on root-layout setupConvex (no auth fetch).
  */
-export function ensureConvexClient(): void {
+export function configureAdminConvexAuth(): void {
+	if (!browser || env.PUBLIC_ADMIN_ENABLED === 'false') return;
+
 	const convexUrl = env.PUBLIC_CONVEX_URL;
 	if (!convexUrl) return;
-	// Only dedupe on the client; each SSR render must setContext again.
-	if (browser && initialized) return;
-	if (browser) initialized = true;
 
-	if (browser && env.PUBLIC_ADMIN_ENABLED !== 'false') {
-		configureClientAuth(setupConvex, useConvexClient, browser, convexUrl);
-	} else {
-		setupConvex(convexUrl);
-	}
+	configureClientAuth(setupConvex, useConvexClient, browser, convexUrl);
 }

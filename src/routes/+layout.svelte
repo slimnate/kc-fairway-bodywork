@@ -1,12 +1,19 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/state';
+	import { env } from '$env/dynamic/public';
+	import { setupConvex } from 'convex-svelte';
 
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import StructuredData from '$lib/components/StructuredData.svelte';
 	import { navbarItems, footerNavItems } from '$lib/data/nav.js';
 	import meta from '$lib/data/meta.js';
+
+	// Persistent Convex context for the whole app (SSR-safe; client disabled on server).
+	// Do not gate this behind route mounts — that breaks CSR return to /blog.
+	const convexUrl = env.PUBLIC_CONVEX_URL;
+	if (convexUrl) setupConvex(convexUrl);
 
 	let { children } = $props();
 

@@ -7,9 +7,9 @@
 	import type { PageData } from './$types';
 	import Toast from '$lib/components/Toast.svelte';
 	import meta from '$lib/data/meta';
-	import { ensureConvexClient } from '$lib/convex/client';
+	import { configureAdminConvexAuth } from '$lib/convex/client';
 
-	ensureConvexClient();
+	configureAdminConvexAuth();
 
 	const { data, children }: { data: PageData; children: any } = $props();
 
