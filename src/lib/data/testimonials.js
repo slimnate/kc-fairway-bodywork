@@ -1,9 +1,8 @@
 /**
- * Client testimonials for /testimonials.
+ * Client testimonials for /testimonials and featured homepage quotes.
  *
- * Placeholder quotes below are for layout only — not shown in Review JSON-LD.
- * When adding a real Google or MassageBook review, set includeInSchema: true,
- * datePublished (ISO YYYY-MM-DD), and ratingValue (1–5).
+ * All entries must be real, published Google reviews, verbatim, never invented.
+ * Do not add placeholder or fabricated quotes.
  *
  * @typedef {{
  *   id: string;
@@ -14,39 +13,60 @@
  *   includeInSchema?: boolean;
  *   datePublished?: string;
  *   ratingValue?: number;
+ *   featured?: boolean;
  * }} Testimonial
  */
 
 /** @type {Testimonial[]} */
 export const testimonials = [
 	{
-		id: '1',
-		author: 'Mike R.',
+		id: 'keegan-s',
+		author: 'Keegan S.',
 		quote:
-			'Anthony helped me unlock rotation I had been fighting for years. My hips feel freer through impact and I am not waking up stiff after 36 holes.',
-		source: 'Golf client',
-		date: '2025',
+			"Anthony is incredible at what he does and has helped me relieve pain and increase movement every time I've gone to him! Highly recommend to anyone, whether or not you're a golfer.",
+		source: 'Google review',
+		ratingValue: 5,
 		includeInSchema: false,
-		ratingValue: 5
+		featured: true
 	},
 	{
-		id: '2',
-		author: 'Sarah T.',
+		id: 'alexander-h',
+		author: 'Alexander H.',
 		quote:
-			'Professional, knowledgeable, and focused on results. The structural integration work made a real difference in my posture and how I move day to day.',
-		source: 'Studio client',
-		date: '2025',
+			'Asked appropriately investigative questions to understand the sources of any issues he might be addressing... While work was predominantly focused on pressure points in my hip flexor and psoas, and the tightness I felt there, the relief I feel in my lower back the next day is astounding. Very amicable and professional guy.',
+		source: 'Google review',
+		ratingValue: 5,
 		includeInSchema: false,
-		ratingValue: 5
+		featured: true
 	},
 	{
-		id: '3',
-		author: 'James L.',
+		id: 'james-m',
+		author: 'James M.',
 		quote:
-			'Best bodywork experience I have had in Kansas City. Clear communication, great space in Midtown, and my shoulder pain improved after just a few sessions.',
-		source: 'Performance bodywork',
-		date: '2024',
+			'I visited Anthony for shoulder pain and issues with range of motion due to an injury... During the session he was able to locate and relieve areas that were causing pain. Afterward I noticed range of motion had significantly improved... Highly recommend scheduling an appointment!',
+		source: 'Google review',
+		ratingValue: 5,
 		includeInSchema: false,
-		ratingValue: 5
+		featured: true
+	},
+	{
+		id: 'hannah-g',
+		author: 'Hannah G.',
+		quote:
+			'Anthony has totally helped with my knee pain!!! I am so grateful and look forward to working with him to continue my healing.',
+		source: 'Google review',
+		ratingValue: 5,
+		includeInSchema: false,
+		featured: true
+	},
+	{
+		id: 'latonya-s',
+		author: 'Latonya S.',
+		quote:
+			'Anthony was amazing!! He was very professional, extremely attentive and knowledgeable... The ambiance was perfect for mind relaxation. I will be back!!',
+		source: 'Google review',
+		ratingValue: 5,
+		includeInSchema: false,
+		featured: true
 	}
 ];

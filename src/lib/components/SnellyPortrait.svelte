@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { staticImages } from '$lib/data/images';
 
-	let { class: className = '' }: { class?: string } = $props();
+	let {
+		class: className = '',
+		priority = false
+	}: { class?: string; priority?: boolean } = $props();
 </script>
 
 <div class="snelly-portrait-wrap {className}">
@@ -9,7 +12,8 @@
 		src={staticImages.snelly.src}
 		width={staticImages.snelly.width}
 		height={staticImages.snelly.height}
-		loading="lazy"
+		loading={priority ? 'eager' : 'lazy'}
+		fetchpriority={priority ? 'high' : 'auto'}
 		decoding="async"
 		alt="Anthony Snell, KC Fairway Bodywork"
 		class="snelly-portrait"

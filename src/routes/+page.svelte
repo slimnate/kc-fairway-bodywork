@@ -1,9 +1,14 @@
 <script>
 	import { offerings, fairwayPerformancePlan } from '$lib/data/services.js';
+	import { focusAreas } from '$lib/data/focus-areas.js';
 	import meta, { getPageDescription } from '$lib/data/meta';
 	import SeoHead from '$lib/components/SeoHead.svelte';
 	import { staticImages } from '$lib/data/images';
 	import SnellyPortrait from '$lib/components/SnellyPortrait.svelte';
+	import { testimonials } from '$lib/data/testimonials.js';
+	import TestimonialCard from '$lib/components/TestimonialCard.svelte';
+
+	const featuredTestimonials = testimonials.filter((t) => t.featured);
 
 	/**
 	 * @param {number|string} price
@@ -35,29 +40,35 @@
 </div>
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
-	<div class="mx-auto max-w-4xl py-6 text-balance">
-		<h1 class="sr-only">{meta.name}</h1>
-		<img
-			src={staticImages.logo.src}
-			width={staticImages.logo.width}
-			height={staticImages.logo.height}
-			fetchpriority="high"
-			decoding="async"
-			class="h-auto w-full max-w-4xl"
-			alt=""
-			aria-hidden="true"
-		/>
-	</div>
-	<div class="mx-auto mt-[-50px] w-full max-w-4xl px-4 text-balance">
-		<SnellyPortrait class="mt-6" />
-	</div>
-	<div class="mx-auto max-w-2xl py-6 text-balance md:text-lg">
-		<p class="pb-4">
-			Welcome to KC Fairway Bodywork! Where golfers, athletes and active individuals come to improve mobility and decrease pain while elevating their performance. I specialize in performance-focused, therapeutic bodywork designed to enhance range of motion and support long-term recovery. I help you move better and play longer.
-		</p>
-		<p>
-			Whether you're dealing with tightness, recovering from an injury, or looking to play your best more often, every session is built on care, quality, and improvement. If you're ready to unlock motion and unlock your game, you're in the right place.
-		</p>
+	<div class="mx-auto grid w-full max-w-6xl items-center gap-8 px-4 md:grid-cols-2">
+		<div class="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
+			<img
+				src={staticImages.logo.src}
+				width={staticImages.logo.width}
+				height={staticImages.logo.height}
+				fetchpriority="high"
+				decoding="async"
+				class="h-auto w-full max-w-sm"
+				alt="KC Fairway Bodywork"
+			/>
+			<h1 class="text-secondary text-3xl font-bold text-balance md:text-4xl">
+				Bodywork for golfers, athletes, and active individuals who want to move better and hurt less.
+			</h1>
+			<p class="text-lg text-balance opacity-90 md:text-xl">
+				I use structural integration and focused bodywork to improve mobility and decrease pain, so
+				you can play your best and move the way you want.
+			</p>
+			<p class="text-sm opacity-80">
+				<span class="font-semibold">Anthony Snell, LMT</span>
+				<span aria-hidden="true"> · </span>
+				Performance Bodywork Specialist
+				<span aria-hidden="true"> · </span>
+				Midtown Kansas City
+			</p>
+		</div>
+		<div class="flex w-full justify-center md:justify-end">
+			<SnellyPortrait priority />
+		</div>
 	</div>
 </section>
 
@@ -72,7 +83,7 @@
 		</h2>
 	</div>
 	<p class="mx-auto max-w-2xl py-4 text-balance text-center text-lg md:text-xl opacity-90">
-		Move better. Swing freer. Play longer.</p> <p> Whether you're working through pain, building rotation, or preparing for your next round, performance starts here..
+		Move better. Feel better. Play longer.</p> <p> Whether you’re working through pain, building mobility, or preparing for your next round, game, or workout, performance starts here.
 	</p>
 	<div class="flex w-full justify-center py-6">
 		<a
@@ -80,6 +91,57 @@
 			class="btn btn-secondary btn-xl w-full rounded-full px-8 py-4 text-xl font-semibold shadow-lg md:w-lg"
 		>
 			Book Now
+		</a>
+	</div>
+</section>
+
+<div class="bg-secondary mx-auto h-[2px] w-[80vw]"></div>
+
+<section class="bg-base-200 flex flex-col items-center justify-center py-12">
+	<div class="mx-auto max-w-4xl py-6 text-balance">
+		<h2 class="text-secondary text-3xl font-bold uppercase md:text-4xl">
+			Three Things I Do Best
+		</h2>
+	</div>
+	<div class="grid max-w-7xl w-full gap-6 px-4 lg:grid-cols-3">
+		{#each focusAreas as area (area.id)}
+			<div class="card bg-base-100 shadow h-full">
+				<div class="card-body flex h-full flex-col">
+					<div class="flex items-center gap-3 pb-4">
+						<span class="icon icon-md icon-custom {area.icon}"></span>
+						<h3 class="card-title text-secondary">{area.title}</h3>
+					</div>
+					<p class="opacity-80 leading-relaxed">{area.description}</p>
+				</div>
+			</div>
+		{/each}
+	</div>
+</section>
+
+<div class="bg-secondary mx-auto h-[2px] w-[80vw]"></div>
+
+<section class="bg-base-200 flex flex-col items-center justify-center py-12">
+	<div class="mx-auto max-w-4xl py-6 text-balance">
+		<h2 class="text-secondary text-3xl font-bold uppercase md:text-4xl">What Clients Say</h2>
+	</div>
+	<div class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4">
+		{#if featuredTestimonials.length > 0}
+			<TestimonialCard item={featuredTestimonials[0]} large />
+		{/if}
+		{#if featuredTestimonials.length > 1}
+			<div class="grid gap-6 md:grid-cols-2">
+				{#each featuredTestimonials.slice(1) as item (item.id)}
+					<TestimonialCard {item} />
+				{/each}
+			</div>
+		{/if}
+		<a
+			href={meta.gbp_url}
+			class="btn btn-secondary mx-auto rounded-full"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			Read more reviews on Google
 		</a>
 	</div>
 </section>
