@@ -1,7 +1,7 @@
 <script>
 	import { offerings, fairwayPerformancePlan } from '$lib/data/services.js';
 	import { focusAreas } from '$lib/data/focus-areas.js';
-	import meta, { BOOKING_URL, getPageDescription } from '$lib/data/meta';
+	import meta, { getPageDescription } from '$lib/data/meta';
 	import SeoHead from '$lib/components/SeoHead.svelte';
 	import { staticImages } from '$lib/data/images';
 	import SnellyPortrait from '$lib/components/SnellyPortrait.svelte';
@@ -61,14 +61,6 @@
 				<span aria-hidden="true"> · </span>
 				Midtown Kansas City
 			</p>
-			<a
-				href={BOOKING_URL}
-				target="_blank"
-				rel="noopener noreferrer"
-				class="btn btn-secondary btn-xl hidden rounded-full px-8 py-4 text-xl font-semibold shadow-lg md:inline-flex md:w-lg"
-			>
-				Book Now
-			</a>
 		</div>
 		<div class="flex w-full justify-center md:justify-end">
 			<SnellyPortrait priority />
