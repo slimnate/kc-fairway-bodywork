@@ -1,5 +1,6 @@
 <script>
 	import { offerings, fairwayPerformancePlan } from '$lib/data/services.js';
+	import { focusAreas } from '$lib/data/focus-areas.js';
 	import meta, { getPageDescription } from '$lib/data/meta';
 	import SeoHead from '$lib/components/SeoHead.svelte';
 	import { staticImages } from '$lib/data/images';
@@ -81,6 +82,29 @@
 		>
 			Book Now
 		</a>
+	</div>
+</section>
+
+<div class="bg-secondary mx-auto h-[2px] w-[80vw]"></div>
+
+<section class="bg-base-200 flex flex-col items-center justify-center py-12">
+	<div class="mx-auto max-w-4xl py-6 text-balance">
+		<h2 class="text-secondary text-3xl font-bold uppercase md:text-4xl">
+			Three Things I Do Best
+		</h2>
+	</div>
+	<div class="grid max-w-7xl w-full gap-6 px-4 lg:grid-cols-3">
+		{#each focusAreas as area (area.id)}
+			<div class="card bg-base-100 shadow h-full">
+				<div class="card-body flex h-full flex-col">
+					<div class="flex items-center gap-3 pb-4">
+						<span class="icon icon-md icon-custom {area.icon}"></span>
+						<h3 class="card-title text-secondary">{area.title}</h3>
+					</div>
+					<p class="opacity-80 leading-relaxed">{area.description}</p>
+				</div>
+			</div>
+		{/each}
 	</div>
 </section>
 
