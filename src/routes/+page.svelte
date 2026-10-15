@@ -5,6 +5,10 @@
 	import SeoHead from '$lib/components/SeoHead.svelte';
 	import { staticImages } from '$lib/data/images';
 	import SnellyPortrait from '$lib/components/SnellyPortrait.svelte';
+	import { testimonials } from '$lib/data/testimonials.js';
+	import TestimonialCard from '$lib/components/TestimonialCard.svelte';
+
+	const featuredTestimonials = testimonials.filter((t) => t.featured);
 
 	/**
 	 * @param {number|string} price
@@ -111,6 +115,34 @@
 				</div>
 			</div>
 		{/each}
+	</div>
+</section>
+
+<div class="bg-secondary mx-auto h-[2px] w-[80vw]"></div>
+
+<section class="bg-base-200 flex flex-col items-center justify-center py-12">
+	<div class="mx-auto max-w-4xl py-6 text-balance">
+		<h2 class="text-secondary text-3xl font-bold uppercase md:text-4xl">What Clients Say</h2>
+	</div>
+	<div class="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4">
+		{#if featuredTestimonials.length > 0}
+			<TestimonialCard item={featuredTestimonials[0]} large />
+		{/if}
+		{#if featuredTestimonials.length > 1}
+			<div class="grid gap-6 md:grid-cols-2">
+				{#each featuredTestimonials.slice(1) as item (item.id)}
+					<TestimonialCard {item} />
+				{/each}
+			</div>
+		{/if}
+		<a
+			href={meta.gbp_url}
+			class="btn btn-secondary mx-auto rounded-full"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			Read more reviews on Google
+		</a>
 	</div>
 </section>
 
