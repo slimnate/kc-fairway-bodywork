@@ -72,7 +72,7 @@
 		</h2>
 	</div>
 	<p class="mx-auto max-w-2xl py-4 text-balance text-center text-lg md:text-xl opacity-90">
-		Move better. Swing freer. Play longer.</p> <p> Whether you're working through pain, building rotation, or preparing for your next round, performance starts here.
+		Move better. Feel better. Play longer.</p> <p> Whether you’re working through pain, building mobility, or preparing for your next round, game, or workout, performance starts here.
 	</p>
 	<div class="flex w-full justify-center py-6">
 		<a
