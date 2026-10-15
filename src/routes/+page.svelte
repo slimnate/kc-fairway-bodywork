@@ -1,7 +1,7 @@
 <script>
 	import { offerings, fairwayPerformancePlan } from '$lib/data/services.js';
 	import { focusAreas } from '$lib/data/focus-areas.js';
-	import meta, { getPageDescription } from '$lib/data/meta';
+	import meta, { BOOKING_URL, getPageDescription } from '$lib/data/meta';
 	import SeoHead from '$lib/components/SeoHead.svelte';
 	import { staticImages } from '$lib/data/images';
 	import SnellyPortrait from '$lib/components/SnellyPortrait.svelte';
@@ -36,29 +36,43 @@
 </div>
 
 <section class="bg-base-200 flex flex-col items-center justify-center py-8 pt-12">
-	<div class="mx-auto max-w-4xl py-6 text-balance">
-		<h1 class="sr-only">{meta.name}</h1>
-		<img
-			src={staticImages.logo.src}
-			width={staticImages.logo.width}
-			height={staticImages.logo.height}
-			fetchpriority="high"
-			decoding="async"
-			class="h-auto w-full max-w-4xl"
-			alt=""
-			aria-hidden="true"
-		/>
-	</div>
-	<div class="mx-auto mt-[-50px] w-full max-w-4xl px-4 text-balance">
-		<SnellyPortrait class="mt-6" />
-	</div>
-	<div class="mx-auto max-w-2xl py-6 text-balance md:text-lg">
-		<p class="pb-4">
-			Welcome to KC Fairway Bodywork! Where golfers, athletes and active individuals come to improve mobility and decrease pain while elevating their performance. I specialize in performance-focused, therapeutic bodywork designed to enhance range of motion and support long-term recovery. I help you move better and play longer.
-		</p>
-		<p>
-			Whether you're dealing with tightness, recovering from an injury, or looking to play your best more often, every session is built on care, quality, and improvement. If you're ready to unlock motion and unlock your game, you're in the right place.
-		</p>
+	<div class="mx-auto grid w-full max-w-6xl items-center gap-8 px-4 md:grid-cols-2">
+		<div class="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
+			<img
+				src={staticImages.logo.src}
+				width={staticImages.logo.width}
+				height={staticImages.logo.height}
+				fetchpriority="high"
+				decoding="async"
+				class="h-auto w-full max-w-sm"
+				alt="KC Fairway Bodywork"
+			/>
+			<h1 class="text-secondary text-3xl font-bold text-balance md:text-4xl">
+				Bodywork for golfers, athletes, and active individuals who want to move better and hurt less.
+			</h1>
+			<p class="text-lg text-balance opacity-90 md:text-xl">
+				I use structural integration and focused bodywork to improve mobility and decrease pain, so
+				you can play your best and move the way you want.
+			</p>
+			<p class="text-sm opacity-80">
+				<span class="font-semibold">Anthony Snell, LMT</span>
+				<span aria-hidden="true"> · </span>
+				Performance Bodywork Specialist
+				<span aria-hidden="true"> · </span>
+				Midtown Kansas City
+			</p>
+			<a
+				href={BOOKING_URL}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="btn btn-secondary btn-xl hidden rounded-full px-8 py-4 text-xl font-semibold shadow-lg md:inline-flex md:w-lg"
+			>
+				Book Now
+			</a>
+		</div>
+		<div class="flex w-full justify-center md:justify-end">
+			<SnellyPortrait priority />
+		</div>
 	</div>
 </section>
 
