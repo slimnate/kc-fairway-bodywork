@@ -35,30 +35,29 @@ const metadata = {
 	// Contact information
 	name: 'KC Fairway Bodywork',
 	tagline: 'Unlock Motion - Unlock Game',
-	description: 'Golf-focused performance bodywork for Kansas City golfers.',
+	description:
+		'Performance bodywork and sports massage in Midtown Kansas City for golfers, athletes, and active people. Improve mobility and decrease pain. Book online.',
 	pageDescriptions: {
-		'/':
-			'Golf-focused performance bodywork for Kansas City golfers.',
+		'/': 'Performance bodywork and sports massage in Midtown Kansas City for golfers, athletes, and active people. Improve mobility and decrease pain. Book online.',
 		'/services':
-			'Performance bodywork and sports massage for Kansas City golfers. Studio sessions in Midtown KC; mobile bodywork in Westport, the Plaza, Brookside, Waldo, and the metro.',
+			'Sports massage and structural integration sessions from 30 to 120 minutes, plus on-course tournament bodywork and the Fairway Performance Plan membership in Midtown KC.',
 		'/testimonials':
-			'Client reviews of golf-focused bodywork at KC Fairway Bodywork in Midtown Kansas City. Leave a review on Google.',
+			'Real Google reviews from clients at KC Fairway Bodywork in Midtown Kansas City.',
 		'/about':
-			'Meet Anthony Snell, performance bodywork specialist for golfers in Midtown Kansas City.',
+			'Meet Anthony Snell, LMT, a performance bodywork specialist in Midtown Kansas City helping golfers, athletes, and active people improve mobility and decrease pain.',
 		'/blog':
-			'Articles on mobility, golf swing improvement, and muscle health from KC Fairway Bodywork.',
+			'Mobility, movement, and bodywork tips for golfers, athletes, and active people from KC Fairway Bodywork in Midtown Kansas City.',
 		'/mailing-list':
-			'Stay updated with wellness tips, massage therapy insights, and exclusive offers from KC Fairway Bodywork.',
+			'Join the KC Fairway Bodywork email list for openings, events, and mobility tips from Midtown Kansas City.',
 		'/contact':
-			'Contact KC Fairway Bodywork in Midtown Kansas City. Call, email, get directions, view hours, or send a message.',
-		'/faq':
-			'Frequently asked questions about golf bodywork, sports massage, structural integration, and booking in Kansas City.',
+			'Contact KC Fairway Bodywork in Midtown Kansas City. 406 W 34th St, Suite 511. Call 913-280-6028 or book online.',
+		'/faq': 'Answers to common questions about booking and sessions at KC Fairway Bodywork in Midtown Kansas City.'
 	},
 	address: '406 W 34th St, Suite 511, Kansas City, MO 64111',
 	phone: '913-280-6028',
 	email: 'anthony@kcfairway.com',
 
-	siteUrl: 'https://kcfairway.com',
+	siteUrl: 'https://kcfairwaybodywork.com',
 	gbp_url: 'https://maps.app.goo.gl/mJfcy9fLrpFssiYRA',
 	ogImage: '/img/og-preview.jpg',
 
@@ -91,15 +90,17 @@ const metadata = {
 	cp_holder: 'Spotlite Studios',
 	cp_url: 'https://spotlitestudios.com/',
 
-	title: 'KC Fairway Bodywork - Sports Massage Therapy',
+	title: 'KC Fairway Bodywork - Sports Massage in Midtown KC',
 
 	keywords: [
-		'golf massage Kansas City',
-		'sports massage KC',
+		'sports massage Kansas City',
+		'massage therapy Midtown Kansas City',
+		'structural integration Kansas City',
 		'performance bodywork',
-		'structural integration',
-		'golf bodywork',
-		'Midtown Kansas City massage'
+		'golf massage Kansas City',
+		'athlete massage KC',
+		'low back and hip mobility massage',
+		'shoulder mobility massage'
 	]
 };
 

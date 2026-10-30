@@ -19,14 +19,14 @@
 export const aboutData = {
 	title: 'About KC Fairway Bodywork',
 	aboutText: [
-		'Hello! My name is Anthony Snell, LMT, Performance Bodywork Specialist and owner of KC Fairway Bodywork. I specialize in working with golfers, athletes, and active individuals looking to improve mobility and decrease pain. Whether recovering from an injury or aiming to elevate peak performance, my work focuses on improving mobility, relieving chronic tension, and supporting recovery.',
-		'KC Fairway Bodywork was built out of a love for golf. I wanted to help golfers swing freely and enjoy the game without pain. Specializing in golfers creates a clear focus: high-quality, results-driven bodywork tailored to the needs of golfers, from weekend players to competitive athletes.',
+		"Hi, I'm Anthony Snell, LMT, a performance bodywork specialist and the owner of KC Fairway Bodywork in Midtown Kansas City. I work with golfers, athletes, and active people who want to improve mobility and decrease pain, whether you're coming back from an injury, dealing with a stiff low back or tight hips, or looking to move better in your sport and your day.",
+		'KC Fairway Bodywork started with my love for golf. I wanted to help golfers swing freely and enjoy the game without pain. That focus shaped how I work: I look at how your hips, ribcage, shoulders, and ankles move together, then use structural integration and focused bodywork to improve how you move.',
 		'Golfer or not, you will have my full drive and desire to help you achieve your wellness and sports goals.'
 	],
 	mission:
 		'To provide quality bodywork that creates real improvement, encouraging you to be your best.',
 	vision:
-		'A community where golfers are inspired, supported, and equipped to move freely and play their best through high-quality, performance-focused bodywork.',
+		'A community of golfers, athletes, and active people who feel supported and equipped to move freely and play their best through high-quality, performance-focused bodywork.',
 	values: [
 		{
 			title: 'Care that Drives Improvement',

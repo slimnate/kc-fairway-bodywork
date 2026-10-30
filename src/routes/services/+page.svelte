@@ -32,7 +32,7 @@
 		Massage Therapy Services
 	</h1>
 	<p class="mx-auto max-w-3xl text-center text-lg md:text-xl">
-		Personalized performance bodywork designed to improve mobility, reduce tension, and support better movement on and off the course. Every session is tailored to your swing, your body, and your goals so you can move better, feel better, and play your best. Studio sessions in Midtown KC; mobile bodywork available in Westport, Country Club Plaza, Brookside, Waldo, and the greater metro.
+		Personalized performance bodywork to improve mobility, reduce tension, and support better movement, whether you're on the course, in the gym, or just getting through your day. Every session is tailored to your body and your goals so you can move better, feel better, and play your best. Studio sessions in Midtown KC; mobile bodywork available in Westport, Country Club Plaza, Brookside, Waldo, and the greater metro.
 	</p>
 </section>
 
@@ -178,7 +178,7 @@
 			Modalities & Techniques
 		</h2>
 		<p class="text-center mt-4 text-lg opacity-90">
-			Every session draws from a range of evidence-based techniques to address your unique needs
+			Every session draws from a range of techniques chosen for your body and your goals.
 		</p>
 	</div>
 	<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-6xl w-full">
