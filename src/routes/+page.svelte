@@ -51,7 +51,7 @@
 				class="h-auto w-full max-w-sm"
 				alt="KC Fairway Bodywork"
 			/>
-			<h1 class="text-secondary text-3xl font-bold text-balance md:text-4xl">
+			<h1 class="text-secondary text-2xl font-bold text-balance md:text-4xl">
 				Bodywork for golfers, athletes, and active individuals who want to move better and hurt less.
 			</h1>
 			<p class="text-lg text-balance opacity-90 md:text-xl">
@@ -129,11 +129,19 @@
 			<TestimonialCard item={featuredTestimonials[0]} large />
 		{/if}
 		{#if featuredTestimonials.length > 1}
-			<div class="grid gap-6 md:grid-cols-2">
+			<div
+				class="flex gap-4 overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 md:gap-6 md:overflow-visible"
+				tabindex="0"
+				role="region"
+				aria-label="More client reviews"
+			>
 				{#each featuredTestimonials.slice(1) as item (item.id)}
-					<TestimonialCard {item} />
+					<div class="w-[85%] shrink-0 snap-center md:w-auto md:shrink md:snap-align-none">
+						<TestimonialCard {item} />
+					</div>
 				{/each}
 			</div>
+			<p class="text-center text-sm opacity-70 md:hidden">Swipe for more reviews</p>
 		{/if}
 		<a
 			href={meta.gbp_url}
