@@ -36,7 +36,7 @@ export const offerings = [
 		serviceName: 'Performance Bodywork',
 		icon: 'icon-heart',
 		description:
-			'Bodywork designed to improve how you move both on and off the course. Using advanced techniques such as Structural Integration, Neuromuscular Therapy, and adhesion release, this treatment reduces tension and supports long-term mobility.',
+			'Bodywork designed to improve how you move in your sport and in everyday life. Using advanced techniques such as Structural Integration, Neuromuscular Therapy, and adhesion release, this treatment reduces tension and supports long-term mobility.',
 		packages: [
 			{
 				name: '30 minutes',
@@ -143,7 +143,7 @@ export const servicePageOfferings = [
 		serviceName: 'Structural Integration',
 		icon: 'icon-building-storefront',
 		description:
-			'Structural Integration is a bodywork method that realigns the body for better posture, easier movement, and less pain. It works with the fascia--the conective tissue around your muscles--to release tension, improve mobility, and rebalance your whole system.',
+			'Structural Integration is a bodywork method that works with the fascia, the connective tissue around your muscles, to release tension, improve mobility, and support better posture, easier movement, and less pain.',
 		packages: []
 	},
 	{
@@ -151,7 +151,7 @@ export const servicePageOfferings = [
 		serviceName: 'Mobility and Assisted Stretch',
 		icon: 'icon-link',
 		description:
-			'Improve flexibility, unlock your rotation, and reduce tension with a focused stretch session designed for golfers. This service targets hips, thoracic spine, shoulders, and core rotation to support a smoother, more powerful swing.',
+			'Improve flexibility, unlock your rotation, and reduce tension with a focused stretch session. This service targets hips, thoracic spine, shoulders, and core rotation to support smoother, more powerful movement, including a better golf swing.',
 		packages: []
 	},
 	offerings[2]
@@ -175,7 +175,7 @@ export const modalities = [
 	{
 		id: 'neuromuscular-therapy',
 		name: 'Neuromuscular Therapy',
-		description: 'Targeted relief for chronic pain and muscular dysfunction'
+		description: 'Targeted work to decrease pain and ease chronic muscle tension.'
 	},
 	{
 		id: 'deep-tissue-massage',
@@ -195,7 +195,7 @@ export const modalities = [
 	{
 		id: 'structural-integration',
 		name: 'Structural Integration',
-		description: 'Structural Integration realigns your body by working with the fascia to reduce pain, improve mobility, and help you move with ease'
+		description: 'Works with the fascia to reduce pain, improve mobility, and help you move with ease.'
 	},
 	{
 		id: 'scar-tissue-therapy',
