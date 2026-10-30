@@ -15,7 +15,8 @@ if (noAdmin) {
 const child = spawn('npx', ['concurrently', 'npx convex dev', 'vite dev'], {
 	cwd: projectRoot,
 	env,
-	stdio: 'inherit'
+	stdio: 'inherit',
+	shell: true
 });
 
 child.on('exit', (code, signal) => {

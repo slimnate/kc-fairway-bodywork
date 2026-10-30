@@ -1,6 +1,5 @@
 <script lang="ts">
 	type Testimonial = {
-		id: string;
 		author: string;
 		quote: string;
 		source?: string;
