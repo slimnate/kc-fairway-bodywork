@@ -68,5 +68,15 @@ export const testimonials = [
 		ratingValue: 5,
 		includeInSchema: false,
 		featured: true
+	},
+	{
+		id: 'levi-a',
+		author: 'Levi A.',
+		quote:
+			'Anthony was very professional throughout the entire process. After being worked on by him, my mobility improved, and tension in my back lessened. Following our session I could see improvements with my driving distance, carry, and ball speed. Highly recommend! Will absolutely be booking more sessions.',
+		source: 'Google review',
+		ratingValue: 5,
+		includeInSchema: false,
+		featured: false
 	}
 ];

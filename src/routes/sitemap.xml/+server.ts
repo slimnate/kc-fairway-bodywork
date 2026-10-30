@@ -8,6 +8,7 @@ const STATIC_PATHS = [
 	'/',
 	'/about',
 	'/services',
+	'/golf',
 	'/blog',
 	'/contact',
 	'/faq',
