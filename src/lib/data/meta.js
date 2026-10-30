@@ -51,7 +51,9 @@ const metadata = {
 			'Join the KC Fairway Bodywork email list for openings, events, and mobility tips from Midtown Kansas City.',
 		'/contact':
 			'Contact KC Fairway Bodywork in Midtown Kansas City. 406 W 34th St, Suite 511. Call 913-280-6028 or book online.',
-		'/faq': 'Answers to common questions about booking and sessions at KC Fairway Bodywork in Midtown Kansas City.'
+		'/faq': 'Answers to common questions about booking and sessions at KC Fairway Bodywork in Midtown Kansas City.',
+		'/golf':
+			'Bodywork for golfers in Midtown Kansas City. Improve thoracic rotation and hip mobility, decrease low back tension, and get more out of your swing.'
 	},
 	address: '406 W 34th St, Suite 511, Kansas City, MO 64111',
 	phone: '913-280-6028',

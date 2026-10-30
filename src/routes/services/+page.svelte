@@ -159,6 +159,14 @@
 							{/if}
 						</ul>
 					{/if}
+					{#if offering.id === 'chair-massage'}
+						<a
+							href="/golf"
+							class="text-secondary mt-4 block w-fit self-center text-sm font-medium underline underline-offset-4 transition-opacity hover:opacity-80"
+						>
+							Golfer? See how I work with golfers →
+						</a>
+					{/if}
 					</div>
 				</div>
 			</div>
