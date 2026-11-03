@@ -119,7 +119,7 @@ export const fairwayPerformancePlan = {
 	pricing: 'Starting at $80/month',
 	subtitle: 'Monthly membership',
 	description:
-		'A monthly membership built to keep you on top of your health and performance. Enjoy preferred rates, priority booking, and automatic birthday and holiday perks. Pause anytime — there\u2019s no long-term contract.',
+		'A monthly membership built to keep you on top of your health and performance. Enjoy preferred rates, priority booking, and automatic birthday and holiday perks. Pause anytime. There\u2019s no long-term contract.',
 	packagesLink: {
 		text: 'Discounted packages also available \u2192',
 		href: '/services'
@@ -249,7 +249,7 @@ export const mobileSetupSteps = [
 		id: 'space-requirements',
 		title: 'Space Requirements',
 		description:
-			"You'll need approximately 6x10 feet of clear floor space—about the size of a queen bed. This can be in a bedroom, living room, or any comfortable, private area in your home or office."
+			"You'll need approximately 6x10 feet of clear floor space, about the size of a queen bed. This can be in a bedroom, living room, or any comfortable, private area in your home or office."
 	},
 	{
 		id: 'quick-setup',

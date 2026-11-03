@@ -246,7 +246,7 @@
 			How It Works
 		</h3>
 		<p class="text-center mt-4 text-lg opacity-90">
-			Bringing professional massage therapy to you—simple, seamless, and stress-free
+			Bringing professional massage therapy to you: simple, seamless, and stress-free
 		</p>
 	</div>
 
@@ -327,7 +327,7 @@
 				<div class="text-center mb-8">
 					<span class="icon icon-xl icon-custom icon-map-pin"></span>
 					<p class="mt-4 text-lg opacity-90">
-						Mobile massage services available throughout the Kansas City metro—including Midtown,
+						Mobile massage services available throughout the Kansas City metro, including Midtown,
 						Westport, the Plaza, Brookside, and Waldo. Travel fees may apply outside the immediate
 						metro area.
 					</p>

@@ -14,8 +14,8 @@
 			Frequently Asked Questions
 		</h1>
 		<p class="text-base-content/85 text-lg">
-			Common questions about golf bodywork, booking, and what to expect at KC Fairway Bodywork in
-			Midtown Kansas City.
+			Common questions about booking and what to expect at KC Fairway Bodywork in Midtown Kansas
+			City.
 		</p>
 	</div>
 </section>
