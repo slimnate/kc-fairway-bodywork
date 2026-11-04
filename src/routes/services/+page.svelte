@@ -227,14 +227,18 @@
 			<p class="opacity-80 text-center">{mobileMassageOffering.description}</p>
 			{#if mobileMassageOffering.packages && mobileMassageOffering.packages.length}
 				<ul class="mt-4 mx-auto flex gap-2 flex-col text-center text-base justify-center">
-					<p class="text-sm opacity-70">Limited time only. Only $10 more for mobile visit.</p>
 					{#each mobileMassageOffering.packages as pkg}
 						<li class="pb-1 flex items-center justify-center gap-2">
 							<span class="icon icon-xs icon-custom icon-clock"></span>
-							<span class="font-medium">{pkg.name}</span> – <span class="font-bold">{formatPrice(pkg.price)}</span>
+							<span class="font-medium">{pkg.name}</span>: <span class="font-bold"
+								>{formatPrice(pkg.price)} + $50 mobile fee</span
+							>
 						</li>
 					{/each}
 				</ul>
+				<p class="mt-4 text-center text-sm opacity-70">
+					One $50 fee per visit, no matter how many people you book.
+				</p>
 			{/if}
 		</div>
 	</div>
@@ -328,8 +332,7 @@
 					<span class="icon icon-xl icon-custom icon-map-pin"></span>
 					<p class="mt-4 text-lg opacity-90">
 						Mobile massage services available throughout the Kansas City metro, including Midtown,
-						Westport, the Plaza, Brookside, and Waldo. Travel fees may apply outside the immediate
-						metro area.
+						Westport, the Plaza, Brookside, and Waldo.
 					</p>
 					<p class="mt-4 text-sm opacity-80">
 						<a href="/faq" class="text-secondary font-semibold hover:underline">View FAQ</a>

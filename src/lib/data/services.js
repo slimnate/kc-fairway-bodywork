@@ -165,8 +165,8 @@ export const mobileMassageOffering = {
 	description:
 		'Enjoy professional therapeutic bodywork in the comfort of your own home. I bring everything needed for a session that fits seamlessly into your routine.',
 	packages: [
-		{ name: '60 minutes', price: 185, description: null },
-		{ name: '90 minutes', price: 235, description: null }
+		{ name: '60 minutes', price: 175, description: null },
+		{ name: '90 minutes', price: 225, description: null }
 	]
 };
 
