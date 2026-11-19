@@ -100,9 +100,9 @@ export const offerings = [
 	}
 ];
 
-/** @type {{ title: string; tagline: string; introBefore: string; introHighlight: string; introAfter: string; benefits: string[]; pricing: string; subtitle: string; description: string; packagesLink: { text: string; href: string } }} */
+/** @type {{ title: string; tagline: string; introBefore: string; introHighlight: string; introAfter: string; benefits: string[]; pricing: string; membershipLink: { text: string; href: string }; subtitle: string; description: string; packagesLink: { text: string; href: string } }} */
 export const fairwayPerformancePlan = {
-	title: 'Fairway performance plan',
+	title: 'Fairway Performance Plan',
 	tagline: 'Move better. Recover faster. Play longer.',
 	introBefore: 'A ',
 	introHighlight: 'monthly membership',
@@ -111,12 +111,16 @@ export const fairwayPerformancePlan = {
 		'1 bodywork session per month',
 		'Discounted member rates on extra sessions',
 		'Priority booking access',
-		'Automatic birthday and holiday perks',
+		'Holiday perks',
 		'Session rollover, up to 3 months',
 		'Share or gift sessions',
 		'Pause anytime, no long-term contract'
 	],
 	pricing: 'Starting at $80/month',
+	membershipLink: {
+		text: 'See membership options',
+		href: 'https://www.massagebook.com/therapists/kc-fairway-bodywork/deals/inhouse/Memberships?src=external'
+	},
 	subtitle: 'Monthly membership',
 	description:
 		'A monthly membership built to keep you on top of your health and performance. Enjoy preferred rates, priority booking, and automatic birthday and holiday perks. Pause anytime. There\u2019s no long-term contract.',
@@ -132,7 +136,7 @@ export const servicePageOfferings = [
 	offerings[1],
 	{
 		id: 'fairway-performance-plan',
-		serviceName: 'Fairway performance plan',
+		serviceName: 'Fairway Performance Plan',
 		icon: 'icon-shield-check',
 		description: '',
 		packages: [],
