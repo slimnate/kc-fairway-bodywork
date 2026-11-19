@@ -78,6 +78,14 @@
 						</ul>
 						<div class="border-secondary/30 w-full border-t pt-4 text-center">
 							<p class="text-secondary font-bold">{fairwayPerformancePlan.pricing}</p>
+							<a
+								href={fairwayPerformancePlan.membershipLink.href}
+								class="btn btn-outline btn-secondary btn-sm mt-3"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								{fairwayPerformancePlan.membershipLink.text}
+							</a>
 						</div>
 					</div>
 				</div>
