@@ -42,6 +42,10 @@ const footerNavItems = [
 		text: 'Myofascial Release'
 	},
 	{
+		href: '/structural-integration',
+		text: 'Structural Integration'
+	},
+	{
 		href: '/about',
 		text: 'About'
 	},

@@ -177,8 +177,14 @@
 					{/if}
 					{#if offering.id === 'structural-integration'}
 						<a
-							href="/myofascial-release"
+							href="/structural-integration"
 							class="text-secondary mt-4 block w-fit self-center text-sm font-medium underline underline-offset-4 transition-opacity hover:opacity-80"
+						>
+							Structural integration →
+						</a>
+						<a
+							href="/myofascial-release"
+							class="text-secondary mt-2 block w-fit self-center text-sm font-medium underline underline-offset-4 transition-opacity hover:opacity-80"
 						>
 							Myofascial release →
 						</a>

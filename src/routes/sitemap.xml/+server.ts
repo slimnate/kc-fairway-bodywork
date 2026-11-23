@@ -10,6 +10,7 @@ const STATIC_PATHS = [
 	'/services',
 	'/golf',
 	'/myofascial-release',
+	'/structural-integration',
 	'/blog',
 	'/contact',
 	'/faq',
