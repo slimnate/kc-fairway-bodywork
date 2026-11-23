@@ -56,7 +56,9 @@ const metadata = {
 		'/golf':
 			'Bodywork for golfers in Midtown Kansas City. Improve thoracic rotation and hip mobility, decrease low back tension, and get more out of your swing.',
 		'/myofascial-release':
-			'Myofascial release and bodywork in Mid-Town Kansas City with Anthony Snell, LMT. Work on tension, stiffness, and mobility. Book online.'
+			'Myofascial release and bodywork in Mid-Town Kansas City with Anthony Snell, LMT. Work on tension, stiffness, and mobility. Book online.',
+		'/structural-integration':
+			'Structural integration in Mid-Town Kansas City with Anthony Snell, LMT. Hands-on work and guided movement to improve mobility. Book online.'
 	},
 	address: '406 W 34th St, Suite 511, Kansas City, MO 64111',
 	phone: '913-280-6028',

@@ -82,7 +82,7 @@ export const structuralIntegration = {
 	before:
 		"Myofascial work runs through most of what I do. In a regular massage it's part of the mix. In ",
 	linkText: 'structural integration',
-	href: '/services',
+	href: '/structural-integration',
 	after:
 		', slow, gentle fascial work is a core part of how we work on movement and posture over a series of sessions.'
 };
