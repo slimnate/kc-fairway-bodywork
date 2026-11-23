@@ -38,6 +38,10 @@ const footerNavItems = [
 		text: 'Services'
 	},
 	{
+		href: '/myofascial-release',
+		text: 'Myofascial Release'
+	},
+	{
 		href: '/about',
 		text: 'About'
 	},

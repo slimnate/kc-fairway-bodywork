@@ -175,6 +175,14 @@
 							Golfer? See how I work with golfers →
 						</a>
 					{/if}
+					{#if offering.id === 'structural-integration'}
+						<a
+							href="/myofascial-release"
+							class="text-secondary mt-4 block w-fit self-center text-sm font-medium underline underline-offset-4 transition-opacity hover:opacity-80"
+						>
+							Myofascial release →
+						</a>
+					{/if}
 					</div>
 				</div>
 			</div>
